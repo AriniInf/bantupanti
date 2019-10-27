@@ -11,5 +11,10 @@ class M_admin extends CI_Model
 	function hapusDonasi($id){
         $this->db->query("delete from donasi where dn_id='".$id."'");
 	}
+
+	public function listAllKegiatan(){
+		$hasil = $this->db->query("SELECT kp_id, ad_id, kp_namakegiatan, kp_penjelasan, kp_tanggal from kegiatanpanti");
+			return $hasil;
+	}
 		
 }

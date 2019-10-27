@@ -11,8 +11,9 @@ class AnakPanti extends CI_Controller {
 	}
 
 	public function listAnak(){
+		$data['content'] = 'anakPanti/v_listAnakPanti';
 		$data['data'] = $this->m_anakPanti->listAnak()->result();
-		$this->load->view('anakPanti/v_listAnakPanti',$data);
+		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 
 	public function listStory(){

@@ -12,7 +12,8 @@ class PengurusPanti extends CI_Controller {
 	}
 
 	public function listPengurus(){
+		$data['content'] = 'pengurusPanti/v_listPengurusPanti';
 		$data['data'] = $this->m_pengurusPanti->listPengurus()->result();
-		$this->load->view('pengurusPanti/v_listPengurusPanti',$data);
+		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 }

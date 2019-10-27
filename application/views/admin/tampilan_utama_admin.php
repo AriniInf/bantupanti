@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sim Pengasuhan | STPN</title>
+  <title>Bantu Panti | ITS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -33,7 +33,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>SPG</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>SIM </b>PENGASUHAN</span>
+      <span class="logo-lg"><b>BANTU </b>PANTI</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -62,33 +62,37 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="<?php echo site_url("main/dashboard"); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          <a href="<?php echo site_url("admin/dashboard"); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>Tabel Pengasuhan</span>
+            <span>Lihat semua</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("main/peristiwa/penghargaan"); ?>"><i class="fa fa-circle-o" name="penghargaan"></i>Penghargaan</a></li>
-            <li><a href="<?php echo site_url("main/peristiwa/pelanggaran"); ?>"><i class="fa fa-circle-o" name="pelanggaran"></i>Pelanggaran</a></li> 
+            <li><a href="<?php echo site_url("donatur/listDonatur"); ?>"><i class="fa fa-circle-o" name="donatur"></i>Donatur</a></li>
+						<li><a href="<?php echo site_url("anakPanti/listAnak"); ?>"><i class="fa fa-circle-o" name="anak_panti"></i>Anak Panti</a></li>
+						<li><a href="<?php echo site_url("pengurusPanti/listPengurus"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Pengurus Panti</a></li>
+						<li><a href="<?php echo site_url("admin/listAllKegiatan"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Kegiatan Panti</a></li>
           </ul>
         </li>
        
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-plus-square"></i> <span>Entry Nilai</span>
+            <i class="fa fa-plus-square"></i> <span>Tambah Sesuatu</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("main/peristiwa/entry_individu"); ?>"><i class="fa fa-circle-o"></i> Entry Nilai Individu</a></li>
-            <li><a href="<?php echo site_url("main/peristiwa/entry_massal"); ?>"><i class="fa fa-circle-o"></i> Entry Nilai Massal</a></li>
+            <li><a href="<?php echo site_url("main/peristiwa/entry_individu"); ?>"><i class="fa fa-circle-o"></i>Tambah Anak Panti</a></li>
+						<li><a href="<?php echo site_url("main/peristiwa/entry_massal"); ?>"><i class="fa fa-circle-o"></i>Tambah Pengurus Panti</a></li>
+						<li><a href=""><i class="fa fa-circle-o"></i>Tambah Pemasukan</a></li>
+						<li><a href=""><i class="fa fa-circle-o"></i>Tambah Pengeluaran</a></li>
           </ul>
         </li>
 
@@ -100,9 +104,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("main/peristiwa/rekap_harga"); ?>"><i class="fa fa-circle-o"></i> Rekap Penghargaan</a></li>
-            <li><a href="<?php echo site_url("main/peristiwa/rekap_langgar"); ?>"><i class="fa fa-circle-o"></i> Rekap Pelanggaran</a></li>
-            <li><a href="<?php echo site_url("main/peristiwa/rekap_taruna"); ?>"><i class="fa fa-circle-o"></i> Rekap Taruna</a></li>
+            <li><a href="<?php echo site_url(""); ?>"><i class="fa fa-circle-o"></i> Rekap Pemasukan</a></li>
+            <li><a href="<?php echo site_url("admin/rekapPengeluaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Pengeluaran</a></li>
+            <li><a href="<?php echo site_url("main/peristiwa/rekap_taruna"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
           </ul>
         </li>
 
@@ -131,7 +135,7 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <center><strong>Copyright &copy; 2019 <a href="http://stpn.ac.id/">STPN</a>.</strong> All rights
+    <center><strong>Copyright &copy; 2019 <a href="http://its.ac.id/">ITS</a>.</strong> All rights
     reserved.</center>
   </footer>
    

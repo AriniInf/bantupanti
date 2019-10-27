@@ -4,7 +4,7 @@
 <section class="content-header">
   <h1>
     Dashboard
-    <small>Sistem Informasi Pengasuhan</small>
+    <small>Sistem Informasi Bantu Panti</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -45,7 +45,7 @@
 
   </script>
 
-  <style>
+  <!-- <style>
   /* Make the image fully responsive */
     .box
     {
@@ -68,4 +68,4 @@
     		background-image: url("<?php echo base_url(''); ?>assets/img/STPN2.jpg");
     	}
     }
-  </style>
+  </style> -->

@@ -10,8 +10,9 @@ class Admin extends CI_Controller {
 	}
 
 	public function listAllDonasi(){
+		$data['content'] = 'admin/v_listAllDonasi';
 		$data['data'] = $this->m_admin->listAllDonasi()->result();
-		$this->load->view('admin/v_listAllDonasi', $data);
+		$this->load->view('admin/tampilan_utama_admin', $data);
 	}
 
 	function hapusDonasi($id){
@@ -19,12 +20,22 @@ class Admin extends CI_Controller {
 		redirect('admin/listAllDonasi');        
 	}
 
+	public function listAllKegiatan(){
+		$data['content'] = 'admin/v_kegiatanPanti';
+		$data['data'] = $this->m_admin->listAllKegiatan()->result();
+		$this->load->view('admin/tampilan_utama_admin', $data);
+	}
+
+	public function rekapPengeluaran(){
+		$data['content'] = 'admin/v_pengeluaran';
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
 	public function dashboard()
 	{
 
 		$data['content'] = 'admin/view_dashboard';
-
-		$this->load->view('tampilan_utama',$data);
+		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 }
 

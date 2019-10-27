@@ -11,8 +11,9 @@ class Donatur extends CI_Controller {
 	}
 
 	public function listDonatur(){
+		$data['content'] = 'donatur/v_listDonatur';
 		$data['data'] = $this->m_donatur->listDonatur()->result();
-		$this->load->view('donatur/v_listDonatur',$data);  
+		$this->load->view('admin/tampilan_utama_admin',$data);  
 	}
 
 	public function dashboard()
