@@ -20,6 +20,12 @@ class Admin extends CI_Controller {
 		redirect('admin/listAllDonasi');        
 	}
 
+	public function listAnak(){
+		$data['content'] = 'anakPanti/v_listAnakPanti';
+		$data['data'] = $this->m_anakPanti->listAnak()->result();
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
 	public function listAllKegiatan(){
 		$data['content'] = 'admin/v_kegiatanPanti';
 		$data['data'] = $this->m_admin->listAllKegiatan()->result();
@@ -36,6 +42,39 @@ class Admin extends CI_Controller {
 
 		$data['content'] = 'admin/view_dashboard';
 		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
+	function formAnak(){
+		$data['content']='admin/v_formAnak';
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
+	function tambahAnak(){
+		$ap_id = $this->input->post('ap_id');
+		$ap_nama = $this->input->post('ap_nama');
+		$ap_tempatlahir = $this->input->post('ap_tempatlahir');
+		$ap_tanggallahir = $this->input->post('ap_tanggallahir');
+		$ap_hobi = $this->input->post('ap_hobi');
+		$ap_sekolah = $this->input->post('ap_sekolah');
+		$ap_prestasi = $this->input->post('ap_prestasi');
+		$ap_foto = $this->input->post('ap_foto');
+		$ap_username = $this->input->post('ap_username');
+		$ap_password = $this->input->post('ap_password');
+		
+		$data = array(
+			'ap_id' => $ap_id,
+			'ap_nama' => $ap_nama,
+			'ap_tempatlahir' => $ap_tempatlahir,
+			'ap_tanggallahir' => $ap_tanggallahir,
+			'ap_hobi' => $ap_hobi,
+			'ap_sekolah' => $ap_sekolah,
+			'ap_prestasi' => $ap_prestasi,
+			'ap_foto' => $ap_foto,
+			'ap_username' => $ap_username,
+			'ap_password' => $ap_password
+			);
+		$this->m_anakPanti->tambahAnak($data,'anakpanti');
+		redirect('admin/listAnak');
 	}
 }
 
