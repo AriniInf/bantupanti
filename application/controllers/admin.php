@@ -19,4 +19,12 @@ class Admin extends CI_Controller {
 		redirect('admin/listAllDonasi');        
 	}
 
+	public function dashboard()
+	{
+
+		$data['content'] = 'admin/view_dashboard';
+
+		$this->load->view('tampilan_utama',$data);
+	}
 }
+

@@ -9,18 +9,17 @@ class M_anakPanti extends CI_Model
 		return $hasil;
 	}
 
-	// public function listStory($id){
-	// 	$hasil = $this->db->get('storyanakpanti');
-	// 	return $hasil;
-	// }
-
 	public function listStory(){
 		$query =  $this->db->query("SELECT sap_id, sap.ap_id, ap_nama, isistory, tanggalstory from anakpanti ap left join storyanakpanti sap on ap.ap_id = sap.ap_id");
 		return $query;
 	}
 
-	// public function getNamaAP($id){
-	// 	$query =  $this->db->query("SELECT ap_nama, ")
-	// }
+	public function tambahStory($data,$table){
+		$query =  $this->db->insert($table, $data);
+	}
+
+	public function tambahAnak($data,$table){
+		$query =  $this->db->insert($table, $data);
+	}
 
 }

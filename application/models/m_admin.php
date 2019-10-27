@@ -11,4 +11,5 @@ class M_admin extends CI_Model
 	function hapusDonasi($id){
         $this->db->query("delete from donasi where dn_id='".$id."'");
 	}
+		
 }
