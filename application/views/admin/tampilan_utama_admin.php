@@ -89,10 +89,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("main/peristiwa/entry_individu"); ?>"><i class="fa fa-circle-o"></i>Tambah Anak Panti</a></li>
-						<li><a href="<?php echo site_url("main/peristiwa/entry_massal"); ?>"><i class="fa fa-circle-o"></i>Tambah Pengurus Panti</a></li>
-						<li><a href=""><i class="fa fa-circle-o"></i>Tambah Pemasukan</a></li>
-						<li><a href=""><i class="fa fa-circle-o"></i>Tambah Pengeluaran</a></li>
+            <li><a href="<?php echo site_url("admin/formAnak"); ?>"><i class="fa fa-circle-o"></i>Tambah Anak Panti</a></li>
+						<li><a href="<?php echo site_url("admin/formPengurus"); ?>"><i class="fa fa-circle-o"></i>Tambah Pengurus Panti</a></li>
+						<li><a href="<?php echo site_url("admin/formPemasukan"); ?>"><i class="fa fa-circle-o"></i>Tambah Pemasukan</a></li>
+						<li><a href="<?php echo site_url("admin/formPengeluaran"); ?>"><i class="fa fa-circle-o"></i>Tambah Pengeluaran</a></li>
           </ul>
         </li>
 
@@ -104,9 +104,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url(""); ?>"><i class="fa fa-circle-o"></i> Rekap Pemasukan</a></li>
+            <li><a href="<?php echo site_url("admin/rekapPemasukan"); ?>"><i class="fa fa-circle-o"></i> Rekap Pemasukan</a></li>
             <li><a href="<?php echo site_url("admin/rekapPengeluaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Pengeluaran</a></li>
-            <li><a href="<?php echo site_url("main/peristiwa/rekap_taruna"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
+            <li><a href="<?php echo site_url("admin/listAllDonasi"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
           </ul>
         </li>
 
