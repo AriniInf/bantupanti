@@ -37,5 +37,17 @@ class Donatur extends CI_Controller {
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
+	public function berdonasi(){
+		$data['content'] = 'donatur/v_formdonasi';
+		$data['data'] = $this->m_donatur->berdonasi()->result();
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
+
+	public function kegiatanPanti(){
+		$data['content'] = 'donatur/v_kegiatanPanti';
+		$data['data'] = $this->m_donatur->kegiatanPanti()->result();
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
+
 	
 }

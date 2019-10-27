@@ -102,6 +102,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo site_url("donatur/profil"); ?>"><i class="fa fa-circle-o" name="penghargaan"></i>Profil</a></li>
+            <li><a href="<?php echo site_url("donatur/kegiatanPanti"); ?>"><i class="fa fa-circle-o" name="penghargaan"></i>Kegiatan</a></li>
             <li><a href="<?php echo site_url("donatur/pengurus"); ?>"><i class="fa fa-circle-o" name="pelanggaran"></i>Pengurus</a></li> 
           </ul>
         </li>
