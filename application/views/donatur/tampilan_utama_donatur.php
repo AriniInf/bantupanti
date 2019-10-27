@@ -67,28 +67,43 @@
 				</li>
 				<li class="treeview">
           <a href="#">
-            <i class="fa fa-plus-square"></i> <span>Donasi</span>
+            <i class="fa fa-plus-square"></i> <span>Data Anak Panti</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("main/peristiwa/entry_individu"); ?>"><i class="fa fa-circle-o"></i>Beri Donasi</a></li>
-            <li><a href="<?php echo site_url("main/peristiwa/entry_massal"); ?>"><i class="fa fa-circle-o"></i>History Donasi</a></li>
+            <li><a href="<?php echo site_url("donatur/listanak"); ?>"><i class="fa fa-circle-o"></i>List</a></li>
+            <li><a href="<?php echo site_url("donatur/diary"); ?>"><i class="fa fa-circle-o"></i>Diary</a></li>
           </ul>
 				</li>
 				
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>Lihat Panti</span>
+            <span>Donasi</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("main/peristiwa/penghargaan"); ?>"><i class="fa fa-circle-o" name="penghargaan"></i>Penghargaan</a></li>
-            <li><a href="<?php echo site_url("main/peristiwa/pelanggaran"); ?>"><i class="fa fa-circle-o" name="pelanggaran"></i>Pelanggaran</a></li> 
+            <li><a href="<?php echo site_url("donatur/berdonasi"); ?>"><i class="fa fa-circle-o" name="penghargaan"></i>Berdonasi</a></li>
+            <li><a href="<?php echo site_url("donatur/history"); ?>"><i class="fa fa-circle-o" name="pelanggaran"></i>History</a></li> 
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Panti</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo site_url("donatur/profil"); ?>"><i class="fa fa-circle-o" name="penghargaan"></i>Profil</a></li>
+            <li><a href="<?php echo site_url("donatur/kegiatanPanti"); ?>"><i class="fa fa-circle-o" name="penghargaan"></i>Kegiatan</a></li>
+            <li><a href="<?php echo site_url("donatur/pengurus"); ?>"><i class="fa fa-circle-o" name="pelanggaran"></i>Pengurus</a></li> 
           </ul>
         </li>
 <!-- 

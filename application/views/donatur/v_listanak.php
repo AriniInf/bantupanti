@@ -4,8 +4,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Lihat Semua</a></li>
-    <li class="active">List Donatur</li>
+    <li class="active">List Anak Panti</li>
   </ol>
 </section>
 
@@ -19,25 +18,21 @@
                 <tr>
 					<th>No</th>
 					<th>Nama</th>
-					<th>Alamat</th>
-					<th>Pekerjaan</th>
-					<th>Email</th>
-					<th>Telp</th>
+					<th>Tempat Tanggal Lahir</th>
+					
                </tr>
             </thead>
             <tbody>
-              <?php 
+			<?php 
               $no=1;
-              foreach ($data as $do) { ?> 
+              foreach($data as $ap){ ?>
 				<tr>
-					<td><?php echo $no++ ?></td>
-					<td><?php echo $do->do_nama ?></td>
-					<td><?php echo $do->do_alamat ?></td>
-					<td><?php echo $do->do_pekerjaan ?></td>
-					<td><?php echo $do->do_email ?></td>
-					<td><?php echo $do->do_telp ?></td>
+					<td><?php echo $no++ ?> </td>
+					<td><?php echo $ap->ap_nama ?></td>
+					<td><?php echo $ap->ap_tempatlahir, $ap->ap_tanggallahir ?></td>
+
 				</tr>
-              <?php }?>
+				<?php } ?>
             </tbody>
           </table>
         </div>
