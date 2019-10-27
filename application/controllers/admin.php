@@ -37,5 +37,11 @@ class Admin extends CI_Controller {
 		$data['content'] = 'admin/view_dashboard';
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
+	
+	public function listDonatur(){
+		$data['content'] = 'donatur/v_listDonatur';
+		$data['data'] = $this->m_donatur->listDonatur()->result();
+		$this->load->view('admin/tampilan_utama_admin',$data);  
+	}
 }
 

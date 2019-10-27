@@ -10,17 +10,30 @@ class Donatur extends CI_Controller {
         $this->load->helper('url');
 	}
 
-	public function listDonatur(){
-		$data['content'] = 'donatur/v_listDonatur';
-		$data['data'] = $this->m_donatur->listDonatur()->result();
-		$this->load->view('admin/tampilan_utama_admin',$data);  
-	}
-
 	public function dashboard()
 	{
 
 		$data['content'] = 'donatur/view_dashboard';
 
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
+
+	public function listdonatur(){
+		$data['content'] = 'donatur/v_formdonasi';
+        $data['data'] = $this->m_donatur->lsitDonatur()->result();
+        $this->load->view('donatur/tampilan_utama_donatur',$data);
+        
+	}
+	
+	public function listanak(){
+		$data['content'] = 'donatur/v_listanak';
+		$data['data'] = $this->m_donatur->listanak()->result();
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
+
+	public function pengurus(){
+		$data['content'] = 'donatur/v_pengurus';
+		$data['data'] = $this->m_donatur->pengurus()->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
