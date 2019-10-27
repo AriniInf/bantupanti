@@ -49,6 +49,21 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 
+	function formPengurus(){
+		$data['content']='admin/v_formPengurusPanti';
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
+	function formPengeluaran(){
+		$data['content']='admin/v_formPengeluaran';
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
+	function formPemasukan(){
+		$data['content']='admin/v_formPemasukan';
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
 	function tambahAnak(){
 		$ap_id = $this->input->post('ap_id');
 		$ap_nama = $this->input->post('ap_nama');
