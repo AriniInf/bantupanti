@@ -67,7 +67,8 @@
 				</li>
 				<li class="treeview">
           <a href="#">
-            <i class="fa fa-plus-square"></i> <span>Data Anak Panti</span>
+          <i class="fa fa-angle-left pull-right" name="dataap"></i>
+          <span>Data Anak Panti</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -80,7 +81,7 @@
 				
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i>
+          <i class="fa fa-angle-left pull-right"></i>
             <span>Donasi</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -94,7 +95,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i>
+          <i class="fa fa-angle-left pull-right"></i>
             <span>Panti</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

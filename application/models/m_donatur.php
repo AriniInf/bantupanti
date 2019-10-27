@@ -24,5 +24,5 @@ class M_donatur extends CI_Model
 	public function kegiatanPanti(){
 		return $this->db->get('bantupanti.kegiatanpanti');
 	}
-	
+
 }
