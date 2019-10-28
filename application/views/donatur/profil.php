@@ -141,11 +141,11 @@
   </div>
   <div class="container left">
     <div class="content">
-      <h2>2015</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+      <h2>Kegiatan</h2>
+      <p>Ada banyak kegiatan panti, tapi tidak tentu setiap bulannya. Pada bulan puasa biasanya lebih banyak acara yang dari luar. Seperti kegiatan yang dari mahasiswa bakti kampus, doa Bersama, maupun buka Bersama. Selain itu juga ada kegiatan sholawatan Bersama masyarakat sekitar</p>
     </div>
   </div>
-  <div class="container right">
+  <!-- <div class="container right">
     <div class="content">
       <h2>2012</h2>
       <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
@@ -163,7 +163,7 @@
       <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
     </div>
   </div>
-</div>
+</div> -->
 
 </body>
 </html>
