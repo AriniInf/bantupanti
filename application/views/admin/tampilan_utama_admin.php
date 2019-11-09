@@ -74,9 +74,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("donatur/listDonatur"); ?>"><i class="fa fa-circle-o" name="donatur"></i>Donatur</a></li>
-						<li><a href="<?php echo site_url("anakPanti/listAnak"); ?>"><i class="fa fa-circle-o" name="anak_panti"></i>Anak Panti</a></li>
-						<li><a href="<?php echo site_url("pengurusPanti/listPengurus"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Pengurus Panti</a></li>
+            <li><a href="<?php echo site_url("admin/listDonatur"); ?>"><i class="fa fa-circle-o" name="donatur"></i>Donatur</a></li>
+						<li><a href="<?php echo site_url("admin/listAnak"); ?>"><i class="fa fa-circle-o" name="anak_panti"></i>Anak Panti</a></li>
+						<li><a href="<?php echo site_url("admin/listPengurus"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Pengurus Panti</a></li>
 						<li><a href="<?php echo site_url("admin/listAllKegiatan"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Kegiatan Panti</a></li>
           </ul>
         </li>

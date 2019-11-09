@@ -16,5 +16,19 @@ class M_admin extends CI_Model
 		$hasil = $this->db->query("SELECT kp_id, ad_id, kp_namakegiatan, kp_penjelasan, kp_tanggal from kegiatanpanti");
 			return $hasil;
 	}
+
+	public function listDonatur(){
+		$hasil = $this->db->get('bantupanti.donatur');
+		return $hasil;
+	}
+
+	public function listPengurus()
+	{
+		$pengurusPanti=$this->db->get("bantupanti.penguruspanti");
+		return $pengurusPanti;
+	}
+	public function listanak(){
+		return $this->db->get('anakpanti');
+	}
 		
 }

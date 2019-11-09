@@ -12,7 +12,6 @@ class Donatur extends CI_Controller {
 
 	public function dashboard()
 	{
-
 		$data['content'] = 'donatur/view_dashboard';
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
