@@ -47,5 +47,10 @@ class Donatur extends CI_Controller {
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
+	public function profil(){
+		$data['content'] = 'donatur/profil';
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
+
 	
 }
