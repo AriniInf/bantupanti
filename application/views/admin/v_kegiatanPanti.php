@@ -16,26 +16,20 @@
 			<div class="box_general">
 				<div class="list_general list_admin">
 					<ul>
-							<li>
-								<h3>Arini</h3>
-								<h4 class="mb-2">Kerja Bakti</h4>
-								<p>bersih2 sekitar panti</p>
-								<div>
-									<a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
-									<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
-									<a href="#" data-id="	" class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</a>
-								</div>
-							</li>
-							<li>
-								<h3>Arini</h3>
-								<h4 class="mb-2">Kerja Bakti</h4>
-								<p>bersih2 sekitar panti</p>
-								<div>
-									<a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
-									<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
-									<a href="#" data-id="	" class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</a>
-								</div>
-							</li>
+						<?php
+						foreach($data as $kp){ ?>
+						<li>	
+							<span><h3><?php echo $kp->pp_nama?></h3></span>
+							<span><p><?php echo $kp->kp_tanggal ?></p></span>
+							<h4 class="mb-2"><?php echo $kp->kp_namakegiatan ?></h4>
+							<p><?php echo $kp->kp_penjelasan ?></p>
+							<div>
+								<a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
+								<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
+								<a href="#" data-id="	" class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</a>
+						</div>						
+						</li>	
+						<?php } ?>		
 					</ul>
 				</div>
 			</div>

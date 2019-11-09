@@ -1,4 +1,11 @@
 <section class="content-header">
+<?php if($this->session->flashdata('tambah')): ?>
+     <?php if($this->session->flashdata('tambah') == TRUE): ?>
+          <div class="alert alert-success">Berhasil menambahkan pengguna baru</div>
+     <?php elseif($this->session->flashdata('tambah') == FALSE): ?>
+          <div class="alert alert-danger">Gagal menambahkan pengguna baru</div>
+     <?php endif; ?>
+<?php endif; ?>
   <h1>
     Donatur
   </h1>

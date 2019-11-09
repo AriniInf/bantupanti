@@ -31,11 +31,11 @@
               foreach ($data as $pp) { ?> 
 				<tr>
 					<td><?php echo $no++ ?></td>
-					<td><?php echo $pp->nama ?></td>
-					<td><?php echo $pp->alamat ?></td>
-					<td><?php echo $pp->jabatan ?></td>
-					<td><?php echo $pp->email ?></td>
-					<td><?php echo $pp->telf ?></td>
+					<td><?php echo $pp->pp_nama ?></td>
+					<td><?php echo $pp->pp_alamat ?></td>
+					<td><?php echo $pp->pp_jabatan ?></td>
+					<td><?php echo $pp->pp_email ?></td>
+					<td><?php echo $pp->pp_telf ?></td>
 				</tr>
               <?php }?>
             </tbody>
