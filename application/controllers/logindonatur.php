@@ -18,7 +18,7 @@ class Login extends CI_Controller {
             $user =$username;
             $pass =MD5($password);
 
-            $cek= $this->model_login->cek_login($user, $pass);
+            $cek= $this->login_model->cek_login($user, $pass);
 			//$this->load->model('model_login');
 
 			if($cek -> num_rows() >0)
@@ -40,7 +40,7 @@ class Login extends CI_Controller {
                  <span aria-hidden="true">&times;</span>
                </button>
              </div>');
-               redirect('login');
+               redirect('logindonatur');
 			    }
 		    }
     
