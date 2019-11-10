@@ -20,12 +20,6 @@ class Admin extends CI_Controller {
 		redirect('admin/listAllDonasi');        
 	}
 
-	public function listAnak(){
-		$data['content'] = 'anakPanti/v_listAnakPanti';
-		$data['data'] = $this->m_anakPanti->listAnak()->result();
-		$this->load->view('admin/tampilan_utama_admin',$data);
-	}
-
 	public function listAllKegiatan(){
 		$data['content'] = 'admin/v_kegiatanPanti';
 		$data['data'] = $this->m_admin->listAllKegiatan()->result();
@@ -49,8 +43,22 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 
-	function formPengurus(){
-		$data['content']='admin/v_formPengurusPanti';
+	public function listdonatur(){
+		$data['content'] = 'admin/v_listDonatur';
+        $data['data'] = $this->m_admin->listDonatur()->result();
+        $this->load->view('admin/tampilan_utama_admin',$data);
+        
+	}
+
+	public function listPengurus(){
+		$data['content'] = 'admin/v_pengurusPanti';
+		$data['data'] = $this->m_admin->listPengurus()->result();
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+	
+	public function listanak(){
+		$data['content'] = 'admin/v_listanak';
+		$data['data'] = $this->m_admin->listanak()->result();
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 
@@ -88,8 +96,49 @@ class Admin extends CI_Controller {
 			'ap_username' => $ap_username,
 			'ap_password' => $ap_password
 			);
-		$this->m_anakPanti->tambahAnak($data,'anakpanti');
+
+			if($this->m_anakPanti->tambahAnak($data,'anakpanti') == TRUE) {
+				$this->session->set_flashdata('tambah', true);
+		   }
+		   else {
+				$this->session->set_flashdata('tambah', false);
+		   }
 		redirect('admin/listAnak');
+	}
+
+	
+	function formPengurus(){
+		$data['content']='admin/v_formPengurusPanti';
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
+	function tambahPengurus(){
+		$pp_id = $this->input->post('pp_id');
+		$pp_nama = $this->input->post('pp_nama');
+		$pp_alamat = $this->input->post('pp_alamat');
+		$pp_jabatan = $this->input->post('pp_jabatan');
+		$pp_email = $this->input->post('pp_email');
+		$pp_telf = $this->input->post('pp_telf');
+		$pp_foto = $this->input->post('pp_foto');
+		
+		$data = array(
+			'pp_id' => $pp_id,
+			'pp_nama' => $pp_nama,
+			'pp_alamat' => $pp_alamat,
+			'pp_jabatan' => $pp_jabatan,
+			'pp_email' => $pp_email,
+			'pp_telf' => $pp_telf,
+			'pp_foto' => $pp_foto,
+			);
+
+		if($this->m_admin->tambahPengurus($data,'bantupantiar.penguruspanti') == TRUE) {
+			$this->session->set_flashdata('tambah', true);
+		}
+		else {
+			$this->session->set_flashdata('tambah', false);
+		}
+		
+		redirect('admin/listPengurus');
 	}
 }
 
