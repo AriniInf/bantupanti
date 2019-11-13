@@ -10,6 +10,11 @@ class AnakPanti extends CI_Controller {
         $this->load->helper('url');
 	}
 
+	public function dashboard()
+	{
+		$data['content'] = 'anakPanti/v_dashboard';
+		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
+	}
 	public function listAnak(){
 		$data['content'] = 'anakPanti/v_listAnakPanti';
 		$data['data'] = $this->m_anakPanti->listAnak()->result();

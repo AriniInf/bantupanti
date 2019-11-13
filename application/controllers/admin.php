@@ -140,5 +140,22 @@ class Admin extends CI_Controller {
 		
 		redirect('admin/listPengurus');
 	}
+	public function tambah_pemasukan(){
+		$id_kategori=$this->input->post('kategori');
+		$nama_peristiwa=$this->input->post('nama_peristiwa');
+		$counter_peristiwa=1;
+		$poin=$this->input->post('point');
+		$this->model_data->simpan_peristiwa($id_kategori,$nama_peristiwa,$poin,$counter_peristiwa);
+		$id_peristiwa=$this->model_data->getId($nama_peristiwa);
+		$data_update=array(
+			"id_peristiwa"=>$id_peristiwa,
+			"id_kategori"=>$id_kategori,
+			"nama_peristiwa"=>$nama_peristiwa,
+			"point"=>$poin,
+			"counter_peristiwa"=>$counter_peristiwa
+		);
+		$this->model_data->insert_history($data_update);
+		redirect('main/peristiwa/penghargaan');
+	}
 }
 

@@ -23,6 +23,26 @@ class Login extends CI_Controller {
 					);
 				$this->session->set_userdata($session_data);
 				redirect(base_url() . 'login/enter');
+				}
+
+			else if($this->model_login->admin_login($username,$pass)){
+				$session_data = array(
+					'username' => $username,
+					'password' => md5($password),
+					'status' => "sudahlogin"
+					);
+				$this->session->set_userdata($session_data);
+				redirect(base_url() . 'login/masuk');
+			}
+
+			else if($this->model_login->ap_login($username,$pass)){
+				$session_data = array(
+					'username' => $username,
+					'password' => md5($password),
+					'status' => "sudahlogin"
+					);
+				$this->session->set_userdata($session_data);
+				redirect(base_url() . 'login/permisi');
 			}
 			else{
 				$this->session->set_flashdata('error','Invalid Username or Password');
@@ -43,7 +63,29 @@ class Login extends CI_Controller {
    		else{
     		redirect('donatur/dashboard');
   		}
- 	}
+	 }
+
+	 public function masuk(){
+		$username = $this->session->userdata('username');
+		 if($username==""){
+		  redirect('login/index');
+		 }
+		 else{
+		  redirect('admin/dashboard');
+		}
+   }
+   public function permisi(){
+	$username = $this->session->userdata('username');
+	 if($username==""){
+	  redirect('login/index');
+	 }
+	 else{
+	  redirect('anakPanti/dashboard');
+	}
+}
+
+   
+	 
 	
 	public function logout(){
 		$this->session->sess_destroy(); 

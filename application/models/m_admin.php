@@ -41,4 +41,8 @@ class M_admin extends CI_Model
 	public function tambahPemasukan($data,$table){
 		$query = $this->db->insert($table,$data);
 	}
+	public function nambah_pemasukan($tr_id,$keterangan,$nominal,$flag){
+		$hasil=$this->db->query("INSERT INTO peristiwa (tr_id,keterangan,nominal,flag) VALUES ('$tr_id','$keterangan','$nominal','0')");
+		return $hasil;
+	  }
 }
