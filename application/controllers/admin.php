@@ -26,6 +26,28 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tampilan_utama_admin', $data);
 	}
 
+	function formKegiatan(){
+		$data['content']='admin/v_tambahkegiatan';
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+	public function tambah_kegiatan(){
+		$kp_id = $this->input->post('kp_id');
+		$ad_id = $this->session->userdata('data')->ad_id;
+		$namakegiatan = $this->input->post('namakegiatan');
+		$penjelasan = $this->input->post('penjelasan');
+		$tanggal = $this->input->post('tanggal');
+		
+		$data = array(
+			'kp_id' => $kp_id,
+			'ad_id' => $ad_id,
+			'namakegiatan' => $namakegiatan,
+			'penjelasan' => $penjelasan,
+			'tanggal' => $tanggal,
+			);
+		$this->m_admin->tambah_kegiatan($data,'bantupanti.kegiatanpanti');
+		redirect('admin/listAllKegiatan');
+	}
+
 	public function rekapPengeluaran(){
 		$data['content'] = 'admin/v_pengeluaran';
 		$this->load->view('admin/tampilan_utama_admin',$data);
@@ -33,9 +55,9 @@ class Admin extends CI_Controller {
 
 	public function dashboard()
 	{
-
 		$data['content'] = 'admin/view_dashboard';
-		$this->load->view('admin/tampilan_utama_admin',$data);
+		$data['user_data'] = $this->session->userdata('data');
+		$this->load->view('admin/tampilan_utama_admin', $data);
 	}
 
 	function formAnak(){
@@ -141,21 +163,33 @@ class Admin extends CI_Controller {
 		redirect('admin/listPengurus');
 	}
 	public function tambah_pemasukan(){
-		$id_kategori=$this->input->post('kategori');
-		$nama_peristiwa=$this->input->post('nama_peristiwa');
-		$counter_peristiwa=1;
-		$poin=$this->input->post('point');
-		$this->model_data->simpan_peristiwa($id_kategori,$nama_peristiwa,$poin,$counter_peristiwa);
-		$id_peristiwa=$this->model_data->getId($nama_peristiwa);
+		$tr_id=$this->input->post('tr_id');
+		$keterangan=$this->input->post('keterangan');
+		$flag=0;
+		$nominal=$this->input->post('nominal');
+		$tanggal=$this->input->post('tanggal');
+		
 		$data_update=array(
-			"id_peristiwa"=>$id_peristiwa,
-			"id_kategori"=>$id_kategori,
-			"nama_peristiwa"=>$nama_peristiwa,
-			"point"=>$poin,
-			"counter_peristiwa"=>$counter_peristiwa
+			"tr_id"=>$tr_id,
+			"keterangan"=>$keterangan,
+			"nominal"=>$nominal,
+			"tanggal"=>$tanggal,
+			"flag"=>$flag
 		);
-		$this->model_data->insert_history($data_update);
-		redirect('main/peristiwa/penghargaan');
+		$this->m_admin->nambah_pemasukan($tr_id,$keterangan,$nominal,$flag,$tanggal);
+		redirect('admin/pemasukan');
+	}
+
+	public function pemasukan(){
+		$data['content'] = 'admin/v_pemasukan';
+		$data['data'] = $this->m_admin->pemasukan();
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
+	public function donasi(){
+		$data['content'] = 'admin/v_donasi';
+		$data['data'] = $this->m_admin->donasi();
+		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 }
 

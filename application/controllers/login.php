@@ -14,6 +14,7 @@ class Login extends CI_Controller {
 			$password=$this->input->post('password');
 			$pass = md5($password);
 			$this->load->model('model_login');
+			$validateAdminLogin = $this->model_login->admin_login($username,$pass);
 			if($this->model_login->can_login($username,$pass))
 			{
 				$session_data = array(
@@ -25,11 +26,10 @@ class Login extends CI_Controller {
 				redirect(base_url() . 'login/enter');
 				}
 
-			else if($this->model_login->admin_login($username,$pass)){
+			else if($validateAdminLogin['status'] === true){
 				$session_data = array(
-					'username' => $username,
-					'password' => md5($password),
-					'status' => "sudahlogin"
+					'data' => $validateAdminLogin['data'],
+					'status' => $validateAdminLogin['status']
 					);
 				$this->session->set_userdata($session_data);
 				redirect(base_url() . 'login/masuk');
@@ -66,11 +66,10 @@ class Login extends CI_Controller {
 	 }
 
 	 public function masuk(){
-		$username = $this->session->userdata('username');
-		 if($username==""){
+		$data['user'] = $this->session->userdata('data');
+		if($data == ""){
 		  redirect('login/index');
-		 }
-		 else{
+		}else{
 		  redirect('admin/dashboard');
 		}
    }

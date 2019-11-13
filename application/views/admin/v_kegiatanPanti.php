@@ -19,10 +19,10 @@
 						<?php
 						foreach($data as $kp){ ?>
 						<li>	
-							<span><h3><?php echo $kp->pp_nama?></h3></span>
-							<span><p><?php echo $kp->kp_tanggal ?></p></span>
-							<h4 class="mb-2"><?php echo $kp->kp_namakegiatan ?></h4>
-							<p><?php echo $kp->kp_penjelasan ?></p>
+							<span><h3><?php echo $kp->nama?></h3></span>
+							<span><p><?php echo $kp->tanggal ?></p></span>
+							<h4 class="mb-2"><?php echo $kp->namakegiatan ?></h4>
+							<p><?php echo $kp->penjelasan ?></p>
 							<div>
 								<a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
 								<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>

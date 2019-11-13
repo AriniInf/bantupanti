@@ -1,11 +1,11 @@
 <section class="content-header">
   <h1>
-    Pengeluaran
+    Donatur
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Tabel Rekap</a></li>
-    <li class="active">Rekap Pemasukan</li>
+    <li><a href="#">Lihat Semua</a></li>
+    <li class="active">List Donatur</li>
   </ol>
 </section>
 
@@ -18,24 +18,29 @@
             <thead>
                 <tr>
 					<th>No</th>
-					<th>Keterangan</th>
+					<th>Donatur</th>
 					<th>Nominal</th>
 					<th>Tanggal</th>
+					<th>Bukti</th>
+					<th>Validasi</th>
+					<th>Hapus</th>
                </tr>
             </thead>
             <tbody>
-			<?php
-				$no=1;
-				foreach($data as $pm){ ?>
-			  ?>
+			<?php 
+              $no=1;
+              foreach($data as $do){ ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
-					<td><?php echo $pm->keterangan ?></td>
-					<td><?php echo $pm->nominal ?></td>
-					<td><?php echo $pm->tanggal?></td>
+					<td><?php echo $do->do_nama ?></td>
+					<td><?php echo $do->dn_nominal ?></td>
+					<td><?php echo $do->dn_tanggal ?></td>
+					<td></td>
+					<td><button>Validasi</button></td>
+					<td><?php echo anchor('admin/hapusDonasi/'.$do->do_id,'Hapus');?></td>
 				</tr>
 				<?php } ?>
-            </tbody>
+			</tbody>
           </table>
         </div>
       </div>

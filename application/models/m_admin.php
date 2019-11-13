@@ -13,7 +13,7 @@ class M_admin extends CI_Model
 	}
 
 	public function listAllKegiatan(){
-		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp_nama, kp_namakegiatan, kp_penjelasan, kp_tanggal from bantupantiar.kegiatanpanti kp join bantupantiar.admin ad on kp.ad_id = ad.ad_id join bantupantiar.penguruspanti pp on ad.pp_id = pp.pp_id");
+		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, nama, namakegiatan, penjelasan, tanggal from bantupanti.kegiatanpanti kp join bantupanti.admin ad on kp.ad_id = ad.ad_id join bantupanti.penguruspanti pp on ad.pp_id = pp.pp_id");
 			return $hasil;
 	}
 
@@ -33,6 +33,9 @@ class M_admin extends CI_Model
 	public function tambahAnak($data,$table){
 		$query =  $this->db->insert($table, $data);
 	}
+	public function tambah_kegiatan($data,$table){
+		$query = $this->db->insert($table, $data);
+	}
 	
 	public function tambahPengurus($data,$table){
 		$query =  $this->db->insert($table, $data);
@@ -41,8 +44,18 @@ class M_admin extends CI_Model
 	public function tambahPemasukan($data,$table){
 		$query = $this->db->insert($table,$data);
 	}
-	public function nambah_pemasukan($tr_id,$keterangan,$nominal,$flag){
-		$hasil=$this->db->query("INSERT INTO peristiwa (tr_id,keterangan,nominal,flag) VALUES ('$tr_id','$keterangan','$nominal','0')");
+	public function nambah_pemasukan($tr_id,$keterangan,$nominal,$flag,$tanggal){
+		$hasil=$this->db->query("INSERT INTO bantupanti.transaksi (tr_id,keterangan,nominal,flag,tanggal) VALUES ('$tr_id','$keterangan','$nominal','$flag','$tanggal')");
 		return $hasil;
-	  }
+	}
+
+	public function pemasukan(){
+		$hasil=$this->db->query("SELECT tr_id, keterangan,nominal,flag,tanggal from bantupanti.transaksi where flag = '0'");
+    	return $hasil->result() ;
+	}
+
+	public function donasi(){
+		$hasil=$this->db->query("SELECT dn_id, dn.do_id, do_nama, dn_nominal, dn_tanggal, dn_bukti from bantupantiar.donasi dn left join bantupantiar.donatur do on do.do_id = dn.do_id");
+    	return $hasil->result() ;
+	}
 }

@@ -25,9 +25,13 @@ class Model_login extends CI_Model{
     {
       $this->db->where('username',$username);
       $this->db->where('password',$password);
-      $query = $this->db->get('bantupanti.admin','');
-      if($query->num_rows() > 0){
-        return true;
+			$query = $this->db->get('bantupanti.admin');
+			$row = $query->row();
+      if(isset($row)){
+        return array(
+					'data' => $row,
+					'status' => true
+				);
       }
       else{
         return false;

@@ -93,6 +93,7 @@
 						<li><a href="<?php echo site_url("admin/formPengurus"); ?>"><i class="fa fa-circle-o"></i>Tambah Pengurus Panti</a></li>
 						<li><a href="<?php echo site_url("admin/formPemasukan"); ?>"><i class="fa fa-circle-o"></i>Tambah Pemasukan</a></li>
 						<li><a href="<?php echo site_url("admin/formPengeluaran"); ?>"><i class="fa fa-circle-o"></i>Tambah Pengeluaran</a></li>
+						<li><a href="<?php echo site_url("admin/formKegiatan"); ?>"><i class="fa fa-circle-o"></i>Tambah Kegiatan Panti</a></li>
           </ul>
         </li>
 
@@ -104,9 +105,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("admin/rekapPemasukan"); ?>"><i class="fa fa-circle-o"></i> Rekap Pemasukan</a></li>
+            <li><a href="<?php echo site_url("admin/pemasukan"); ?>"><i class="fa fa-circle-o"></i> Rekap Pemasukan</a></li>
             <li><a href="<?php echo site_url("admin/rekapPengeluaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Pengeluaran</a></li>
-            <li><a href="<?php echo site_url("admin/listAllDonasi"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
+            <li><a href="<?php echo site_url("admin/donasi"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
           </ul>
         </li>
 
