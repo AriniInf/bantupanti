@@ -37,4 +37,8 @@ class M_admin extends CI_Model
 	public function tambahPengurus($data,$table){
 		$query =  $this->db->insert($table, $data);
 	}
+
+	public function tambahPemasukan($data,$table){
+		$query = $this->db->insert($table,$data);
+	}
 }

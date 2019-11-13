@@ -12,7 +12,33 @@ class Model_login extends CI_Model{
     {
       $this->db->where('username',$username);
       $this->db->where('password',$password);
-      $query = $this->db->get('bantupanti.donatur');
+      $query = $this->db->get('bantupanti.donatur','');
+      if($query->num_rows() > 0){
+        return true;
+      }
+      else{
+        return false;
+      }
+		}
+		
+		function admin_login($username,$password)
+    {
+      $this->db->where('username',$username);
+      $this->db->where('password',$password);
+      $query = $this->db->get('bantupanti.admin','');
+      if($query->num_rows() > 0){
+        return true;
+      }
+      else{
+        return false;
+      }
+		}
+		
+		function ap_login($username,$password)
+    {
+      $this->db->where('username',$username);
+      $this->db->where('password',$password);
+      $query = $this->db->get('bantupanti.anakpanti','');
       if($query->num_rows() > 0){
         return true;
       }
