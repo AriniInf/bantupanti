@@ -25,9 +25,23 @@ class M_donatur extends CI_Model
 	
 		return $this->db->get('bantupanti.kegiatanpanti');
 	}
-
-	public function simpan_donasi($data){
-		return $this->db->insert('bantupanti.donasi',$data);
+	public function diary(){
+		$query =  $this->db->query("SELECT sap_id, sap.ap_id, ap_nama, isistory, tanggalstory from anakpanti ap left join storyanakpanti sap on ap.ap_id = sap.ap_id");
+		return $query;
 	}
+
+	// public function simpan_donasi($data,$table){
+	// 	return $this->db->insert($table, $data);
+	// }
+	// public function simpan_donasi($data){
+	// 	return $this->db->insert('bantupanti.donasi',$data);
+	// }
+	public function tambahdonasi($data,$table){
+		$query =  $this->db->insert($table, $data);
+	}
+
+	// public function history($data){
+	// 	return $this->db->get('bantupanti.donasi',$data);
+	// }
 
 }

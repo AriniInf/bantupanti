@@ -42,38 +42,30 @@ class Donatur extends CI_Controller {
 
 	}
 
-	public function inputdonasi(){
-		//cek
-		$nominal = $this->input->post('nominal');
-		$tanggal = $this->input->post('tanggal');
-		$bukti = $this->input->post('bukti');
+	// public function inputdonasi(){
+	// 	//cek
 
-		$data = array(
-			'nominal' => $nominal,
-			'tanggal' => $tanggal,
-			'bukti' => $bukti
+	// 	$dn_nominal = $this->input->post('dn_nominal');
+	// 	$dn_tanggal = $this->input->post('dn_tanggal');
+	// 	$dn_bukti = $this->input->post('dn_bukti');
 
-		);
-		$this->m_donatur->simpan_donasi($data);
-		redirect('donatur');
-		
-	}
+	// 	$data = array(
 
-	// public function inputDonasi(){
-	// 	$this->_rules();
+	// 		'dn_nominal' => $dn_nominal,
+	// 		'dn_tanggal' => $dn_tanggal,
+	// 		'dn_bukti' => $dn_bukti
 
-	// 	if($this->form_validation->run()== FALSE){
-	// 		$this->berdonasi();
-	// 	}else{
-	// 		$data= array(
-	// 		'nominal' =>$this->berdonasi->post('nominal', TRUE),
-	// 		'tanggal' =>$this->berdonasi->post('tanggal', TRUE),
-	// 		'bukti' =>$this->berdonasi->post('bukti', TRUE),
-	// 		);
-	// 		$this->m_donatur->berdonasi($data);
-	// 		redirect('donatur/formdonasi');
+	// 	);
+
+	// 	if($this->m_donatur->simpan_donasi($data,'bantupantiar.donasi') == TRUE) {
+	// 		$this->session->set_flashdata('tambah', true);
 	// 	}
-
+	// 	else {
+	// 		$this->session->set_flashdata('tambah', false);
+	// 	}
+		
+	// 	redirect('donatur');
+		
 	// }
 
 	public function kegiatanPanti(){
@@ -87,5 +79,46 @@ class Donatur extends CI_Controller {
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
+	public function history(){
+		$data['content'] = 'donatur/history';
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
+
+	function tambahdonasi(){
+		$dn_id = $this->input->post('dn_id');
+		$dn_nominal = $this->input->post('dn_nominal');
+		$dn_tanggal = $this->input->post('dn_tanggal');
+		$dn_bukti = $this->input->post('dn_bukti');
 	
+		
+		$data = array(
+			'dn_id' => $dn_id,
+			'dn_nominal' => $dn_nominal,
+			'dn_tanggal' => $dn_tanggal,
+			'dn_bukti' => $dn_bukti,
+
+			);
+
+		if($this->m_donatur->tambahdonasi($data,'bantupantiar.donasi') == TRUE) {
+			$this->session->set_flashdata('tambah', true);
+		}
+		else {
+			$this->session->set_flashdata('tambah', false);
+		}
+		
+		redirect('donatur/dashboard');
+	}
+	public function diary(){
+
+		$data['content'] = 'donatur/v_diary';
+		$data['data'] = $this->m_donatur->diary()->result();
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+
+		// $data['data'] = $this->m_donatur->diary()->result();
+		// $this->load->view('donatur/v_diary',$data);
+	}
+	public function komendiary(){
+		$data['content'] = 'donatur/komendiary';
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
 }
