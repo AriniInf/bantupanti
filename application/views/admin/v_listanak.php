@@ -7,7 +7,7 @@
      <?php endif; ?>
 <?php endif; ?>
   <h1>
-    Donatur
+    Anak Panti
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -35,8 +35,8 @@
               foreach($data as $ap){ ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
-					<td><?php echo $ap->ap_nama ?></td>
-					<td><?php echo $ap->ap_tempatlahir, $ap->ap_tanggallahir ?></td>
+					<td><?php echo $ap->nama ?></td>
+					<td><?php echo $ap->tempatlahir, $ap->tanggallahir ?></td>
 
 				</tr>
 				<?php } ?>

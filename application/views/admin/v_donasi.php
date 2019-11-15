@@ -1,11 +1,11 @@
 <section class="content-header">
   <h1>
-    Donatur
+    Donasi
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="#">Lihat Semua</a></li>
-    <li class="active">List Donatur</li>
+    <li class="active">List Donasi</li>
   </ol>
 </section>
 
@@ -32,12 +32,12 @@
               foreach($data as $do){ ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
-					<td><?php echo $do->do_nama ?></td>
-					<td><?php echo $do->dn_nominal ?></td>
-					<td><?php echo $do->dn_tanggal ?></td>
+					<td><?php echo $do->nama ?></td>
+					<td><?php echo $do->nominal ?></td>
+					<td><?php echo $do->tanggal ?></td>
 					<td></td>
 					<td><button>Validasi</button></td>
-					<td><?php echo anchor('admin/hapusDonasi/'.$do->do_id,'Hapus');?></td>
+					<td><?php echo anchor('admin/hapusDonasi/'.$do->dn_id,'Hapus');?></td>
 				</tr>
 				<?php } ?>
 			</tbody>

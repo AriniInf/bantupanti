@@ -14,7 +14,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-body" style="overflow-y:scroll">
-          <table id="example2" class="table table-bordered table-hover bg-danger table-striped text-center">
+				<table id="example2" class="table table-bordered table-hover bg-danger table-striped text-center">
             <thead>
                 <tr>
 					<th>No</th>
@@ -25,14 +25,15 @@
             </thead>
             <tbody>
 			<?php
-			  $no=1;
-			  ?>
+				$no=1;
+				foreach($data as $pm){ ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
-					<td>Membeli keperluan dapur</td>
-					<td>50.000</td>
-					<td>27-10-2019</td>
+					<td><?php echo $pm->keterangan ?></td>
+					<td><?php echo $pm->nominal ?></td>
+					<td><?php echo $pm->tanggal?></td>
 				</tr>
+				<?php } ?>
             </tbody>
           </table>
         </div>

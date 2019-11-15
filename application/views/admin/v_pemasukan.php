@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    Pengeluaran
+    Pemasukan
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -27,7 +27,6 @@
 			<?php
 				$no=1;
 				foreach($data as $pm){ ?>
-			  ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
 					<td><?php echo $pm->keterangan ?></td>

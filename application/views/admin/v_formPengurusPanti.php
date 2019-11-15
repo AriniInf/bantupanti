@@ -5,23 +5,23 @@
 	</div>
 	<div class="form-group">
 		<label>Nama</label>
-		<input type="text" name="pp_nama" class="form-control">
+		<input type="text" name="nama" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>Alamat</label>
-		<input type="text" name="pp_alamat" class="form-control">
+		<input type="text" name="alamat" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>Jabatan</label>
-		<input type="text" name="pp_jabatan" class="form-control">
+		<input type="text" name="jabatan" class="form-control">
 	</div>
 	<div class="form-group">                
 		<label>Email</label>
-		<input type="text" name="pp_email" class="form-control">
+		<input type="text" name="email" class="form-control">
 	</div>
 	<div class="form-group">                
 		<label>Telepon</label>
-		<input type="text" name="pp_telf" class="form-control">
+		<input type="text" name="elf" class="form-control">
 	</div>
 		<button type="submit" name="simpan" class="btn btn-info">Tambah</button>
 	</form>

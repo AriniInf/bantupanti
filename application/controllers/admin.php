@@ -17,7 +17,7 @@ class Admin extends CI_Controller {
 
 	function hapusDonasi($id){
 		$this->m_admin->hapusDonasi($id);
-		redirect('admin/listAllDonasi');        
+		redirect('admin/donasi');        
 	}
 
 	public function listAllKegiatan(){
@@ -48,11 +48,6 @@ class Admin extends CI_Controller {
 		redirect('admin/listAllKegiatan');
 	}
 
-	public function rekapPengeluaran(){
-		$data['content'] = 'admin/v_pengeluaran';
-		$this->load->view('admin/tampilan_utama_admin',$data);
-	}
-
 	public function dashboard()
 	{
 		$data['content'] = 'admin/view_dashboard';
@@ -78,7 +73,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 	
-	public function listanak(){
+	public function listAnak(){
 		$data['content'] = 'admin/v_listanak';
 		$data['data'] = $this->m_admin->listanak()->result();
 		$this->load->view('admin/tampilan_utama_admin',$data);
@@ -176,13 +171,37 @@ class Admin extends CI_Controller {
 			"tanggal"=>$tanggal,
 			"flag"=>$flag
 		);
-		$this->m_admin->nambah_pemasukan($tr_id,$keterangan,$nominal,$flag,$tanggal);
+		$this->m_admin->nambah_transaksi($tr_id,$keterangan,$nominal,$flag,$tanggal);
 		redirect('admin/pemasukan');
 	}
 
 	public function pemasukan(){
 		$data['content'] = 'admin/v_pemasukan';
 		$data['data'] = $this->m_admin->pemasukan();
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
+	public function tambah_pengeluaran(){
+		$tr_id=$this->input->post('tr_id');
+		$keterangan=$this->input->post('keterangan');
+		$flag=1;
+		$nominal=$this->input->post('nominal');
+		$tanggal=$this->input->post('tanggal');
+		
+		$data_update=array(
+			"tr_id"=>$tr_id,
+			"keterangan"=>$keterangan,
+			"nominal"=>$nominal,
+			"tanggal"=>$tanggal,
+			"flag"=>$flag
+		);
+		$this->m_admin->nambah_transaksi($tr_id,$keterangan,$nominal,$flag,$tanggal);
+		redirect('admin/pengeluaran');
+	}
+
+	public function pengeluaran(){
+		$data['content'] = 'admin/v_pengeluaran';
+		$data['data'] = $this->m_admin->pengeluaran();
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 
