@@ -32,17 +32,17 @@ class AnakPanti extends CI_Controller {
 	}
  
 	function tambahStory(){
-		$sap_id = $this->input->post('sap_id');
+		$dy_id = $this->input->post('dy_id');
 		$ap_id = $this->input->post('ap_id');
-		$isistory = $this->input->post('isistory');
-		$tanggalstory = $this->input->post('tanggalstory');
+		$isistory = $this->input->post('diary');
+		$tanggalstory = $this->input->post('tanggal');
 		// $ini=$this->m_anakPanti;
 		// $data['ini']=$ini->listStory();
 		$data = array(
-			'sap_id' => $sap_id,
+			'dy_id' => $dy_id,
 			'ap_id' => $ap_id,
-			'isistory' => $isistory,
-			'tanggalstory' => $tanggalstory
+			'diary' => $diary,
+			'tanggal' => $tanggal
 			);
 		$this->m_anakPanti->tambahStory($data,'storyanakpanti');
 		redirect('anakPanti/listStory');
@@ -54,27 +54,27 @@ class AnakPanti extends CI_Controller {
 
 	function tambahAnak(){
 		$ap_id = $this->input->post('ap_id');
-		$ap_nama = $this->input->post('ap_nama');
-		$ap_tempatlahir = $this->input->post('ap_tempatlahir');
-		$ap_tanggallahir = $this->input->post('ap_tanggallahir');
-		$ap_hobi = $this->input->post('ap_hobi');
-		$ap_sekolah = $this->input->post('ap_sekolah');
-		$ap_prestasi = $this->input->post('ap_prestasi');
-		$ap_foto = $this->input->post('ap_foto');
-		$ap_username = $this->input->post('ap_username');
-		$ap_password = $this->input->post('ap_password');
+		$nama = $this->input->post('nama');
+		$tempatlahir = $this->input->post('tempatlahir');
+		$tanggallahir = $this->input->post('tanggal');
+		$hobi = $this->input->post('hobi');
+		$sekolah = $this->input->post('sekolah');
+		$prestasi = $this->input->post('prestasi');
+		$foto = $this->input->post('foto');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 		
 		$data = array(
 			'ap_id' => $ap_id,
-			'ap_nama' => $ap_nama,
-			'ap_tempatlahir' => $ap_tempatlahir,
-			'ap_tanggallahir' => $ap_tanggallahir,
-			'ap_hobi' => $ap_hobi,
-			'ap_sekolah' => $ap_sekolah,
-			'ap_prestasi' => $ap_prestasi,
-			'ap_foto' => $ap_foto,
-			'ap_username' => $ap_username,
-			'ap_password' => $ap_password
+			'nama' => $nama,
+			'tempatlahir' => $tempatlahir,
+			'tanggal' => $tanggal,
+			'hobi' => $hobi,
+			'sekolah' => $sekolah,
+			'prestasi' => $prestasi,
+			'foto' => $foto,
+			'username' => $username,
+			'password' => $password
 			);
 		$this->m_anakPanti->tambahAnak($data,'anakpanti');
 		redirect('anakPanti/listAnak');

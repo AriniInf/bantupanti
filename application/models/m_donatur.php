@@ -14,19 +14,19 @@ class M_donatur extends CI_Model
 	}
 
 	public function pengurus(){
-		return $this->db->get('bantupanti.penguruspanti');
+		return $this->db->get('penguruspanti');
 	}
 
-	public function berdonasi(){
-		return $this->db->get('bantupanti.donasi');
-	}
+	// public function berdonasi(){
+	// 	return $this->db->get('bantupantiar.donasi');
+	// }
 
 	public function kegiatanPanti(){
 	
-		return $this->db->get('bantupanti.kegiatanpanti');
+		return $this->db->get('kegiatanpanti');
 	}
 	public function diary(){
-		$query =  $this->db->query("SELECT sap_id, sap.ap_id, ap_nama, isistory, tanggalstory from anakpanti ap left join storyanakpanti sap on ap.ap_id = sap.ap_id");
+		$query =  $this->db->query("SELECT dy.dy_id, dy.ap_id, ap.nama, dy.diary, dy.tanggal from anakpanti ap left join diary dy on ap.ap_id = dy.ap_id");
 		return $query;
 	}
 
@@ -40,8 +40,10 @@ class M_donatur extends CI_Model
 		$query =  $this->db->insert($table, $data);
 	}
 
-	// public function history($data){
-	// 	return $this->db->get('bantupanti.donasi',$data);
-	// }
+	public function history(){
+		$query =  $this->db->query("SELECT dn.tanggal, dn.nominal, dn.bukti, dn.keterangan from donatur do inner join donasi_ dn on dn.do_id = do.do_id");
+		return $query;
+	
+	}
 
 }

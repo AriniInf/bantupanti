@@ -15,35 +15,35 @@
 			</tr>
 			<tr>
 				<td>Tempat Lahir</td>
-				<td><input type="text" name="ap_tempatlahir"></td>
+				<td><input type="text" name="tempatlahir"></td>
 			</tr>
 			<tr>
 				<td>Tanggal Lahir</td>
-				<td><input type="date" name="ap_tanggallahir"></td>
+				<td><input type="date" name="tanggal"></td>
 			</tr>
 			<tr>
 				<td>Hobi</td>
-				<td><input type="text" name="ap_hobi"></td>
+				<td><input type="text" name="hobi"></td>
 			</tr>
 			<tr>
 				<td>Sekolah</td>
-				<td><input type="text" name="ap_sekolah"></td>
+				<td><input type="text" name="sekolah"></td>
 			</tr>
 			<tr>
 				<td>Prestasi</td>
-				<td><input type="text" name="ap_prestasi"></td>
+				<td><input type="text" name="prestasi"></td>
 			</tr>
 			<tr>
 				<td>Foto</td>
-				<td><input type="photo" name="ap_foto"></td>
+				<td><input type="photo" name="foto"></td>
 			</tr>
 			<tr>
 				<td>Username</td>
-				<td><input type="text" name="ap_username"></td>
+				<td><input type="text" name="username"></td>
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><input type="password" name="ap_password"></td>
+				<td><input type="password" name="password"></td>
 			</tr>
 			<tr>
 				<td></td>

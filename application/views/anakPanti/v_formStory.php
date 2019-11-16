@@ -23,11 +23,11 @@
 			</tr>
 			<tr>
 				<td>Cerita</td>
-				<td><input type="text" name="isistory"></td>
+				<td><input type="text" name="diary"></td>
 			</tr>
 			<tr>
 				<td>Tanggal</td>
-				<td><input type="date" name="tanggalstory"></td>
+				<td><input type="date" name="tanggal"></td>
 			</tr>
 			<tr>
 				<td></td>

@@ -28,8 +28,8 @@
               foreach($data as $ap){ ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
-					<td><?php echo $ap->ap_nama ?></td>
-					<td><?php echo $ap->ap_tempatlahir, $ap->ap_tanggallahir ?></td>
+					<td><?php echo $ap->nama ?></td>
+					<td><?php echo $ap->tempatlahir, $ap->tanggal ?></td>
 
 				</tr>
 				<?php } ?>

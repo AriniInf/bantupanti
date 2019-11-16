@@ -37,7 +37,6 @@ class Donatur extends CI_Controller {
 
 	public function berdonasi(){
 		$data['content'] = 'donatur/v_formdonasi';
-		$data['data'] = $this->m_donatur->berdonasi()->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 
 	}
@@ -80,26 +79,30 @@ class Donatur extends CI_Controller {
 	}
 
 	public function history(){
-		$data['content'] = 'donatur/history';
+		$data['content'] = 'donatur/v_history';
+		$data['data'] = $this->m_donatur->history()->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
 	function tambahdonasi(){
+
 		$dn_id = $this->input->post('dn_id');
-		$dn_nominal = $this->input->post('dn_nominal');
-		$dn_tanggal = $this->input->post('dn_tanggal');
-		$dn_bukti = $this->input->post('dn_bukti');
+		$do_id = $this->input->post('do_id');
+		$nominal = $this->input->post('nominal');
+		$tanggal = $this->input->post('tanggal');
+		$bukti = $this->input->post('bukti');
 	
-		
+	
 		$data = array(
+			'do_id' => $do_id,
 			'dn_id' => $dn_id,
-			'dn_nominal' => $dn_nominal,
-			'dn_tanggal' => $dn_tanggal,
-			'dn_bukti' => $dn_bukti,
+			'nominal' => $nominal,
+			'tanggal' => $tanggal,
+			'bukti' => $bukti,
 
 			);
 
-		if($this->m_donatur->tambahdonasi($data,'bantupantiar.donasi') == TRUE) {
+		if($this->m_donatur->tambahdonasi($data,'donasi_') == TRUE) {
 			$this->session->set_flashdata('tambah', true);
 		}
 		else {
