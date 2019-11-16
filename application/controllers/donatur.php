@@ -84,32 +84,27 @@ class Donatur extends CI_Controller {
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
-	function tambahdonasi(){
+	public function tambahdonasi(){
 
-		$dn_id = $this->input->post('dn_id');
-		$do_id = $this->input->post('do_id');
+		$dn_id= $this->input->post('dn_id');
+		$do_id = $this->session->userdata('data')->do_id;
 		$nominal = $this->input->post('nominal');
 		$tanggal = $this->input->post('tanggal');
-		$bukti = $this->input->post('bukti');
+		$bukti= $this->input->post('bukti');
 	
 	
 		$data = array(
-			'do_id' => $do_id,
+			
 			'dn_id' => $dn_id,
+			'do_id' => $do_id,
 			'nominal' => $nominal,
 			'tanggal' => $tanggal,
 			'bukti' => $bukti,
 
 			);
 
-		if($this->m_donatur->tambahdonasi($data,'donasi_') == TRUE) {
-			$this->session->set_flashdata('tambah', true);
-		}
-		else {
-			$this->session->set_flashdata('tambah', false);
-		}
-		
-		redirect('donatur/dashboard');
+		$this->m_donatur->tambahdonasi($data,'donasi_');
+		redirect('donatur/history');
 	}
 	public function diary(){
 
@@ -120,8 +115,30 @@ class Donatur extends CI_Controller {
 		// $data['data'] = $this->m_donatur->diary()->result();
 		// $this->load->view('donatur/v_diary',$data);
 	}
-	public function komendiary(){
-		$data['content'] = 'donatur/komendiary';
+	public function komenkegiatan(){
+		$data['content'] = 'donatur/komenkegiatan';
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
+	function tambahkomenkegiatan(){
+		$do_id = $this->session->userdata('do_id')->do_id;
+		$kp_id = $this->session->userdata('kp_id')->kp_id;
+		$komen = $this->input->post('komen');
+		$tanggal = $this->input->post('tanggal');
+
+		$data = array(
+			'do_id' => $do_id,
+			'kp_id' => $kp_id,
+			'komen' => $komen,
+			'tanggal' => $tanggal,
+		
+			);
+
+			if($this->m_donatur->tambahkomenkegiatan($data,'dokomen') == TRUE) {
+				$this->session->set_flashdata('tambah', true);
+		   }
+		   else {
+				$this->session->set_flashdata('tambah', false);
+		   }
+		redirect('donatur/v_diary');
 	}
 }

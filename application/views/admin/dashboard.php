@@ -4,11 +4,11 @@
 <section class="content-header">
   <h1>
     Dashboard
-    <small>Bantu Panti</small>
+    <small>Sistem Informasi Bantu Panti</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Dashboardyuhuuuu</li>
+    <li class="active">Dashboard</li>
   </ol>
 </section>
 

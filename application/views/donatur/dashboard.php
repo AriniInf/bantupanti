@@ -8,7 +8,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Dashboardyuhuuuu</li>
+    <li class="active">Dashboard</li>
   </ol>
 </section>
 
@@ -45,7 +45,7 @@
 
   </script>
 
-  <!-- <style>
+  <style>
   /* Make the image fully responsive */
     .box
     {
@@ -68,4 +68,4 @@
     		background-image: url("<?php echo base_url(''); ?>assets/img/STPN2.jpg");
     	}
     }
-  </style> -->
+  </style>

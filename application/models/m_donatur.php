@@ -36,7 +36,12 @@ class M_donatur extends CI_Model
 	// public function simpan_donasi($data){
 	// 	return $this->db->insert('bantupanti.donasi',$data);
 	// }
+
 	public function tambahdonasi($data,$table){
+		$query =  $this->db->insert($table, $data);
+	}
+
+	public function tambahkomenkegiatan($data,$table){
 		$query =  $this->db->insert($table, $data);
 	}
 
