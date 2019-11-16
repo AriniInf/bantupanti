@@ -12,7 +12,7 @@ class Model_login extends CI_Model{
     {
       $this->db->where('username',$username);
       $this->db->where('password',$password);
-      $query = $this->db->get('bantupanti.donatur','');
+      $query = $this->db->get('donatur','');
       if($query->num_rows() > 0){
         return true;
       }
@@ -25,7 +25,11 @@ class Model_login extends CI_Model{
     {
       $this->db->where('username',$username);
       $this->db->where('password',$password);
+<<<<<<< HEAD
 			$query = $this->db->get('bantupanti2.admin');
+=======
+			$query = $this->db->get('admin');
+>>>>>>> 6dff24167bcacaad3337f99904a2d2080773ebca
 			$row = $query->row();
       if(isset($row)){
         return array(
@@ -78,7 +82,7 @@ class Model_login extends CI_Model{
     {
       $this->db->where('username',$username);
       $this->db->where('password',$password);
-      $query = $this->db->get('bantupanti.anakpanti','');
+      $query = $this->db->get('anakpanti','');
       if($query->num_rows() > 0){
         return true;
       }
@@ -86,34 +90,6 @@ class Model_login extends CI_Model{
         return false;
       }
     }
-    // public function getLoginData($user, $pass){
-    //     $u = $user;
-    //     $p = MD5($pass);
-
-    //     $query_cekLogin = $this->db->get_where('user', array('username' =>$su, 'password'=>$p));
-
-    //     if(count($query_cekLogin->result())>0){
-    //         foreach ($query_cekLogin->result() as $qck){
-    //             foreach ($query_cekLogin->result() as $ck){
-    //                 $sess_data ['logged_in'] = TRUE;
-    //                 $sess_data ['username'] = $ck->username;
-    //                 $sess_data ['password'] = $ck->password;
-    //                 $this->session->set_userdata($sess_data);
-    //             }
-    //             redirect('donatur/view_logindonatur');
-    //         } 
-
-             
-    //     } else{
-    //         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    //         Username atau Password salah!
-    //        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    //          <span aria-hidden="true">&times;</span>
-    //        </button>
-    //      </div>');
-    //         redirect('donatur');
-    //     }
-    // }
 }
 
 ?>

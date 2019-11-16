@@ -26,7 +26,7 @@
 							<div>
 								<a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
 								<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
-								<a href="#" data-id="	" class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</a>
+								<a href="#" data-id="" class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</a>
 						</div>						
 						</li>	
 						<?php } ?>		

@@ -95,4 +95,7 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6dff24167bcacaad3337f99904a2d2080773ebca
