@@ -93,4 +93,8 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> 701f1b610e064313c2d21c8e112a0cb2f2187a8f

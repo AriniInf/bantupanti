@@ -214,5 +214,11 @@ class Admin extends CI_Controller {
 		$data['data'] = $this->m_admin->donasi();
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
+
+	public function laporan(){
+		$data['content'] = 'admin/v_laporan';
+		$data['data'] = $this->m_admin->pengeluaran();
+		$this->load->view('admin/tampilan_utama_admin_print',$data);
+	}
 }
 
