@@ -26,7 +26,7 @@
 							<div>
 								<a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
 								<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
-								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'	<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</button>');?>
+								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</button>');?>
 							</div>						
 						</li>	
 						<?php } ?>		
