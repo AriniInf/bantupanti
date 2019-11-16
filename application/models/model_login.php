@@ -12,7 +12,7 @@ class Model_login extends CI_Model{
     {
       $this->db->where('username',$username);
       $this->db->where('password',$password);
-      $query = $this->db->get('bantupanti.donatur','');
+      $query = $this->db->get('donatur','');
       if($query->num_rows() > 0){
         return true;
       }
@@ -25,7 +25,7 @@ class Model_login extends CI_Model{
     {
       $this->db->where('username',$username);
       $this->db->where('password',$password);
-			$query = $this->db->get('bantupanti.admin');
+			$query = $this->db->get('admin');
 			$row = $query->row();
       if(isset($row)){
         return array(
@@ -42,7 +42,7 @@ class Model_login extends CI_Model{
     {
       $this->db->where('username',$username);
       $this->db->where('password',$password);
-      $query = $this->db->get('bantupanti.anakpanti','');
+      $query = $this->db->get('anakpanti','');
       if($query->num_rows() > 0){
         return true;
       }
