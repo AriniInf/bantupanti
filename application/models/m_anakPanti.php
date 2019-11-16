@@ -10,7 +10,7 @@ class M_anakPanti extends CI_Model
 	}
 
 	public function listStory(){
-		$query =  $this->db->query("SELECT sap_id, sap.ap_id, ap_nama, isistory, tanggalstory from anakpanti ap left join storyanakpanti sap on ap.ap_id = sap.ap_id");
+		$query =  $this->db->query("SELECT sap.dy_id, ap.ap_id, sap.ap_id, ap.nama, sap.diary, ap.tanggal from anakpanti ap left join diary sap on ap.ap_id = sap.ap_id");
 		return $query;
 	}
 

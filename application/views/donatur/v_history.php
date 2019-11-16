@@ -15,8 +15,30 @@
         <div class="box-body" style="overflow-y:scroll">
           <table id="example2" class="table table-bordered table-hover bg-danger table-striped text-center">
             <thead>
-             
-	
+                <tr>
+					<th>No</th>
+          <th>Nama</th>
+					<th>Nominal</th>
+					<th>tanggal</th>
+          <th>keterangan</th>
+          <th>bukti</th>
+					
+               </tr>
+            </thead>
+            <tbody>
+			<?php 
+              $no=1;
+              foreach($data as $dn){ ?>
+				<tr>
+					<td><?php echo $no++ ?> </td>
+         
+					<td><?php echo $dn->nominal ?></td>
+					<td><?php echo $dn->tanggal ?></td>
+          <td><?php echo $dn->keterangan ?></td>
+          <td><?php echo $dn->bukti ?></td>
+
+				</tr>
+				<?php } ?>
             </tbody>
           </table>
         </div>

@@ -35,7 +35,7 @@
 					<td><?php echo $pp->alamat ?></td>
 					<td><?php echo $pp->jabatan ?></td>
 					<td><?php echo $pp->email ?></td>
-					<td><?php echo $pp->telf ?></td>
+					<td><?php echo $pp->telp ?></td>
 				</tr>
               <?php }?>
             </tbody>

@@ -15,8 +15,8 @@
 		<?php foreach($data as $sap){ ?>
 		<tr>
 			<td><?php echo $sap->ap_nama ?></td>
-			<td><?php echo $sap->isistory ?></td>
-			<td><?php echo $sap->tanggalstory ?></td>
+			<td><?php echo $sap->diary ?></td>
+			<td><?php echo $sap->tanggal ?></td>
 		</tr>
 		<?php } ?>
 	</table>

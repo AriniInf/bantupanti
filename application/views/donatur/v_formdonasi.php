@@ -28,21 +28,22 @@
 <div class="container-fluid">	
 	<form action="<?php echo base_url(). 'donatur/tambahdonasi'; ?>" method="post" enctype="multipart/form-data" class="col-xs-6">
 	<div class="form-group">
-		<input type="hidden" name="dn_id" id="dn_id" value="" class="form-control">
+		<input type="hidden" name="do_id" id="do_id" value="" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>nominal</label>
-		<input type="text" name="dn_nominal" class="form-control">
+		<input type="text" name="nominal" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>tanggal</label>
-		<input type="date" name="dn_tanggal" class="form-control">
+		<input type="date" name="tanggal" class="form-control">
 	</div>
-	<div class="form-group">
+	<!-- <div class="form-group">
 		<label>bukti</label>
-		<input type="file" name="dn_bukti" accept='image/*' class="form-control">
-	</div>
+		<input type="file" name="bukti" accept='image/*' class="form-control">
+	</div> -->
 	
 		<button type="submit" name="simpan" class="btn btn-info">Tambah</button>
 	</form>
 </div>
+
