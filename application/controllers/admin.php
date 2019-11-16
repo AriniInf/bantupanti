@@ -33,19 +33,24 @@ class Admin extends CI_Controller {
 	public function tambah_kegiatan(){
 		$kp_id = $this->input->post('kp_id');
 		$ad_id = $this->session->userdata('data')->ad_id;
-		$namakegiatan = $this->input->post('namakegiatan');
+		$nama = $this->input->post('nama');
 		$penjelasan = $this->input->post('penjelasan');
 		$tanggal = $this->input->post('tanggal');
 		
 		$data = array(
 			'kp_id' => $kp_id,
 			'ad_id' => $ad_id,
-			'namakegiatan' => $namakegiatan,
+			'nama' => $nama,
 			'penjelasan' => $penjelasan,
 			'tanggal' => $tanggal,
 			);
-		$this->m_admin->tambah_kegiatan($data,'bantupanti.kegiatanpanti');
+		$this->m_admin->tambah_kegiatan($data,'kegiatanpanti');
 		redirect('admin/listAllKegiatan');
+	}
+
+	function hapusKegiatan($id){
+		$this->m_admin->hapusKegiatan($id);
+		redirect('admin/listAllKegiatan');        
 	}
 
 	public function dashboard()
@@ -91,35 +96,30 @@ class Admin extends CI_Controller {
 
 	function tambahAnak(){
 		$ap_id = $this->input->post('ap_id');
-		$ap_nama = $this->input->post('ap_nama');
-		$ap_tempatlahir = $this->input->post('ap_tempatlahir');
-		$ap_tanggallahir = $this->input->post('ap_tanggallahir');
-		$ap_hobi = $this->input->post('ap_hobi');
-		$ap_sekolah = $this->input->post('ap_sekolah');
-		$ap_prestasi = $this->input->post('ap_prestasi');
-		$ap_foto = $this->input->post('ap_foto');
-		$ap_username = $this->input->post('ap_username');
-		$ap_password = $this->input->post('ap_password');
+		$nama = $this->input->post('nama');
+		$tempatlahir = $this->input->post('tempatlahir');
+		$tanggal = $this->input->post('tanggal');
+		$hobi = $this->input->post('hobi');
+		$sekolah = $this->input->post('sekolah');
+		$prestasi = $this->input->post('prestasi');
+		$foto = $this->input->post('foto');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 		
 		$data = array(
 			'ap_id' => $ap_id,
-			'ap_nama' => $ap_nama,
-			'ap_tempatlahir' => $ap_tempatlahir,
-			'ap_tanggallahir' => $ap_tanggallahir,
-			'ap_hobi' => $ap_hobi,
-			'ap_sekolah' => $ap_sekolah,
-			'ap_prestasi' => $ap_prestasi,
-			'ap_foto' => $ap_foto,
-			'ap_username' => $ap_username,
-			'ap_password' => $ap_password
+			'nama' => $nama,
+			'tempatlahir' => $tempatlahir,
+			'tanggal' => $tanggal,
+			'hobi' => $hobi,
+			'sekolah' => $sekolah,
+			'prestasi' => $prestasi,
+			'foto' => $foto,
+			'username' => $username,
+			'password' => $password
 			);
 
-			if($this->m_anakPanti->tambahAnak($data,'anakpanti') == TRUE) {
-				$this->session->set_flashdata('tambah', true);
-		   }
-		   else {
-				$this->session->set_flashdata('tambah', false);
-		   }
+		$this->m_admin->tambahAnak($data,'anakpanti');
 		redirect('admin/listAnak');
 	}
 
@@ -131,24 +131,24 @@ class Admin extends CI_Controller {
 
 	function tambahPengurus(){
 		$pp_id = $this->input->post('pp_id');
-		$pp_nama = $this->input->post('pp_nama');
-		$pp_alamat = $this->input->post('pp_alamat');
-		$pp_jabatan = $this->input->post('pp_jabatan');
-		$pp_email = $this->input->post('pp_email');
-		$pp_telf = $this->input->post('pp_telf');
-		$pp_foto = $this->input->post('pp_foto');
+		$nama = $this->input->post('nama');
+		$alamat = $this->input->post('alamat');
+		$jabatan = $this->input->post('jabatan');
+		$email = $this->input->post('email');
+		$telp = $this->input->post('telp');
+		$foto = $this->input->post('foto');
 		
 		$data = array(
 			'pp_id' => $pp_id,
-			'pp_nama' => $pp_nama,
-			'pp_alamat' => $pp_alamat,
-			'pp_jabatan' => $pp_jabatan,
-			'pp_email' => $pp_email,
-			'pp_telf' => $pp_telf,
-			'pp_foto' => $pp_foto,
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'jabatan' => $jabatan,
+			'email' => $email,
+			'telp' => $telp,
+			'foto' => $foto,
 			);
 
-		if($this->m_admin->tambahPengurus($data,'bantupantiar.penguruspanti') == TRUE) {
+		if($this->m_admin->tambahPengurus($data,'penguruspanti') == TRUE) {
 			$this->session->set_flashdata('tambah', true);
 		}
 		else {
@@ -159,6 +159,7 @@ class Admin extends CI_Controller {
 	}
 	public function tambah_pemasukan(){
 		$tr_id=$this->input->post('tr_id');
+		$ad_id = $this->session->userdata('data')->ad_id;
 		$keterangan=$this->input->post('keterangan');
 		$flag=0;
 		$nominal=$this->input->post('nominal');
@@ -166,12 +167,13 @@ class Admin extends CI_Controller {
 		
 		$data_update=array(
 			"tr_id"=>$tr_id,
+			"ad_id"=>$ad_id,
 			"keterangan"=>$keterangan,
 			"nominal"=>$nominal,
 			"tanggal"=>$tanggal,
 			"flag"=>$flag
 		);
-		$this->m_admin->nambah_transaksi($tr_id,$keterangan,$nominal,$flag,$tanggal);
+		$this->m_admin->nambah_transaksi($tr_id,$ad_id,$keterangan,$nominal,$flag,$tanggal);
 		redirect('admin/pemasukan');
 	}
 
@@ -183,6 +185,7 @@ class Admin extends CI_Controller {
 
 	public function tambah_pengeluaran(){
 		$tr_id=$this->input->post('tr_id');
+		$ad_id = $this->session->userdata('data')->ad_id;
 		$keterangan=$this->input->post('keterangan');
 		$flag=1;
 		$nominal=$this->input->post('nominal');
@@ -190,12 +193,13 @@ class Admin extends CI_Controller {
 		
 		$data_update=array(
 			"tr_id"=>$tr_id,
+			"ad_id"=>$ad_id,
 			"keterangan"=>$keterangan,
 			"nominal"=>$nominal,
 			"tanggal"=>$tanggal,
 			"flag"=>$flag
 		);
-		$this->m_admin->nambah_transaksi($tr_id,$keterangan,$nominal,$flag,$tanggal);
+		$this->m_admin->nambah_transaksi($tr_id,$ad_id,$keterangan,$nominal,$flag,$tanggal);
 		redirect('admin/pengeluaran');
 	}
 

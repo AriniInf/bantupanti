@@ -19,15 +19,15 @@
 						<?php
 						foreach($data as $kp){ ?>
 						<li>	
-							<span><h3><?php echo $kp->nama?></h3></span>
+							<span><h3><?php echo $kp->pengurus?></h3></span>
 							<span><p><?php echo $kp->tanggal ?></p></span>
-							<h4 class="mb-2"><?php echo $kp->namakegiatan ?></h4>
+							<h4 class="mb-2"><?php echo $kp->kegiatan ?></h4>
 							<p><?php echo $kp->penjelasan ?></p>
 							<div>
 								<a href="" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit</a>
 								<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
-								<a href="#" data-id="" class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</a>
-						</div>						
+								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'	<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</button>');?>
+							</div>						
 						</li>	
 						<?php } ?>		
 					</ul>

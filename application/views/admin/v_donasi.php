@@ -32,7 +32,7 @@
               foreach($data as $do){ ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
-					<td><?php echo $do->nama ?></td>
+					<td><?php echo $do->pendonatur ?></td>
 					<td><?php echo $do->nominal ?></td>
 					<td><?php echo $do->tanggal ?></td>
 					<td></td>

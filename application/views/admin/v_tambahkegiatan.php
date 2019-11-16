@@ -8,7 +8,7 @@
 	</div>
 	<div class="form-group">
 		<label>Nama Kegiatan</label>
-		<input type="text" name="namakegiatan" class="form-control">
+		<input type="text" name="nama" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>Penjelasan</label>

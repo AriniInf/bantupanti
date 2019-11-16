@@ -36,7 +36,7 @@
 				<tr>
 					<td><?php echo $no++ ?> </td>
 					<td><?php echo $ap->nama ?></td>
-					<td><?php echo $ap->tempatlahir, $ap->tanggallahir ?></td>
+					<td><?php echo $ap->tempatlahir ?>, <?php echo $ap->tanggal ?></td>
 
 				</tr>
 				<?php } ?>

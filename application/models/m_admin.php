@@ -4,11 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_admin extends CI_Model 
 {
 	function hapusDonasi($id){
-        $this->db->query("delete from donasi where dn_id='".$id."'");
+        $this->db->query("delete from donasi_ where dn_id='".$id."'");
 	}
 
 	public function listAllKegiatan(){
-		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, nama, namakegiatan, penjelasan, tanggal from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
+		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama as kegiatan, penjelasan, tanggal from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
 			return $hasil;
 	}
 
@@ -31,13 +31,15 @@ class M_admin extends CI_Model
 	public function tambah_kegiatan($data,$table){
 		$query = $this->db->insert($table, $data);
 	}
-	
+	function hapusKegiatan($id){
+        $this->db->query("delete from kegiatanpanti where kp_id='".$id."'");
+	}
 	public function tambahPengurus($data,$table){
 		$query =  $this->db->insert($table, $data);
 	}
 
-	public function nambah_transaksi($tr_id,$keterangan,$nominal,$flag,$tanggal){
-		$hasil=$this->db->query("INSERT INTO transaksi (tr_id,keterangan,nominal,flag,tanggal) VALUES ('$tr_id','$keterangan','$nominal','$flag','$tanggal')");
+	public function nambah_transaksi($tr_id,$ad_id,$keterangan,$nominal,$flag,$tanggal){
+		$hasil=$this->db->query("INSERT INTO transaksi (tr_id,ad_id, keterangan,nominal,flag,tanggal) VALUES ('$tr_id','$ad_id','$keterangan','$nominal','$flag','$tanggal')");
 		return $hasil;
 	}
 
@@ -52,7 +54,7 @@ class M_admin extends CI_Model
 	}
 
 	public function donasi(){
-		$hasil=$this->db->query("SELECT dn_id, dn.do_id, nama, nominal, tanggal, bukti from donasi dn left join donatur do on do.do_id = dn.do_id");
+		$hasil=$this->db->query("SELECT dn_id, dn.do_id, do.nama as pendonatur, nominal, tanggal, bukti from donasi_ dn  join donatur do on do.do_id = dn.do_id");
     	return $hasil->result() ;
 	}
 }

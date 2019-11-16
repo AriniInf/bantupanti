@@ -1,5 +1,15 @@
+<section class="content-header">
+  <h1>
+    Tambah Anak
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Tambah Sesuatu</a></li>
+    <li class="active">Tambah Anak</li>
+  </ol>
+</section>
 <div class="container-fluid">	
-	<form action="<?php echo base_url(). 'anakPanti/tambahAnak'; ?>" method="post" class="col-xs-6">
+	<form action="<?php echo base_url(). 'admin/tambahAnak'; ?>" method="post" class="col-xs-6">
 	<div class="form-group">
 		<input type="hidden" name="ap_id" id="ap_id" value="" class="form-control">
 	</div>
@@ -9,7 +19,7 @@
 	</div>
 	<div class="form-group">
 		<label>Tanggal Lahir</label>
-		<input type="date" name="tanggallahir" class="form-control">
+		<input type="date" name="tanggal" class="form-control">
 	</div>
 	<div class="form-group">
 		<label name="kategori">Tempat Lahir</label>
@@ -29,7 +39,7 @@
 	</div>
 	<div class="form-group">                
 		<label>Sekolah</label>
-		<input type="text" name="ekolah" class="form-control">
+		<input type="text" name="sekolah" class="form-control">
 	</div>
 	<div class="form-group">                
 		<label>Prestasi</label>

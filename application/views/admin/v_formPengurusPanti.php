@@ -1,3 +1,13 @@
+<section class="content-header">
+  <h1>
+    Pengurus Panti
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Lihat Semua</a></li>
+    <li class="active">Pengurus Panti</li>
+  </ol>
+</section>
 <div class="container-fluid">	
 	<form action="<?php echo base_url(). 'admin/tambahPengurus'; ?>" method="post" class="col-xs-6">
 	<div class="form-group">
@@ -21,7 +31,7 @@
 	</div>
 	<div class="form-group">                
 		<label>Telepon</label>
-		<input type="text" name="elf" class="form-control">
+		<input type="text" name="telp" class="form-control">
 	</div>
 		<button type="submit" name="simpan" class="btn btn-info">Tambah</button>
 	</form>
