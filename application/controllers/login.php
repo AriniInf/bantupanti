@@ -76,19 +76,15 @@ class Login extends CI_Controller {
    public function permisi(){
 	$username = $this->session->userdata('username');
 	 if($username==""){
-	  redirect('login/index');
+	  	redirect('login/index');
 	 }
 	 else{
-	  redirect('anakPanti/dashboard');
+	  	redirect('anakPanti/dashboard');
+		}
 	}
-}
-
-   
-	 
-	
 	public function logout(){
 		$this->session->sess_destroy(); 
-		redirect('logindonatur');
+		redirect('login');
 	}
 
 }
