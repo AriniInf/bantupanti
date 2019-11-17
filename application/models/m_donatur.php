@@ -46,9 +46,23 @@ class M_donatur extends CI_Model
 	}
 
 	public function history(){
-		$query =  $this->db->query("SELECT dn.tanggal, dn.nominal, dn.bukti, dn.keterangan from donatur do inner join donasi_ dn on dn.do_id = do.do_id");
+		$query =  $this->db->query("SELECT dn.tanggal, dn.nominal, dn.keterangan from donatur do inner join donasi_ dn on dn.do_id = do.do_id");
 		return $query;
 	
 	}
+	public function profile(){
+		return $this->db->get('donatur');
 
-}
+	}
+	public function detail($do_id){
+		$hasil = $this->db->where('do_id',$do_id)->get('donatur');
+		if($hasil->num_rows()>0){
+			return $hasil->result();
+		}else{
+				return false;
+			}
+		}
+
+	}
+
+

@@ -21,9 +21,8 @@ class Login extends CI_Controller {
 			if($validateDonaturLogin['status'] === true)
 			{
 				$session_data = array(
-					'username' => $username,
-					'password' => md5($password),
-					'status' => "sudahlogin"
+					'data' => $validateDonaturLogin['data'],
+					'status' => $validateDonaturLogin['status']
 					);
 				$this->session->set_userdata($session_data);
 				redirect(base_url() . 'login/enter');
@@ -84,6 +83,16 @@ if($this->form_validation->run())
 					);
 				$this->session->set_userdata($session_data);
 				redirect(base_url() . 'login/masuk');
+			}
+
+			else if($validateDonaturLogin['status'] === true){
+					
+				$session_data = array(
+					'data' => $validateDonaturLogin['data'],
+					'status' => $validateDonaturLogin['status']
+					);
+				$this->session->set_userdata($session_data);
+				redirect(base_url() . 'login/enter');
 			}
 
 			else if($this->model_login->ap_login($username,$pass)){
