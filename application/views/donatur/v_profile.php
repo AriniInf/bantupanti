@@ -1,46 +1,49 @@
-<div class="cotainer-fliud">
 <section class="content-header">
   <h1>
-    Donatur
+   Profile Donatur
   </h1>
   <ol class="breadcrumb">
-    
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Lihat Semua</a></li>
+    <li class="active">Profile</li>
   </ol>
-</section>
+<table class="table table hover table-bordered table-striped">
 
-<section class="content">
 
-          <table id="example2" class="table table-hover table-striped text-center">
-           
-                <tr>
-                    <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>Pekerjaan</th>
-                    <!-- <th>Telp</th>
-                    <th>Foto</th> -->
-                    <th colspan="2">Aksi</th>
-               </tr>
-            
-            <tbody>
-              <?php 
-              
-              foreach ($data as $do)  : ?> 
+            <?php foreach($data as $do) : ?>
+        <tr>
+          <td>Foto</td>
+          <td><?php echo $do->foto; ?></td>
+        </tr>
 				<tr>
-                    <td><?php echo $do->nama ?></td>
-                    <td><?php echo $do->alamat ?></td>
-                    <td><?php echo $do->pekerjaan ?></td>
-                    <td width="20px"><?php echo anchor('donatur/detail/'.$do->do_id,'<div class="btn btn-sm btn-info"><i class="fa fa-eye"></i></div>')?></td>
-                    <td width="20px"><?php echo anchor('donatur/update/'.$do->do_id,'<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>')?></td>
+          <td>nama</td>
+					<td><?php echo $do->nama; ?></td>
+        </tr>
+        <tr>
+          <td>Alamat</td>
+					<td><?php echo $do->alamat; ?></td>
+        </tr>
+        <tr>
+          <td>Pekerjaan</td>
+					<td><?php echo $do->pekerjaan; ?></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+					<td><?php echo $do->email; ?></td>
+        </tr>
+        <tr>
+          <td>Telp</td>
+					<td><?php echo $do->telp; ?></td>
 				</tr>
-                <?php endforeach; ?>
-            </tbody>
+        <br>
+              <?php endforeach; ?>
+              
+         
           </table>
-       
-</section>
+ 
 
 <style>
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
    background-color: #f4f4f4;
 }
 </style>
-</div>

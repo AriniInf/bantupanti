@@ -33,7 +33,6 @@
 					<td><?php echo $sap->nama ?></td>
 					<td><?php echo $sap->diary?></td>
 					<td><?php echo $sap->tanggal?></td>
-					<td><?php echo anchor('donatur/komendiary','<button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> komen </button>')?>
 					
 				</div>	
 				</tr>
