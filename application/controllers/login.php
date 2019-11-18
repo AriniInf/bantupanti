@@ -39,8 +39,8 @@ class Login extends CI_Controller {
 
 			else if($validateAnakPantiLogin['status']===true){
 				$session_data = array(
-					'data' => $validateAnakPantiLogin['data'],
-					'status' => $validateAnakPantiLogin['status']
+					'data' => $validateDonaturLogin['data'],
+					'status' => $validateDonaturLogin['status']
 					);
 				$this->session->set_userdata($session_data);
 				redirect(base_url() . 'login/permisi');
@@ -57,7 +57,7 @@ class Login extends CI_Controller {
 	}
 
 	public function enter(){
-  		$username = $this->session->userdata('data');
+  		$username = $this->session->userdata('username');
    		if($username==""){
    		 redirect('login/index');
    		}
@@ -75,7 +75,7 @@ class Login extends CI_Controller {
 		}
    }
    public function permisi(){
-	$username = $this->session->userdata('data');
+	$username = $this->session->userdata('username');
 	 if($username==""){
 	  	redirect('login/index');
 	 }

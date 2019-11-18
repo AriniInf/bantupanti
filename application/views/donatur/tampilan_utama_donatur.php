@@ -47,6 +47,11 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+         
+          <li>
+          <a href="<?php echo site_url("donatur/profile"); ?>"><i class="glyphicon glyphicon-log-out"></i> Profile</a>
+          </li>
+
           <li>
             <a href="<?php echo site_url("login/logout"); ?>"><i class="glyphicon glyphicon-log-out"></i> Log Out</a>
           </li>

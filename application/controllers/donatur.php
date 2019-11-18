@@ -54,28 +54,7 @@ class Donatur extends CI_Controller {
 	public function berdonasi(){
 		$data['content'] = 'donatur/v_formdonasi';
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
-	}
-
-	function tambahdonasi(){
-		$dn_id = $this->input->post('dn_id');
-		$nominal = $this->input->post('nominal');
-		$tanggal = $this->input->post('tanggal');
-		// $bukti = $this->input->post('bukti');
-		$keterangan = $this->input->post('keterangan');
-		$flag = 0;	
-		$do_id = $this->session->userdata('data')->do_id;
-		$data = array(
-			'dn_id' => $dn_id,
-			'nominal' => $nominal,
-			'tanggal' => $tanggal,
-			'flag' => $flag,
-			'do_id' => $do_id,
-			'keterangan' => $keterangan
-			// 'bukti' => $bukti
-			);
-		$this->m_donatur->tambahdonasi($data,'donasi_');		
-		redirect('donatur/history');
-	}
+	}	
 
 	public function diary(){
 
@@ -86,8 +65,43 @@ class Donatur extends CI_Controller {
 		// $data['data'] = $this->m_donatur->diary()->result();
 		// $this->load->view('donatur/v_diary',$data);
 	}
-	public function komendiary(){
-		$data['content'] = 'donatur/komendiary';
+	public function komenkegiatan(){
+		$data['content'] = 'donatur/komenkegiatan';
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
+	function tambahkomenkegiatan(){
+		$do_id = $this->session->userdata('do_id')->do_id;
+		$kp_id = $this->session->userdata('kp_id')->kp_id;
+		$komen = $this->input->post('komen');
+		$tanggal = $this->input->post('tanggal');
+
+		$data = array(
+			'do_id' => $do_id,
+			'kp_id' => $kp_id,
+			'komen' => $komen,
+			'tanggal' => $tanggal,
+		
+			);
+
+			if($this->m_donatur->tambahkomenkegiatan($data,'dokomen') == TRUE) {
+				$this->session->set_flashdata('tambah', true);
+		   }
+		   else {
+				$this->session->set_flashdata('tambah', false);
+		   }
+		redirect('donatur/v_diary');
+	}
+	public function profile(){
+		$data['content'] = 'donatur/v_profile';
+		$data['data'] = $this->m_donatur->profile()->result();
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+
+	}
+	public function detail($do_id){
+		$data['content'] = 'donatur/v_detail';
+		$data['data'] = $this->m_donatur->detail($do_id);
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+
+	}
+	
 }
