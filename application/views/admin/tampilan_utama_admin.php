@@ -128,7 +128,8 @@
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
    
-      <?php $this->load->view($content);?>
+			<?php $this->load->view($content);?>
+			
     <!-- Main content -->
     
     <!-- /.content -->

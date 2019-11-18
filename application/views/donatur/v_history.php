@@ -31,7 +31,7 @@
               foreach($data as $dn){ ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
-         
+					<td><?php echo $dn->nama ?></td>
 					<td><?php echo $dn->nominal ?></td>
 					<td><?php echo $dn->tanggal ?></td>
           <td><?php echo $dn->keterangan ?></td>

@@ -2,17 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Donatur extends CI_Controller {
-
 	public function __construct() {
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->model('m_donatur');
         $this->load->helper('url');
 	}
-
+	
 	public function dashboard()
 	{
 		$data['content'] = 'donatur/view_dashboard';
+		$data['data'] = $this->session->userdata('data')->do_id;
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
@@ -20,7 +20,6 @@ class Donatur extends CI_Controller {
 		$data['content'] = 'donatur/v_formdonasi';
         $data['data'] = $this->m_donatur->lsitDonatur()->result();
         $this->load->view('donatur/tampilan_utama_donatur',$data);
-        
 	}
 	
 	public function listanak(){
@@ -34,38 +33,6 @@ class Donatur extends CI_Controller {
 		$data['data'] = $this->m_donatur->pengurus()->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
-
-	public function berdonasi(){
-		$data['content'] = 'donatur/v_formdonasi';
-		$this->load->view('donatur/tampilan_utama_donatur',$data);
-
-	}
-
-	// public function inputdonasi(){
-	// 	//cek
-
-	// 	$dn_nominal = $this->input->post('dn_nominal');
-	// 	$dn_tanggal = $this->input->post('dn_tanggal');
-	// 	$dn_bukti = $this->input->post('dn_bukti');
-
-	// 	$data = array(
-
-	// 		'dn_nominal' => $dn_nominal,
-	// 		'dn_tanggal' => $dn_tanggal,
-	// 		'dn_bukti' => $dn_bukti
-
-	// 	);
-
-	// 	if($this->m_donatur->simpan_donasi($data,'bantupantiar.donasi') == TRUE) {
-	// 		$this->session->set_flashdata('tambah', true);
-	// 	}
-	// 	else {
-	// 		$this->session->set_flashdata('tambah', false);
-	// 	}
-		
-	// 	redirect('donatur');
-		
-	// }
 
 	public function kegiatanPanti(){
 		$data['content'] = 'donatur/v_kegiatanPanti';
@@ -84,33 +51,32 @@ class Donatur extends CI_Controller {
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
-	function tambahdonasi(){
+	public function berdonasi(){
+		$data['content'] = 'donatur/v_formdonasi';
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
+	}
 
+	function tambahdonasi(){
 		$dn_id = $this->input->post('dn_id');
-		$do_id = $this->input->post('do_id');
 		$nominal = $this->input->post('nominal');
 		$tanggal = $this->input->post('tanggal');
-		$bukti = $this->input->post('bukti');
-	
-	
+		// $bukti = $this->input->post('bukti');
+		$keterangan = $this->input->post('keterangan');
+		$flag = 0;	
+		$do_id = $this->session->userdata('data')->do_id;
 		$data = array(
-			'do_id' => $do_id,
 			'dn_id' => $dn_id,
 			'nominal' => $nominal,
 			'tanggal' => $tanggal,
-			'bukti' => $bukti,
-
+			'flag' => $flag,
+			'do_id' => $do_id,
+			'keterangan' => $keterangan
+			// 'bukti' => $bukti
 			);
-
-		if($this->m_donatur->tambahdonasi($data,'donasi_') == TRUE) {
-			$this->session->set_flashdata('tambah', true);
-		}
-		else {
-			$this->session->set_flashdata('tambah', false);
-		}
-		
-		redirect('donatur/dashboard');
+		$this->m_donatur->tambahdonasi($data,'donasi_');		
+		redirect('donatur/history');
 	}
+
 	public function diary(){
 
 		$data['content'] = 'donatur/v_diary';

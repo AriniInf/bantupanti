@@ -30,18 +30,12 @@ class M_donatur extends CI_Model
 		return $query;
 	}
 
-	// public function simpan_donasi($data,$table){
-	// 	return $this->db->insert($table, $data);
-	// }
-	// public function simpan_donasi($data){
-	// 	return $this->db->insert('bantupanti.donasi',$data);
-	// }
 	public function tambahdonasi($data,$table){
-		$query =  $this->db->insert($table, $data);
+		$query = $this->db->insert($table, $data);
 	}
 
 	public function history(){
-		$query =  $this->db->query("SELECT dn.tanggal, dn.nominal, dn.bukti, dn.keterangan from donatur do inner join donasi_ dn on dn.do_id = do.do_id");
+		$query =  $this->db->query("SELECT nama, dn.tanggal, dn.nominal, dn.bukti, dn.keterangan from donatur do inner join donasi_ dn on dn.do_id = do.do_id");
 		return $query;
 	
 	}
