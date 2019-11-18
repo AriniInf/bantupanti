@@ -56,6 +56,29 @@ class Donatur extends CI_Controller {
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}	
 
+	function tambahdonasi(){
+		$dn_id = $this->input->post('dn_id');
+		$nominal = $this->input->post('nominal');
+		$tanggal = $this->input->post('tanggal');
+		// $bukti = $this->input->post('bukti');
+		$keterangan = $this->input->post('keterangan');
+		$flag = 0;	
+		$do_id = $this->session->userdata('data')->do_id;	
+		$data = array(
+			
+			'dn_id' => $dn_id,
+			//'do_id' => $do_id,
+			'nominal' => $nominal,
+			'tanggal' => $tanggal,
+			'flag' => $flag,
+			'do_id' => $do_id,
+			'keterangan' => $keterangan
+			// 'bukti' => $bukti
+			);
+		$this->m_donatur->tambahdonasi($data,'donasi_');
+		redirect('donatur/history');
+	}
+
 	public function diary(){
 
 		$data['content'] = 'donatur/v_diary';
