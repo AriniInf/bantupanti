@@ -17,10 +17,6 @@ class M_donatur extends CI_Model
 		return $this->db->get('penguruspanti');
 	}
 
-	// public function berdonasi(){
-	// 	return $this->db->get('bantupantiar.donasi');
-	// }
-
 	public function kegiatanPanti(){
 	
 		return $this->db->get('kegiatanpanti');

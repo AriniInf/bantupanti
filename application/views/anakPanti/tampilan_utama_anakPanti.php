@@ -74,10 +74,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("admin/listDonatur"); ?>"><i class="fa fa-circle-o" name="donatur"></i>Donatur</a></li>
-						<li><a href="<?php echo site_url("admin/listAnak"); ?>"><i class="fa fa-circle-o" name="anak_panti"></i>Anak Panti</a></li>
-						<li><a href="<?php echo site_url("admin/listPengurus"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Pengurus Panti</a></li>
-						<li><a href="<?php echo site_url("admin/listAllKegiatan"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Kegiatan Panti</a></li>
+						<li><a href="<?php echo site_url("anakPanti/diary"); ?>"><i class="fa fa-circle-o" name="diary"></i>Diary</a></li>
+						<li><a href="<?php echo site_url("anakPanti/kegiatan_panti"); ?>"><i class="fa fa-circle-o" name="kegiatanpanti"></i>Kegiatan Panti</a></li>
           </ul>
         </li>
        
@@ -89,36 +87,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("admin/formAnak"); ?>"><i class="fa fa-circle-o"></i>Tambah Anak Panti</a></li>
-						<li><a href="<?php echo site_url("admin/formPengurus"); ?>"><i class="fa fa-circle-o"></i>Tambah Pengurus Panti</a></li>
-						<li><a href="<?php echo site_url("admin/formPemasukan"); ?>"><i class="fa fa-circle-o"></i>Tambah Pemasukan</a></li>
-						<li><a href="<?php echo site_url("admin/formPengeluaran"); ?>"><i class="fa fa-circle-o"></i>Tambah Pengeluaran</a></li>
+            <li><a href="<?php echo site_url("anakPanti/formDiary"); ?>"><i class="fa fa-circle-o"></i>Diary</a></li>
           </ul>
         </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-table"></i> <span>Tabel Rekap</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo site_url("admin/rekapPemasukan"); ?>"><i class="fa fa-circle-o"></i> Rekap Pemasukan</a></li>
-            <li><a href="<?php echo site_url("admin/rekapPengeluaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Pengeluaran</a></li>
-            <li><a href="<?php echo site_url("admin/listAllDonasi"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
-          </ul>
-        </li>
-
-      <!-- <li class="treeview">
-          <a href="#">
-            <i class="fa fa-book"></i> <span>Finger Print</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-        </li> -->
-      </ul>
     </section>
     <!-- /.sidebar -->
   </aside>

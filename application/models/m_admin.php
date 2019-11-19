@@ -54,7 +54,21 @@ class M_admin extends CI_Model
 	}
 
 	public function donasi(){
-		$hasil=$this->db->query("SELECT dn_id, dn.do_id, do.nama as pendonatur, nominal, tanggal, bukti from donasi_ dn  join donatur do on do.do_id = dn.do_id");
+		$hasil=$this->db->query("SELECT dn_id, dn.do_id, do.nama as pendonatur, nominal, tanggal, bukti from donasi_ dn  join donatur do on do.do_id = dn.do_id where flag = '0'");
     	return $hasil->result() ;
 	}
+	public function history(){
+		$hasil = $this->db->query("SELECT dn_id, dn.do_id, do.nama as pendonatur, nominal, tanggal, bukti , flag from donasi_ dn  join donatur do on do.do_id = dn.do_id where flag = '1'");
+		return $hasil->result();
+	}
+
+	public function get_id($id){
+		$this->db->where('dn_id',$id);
+		$query=$this->db->get('donasi_');
+		return $query->result();
+	  }
+
+	public function updatevalidasi($id){
+		$hasil = $this->db->query("UPDATE donasi_ SET flag = '1' WHERE dn_id = '".$id."'");
+	  }
 }

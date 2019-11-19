@@ -1,11 +1,11 @@
 <section class="content-header">
   <h1>
-    Donatur
+    Donasi
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="#">Lihat Semua</a></li>
-    <li class="active">List Anak Panti</li>
+    <li class="active">List Donasi</li>
   </ol>
 </section>
 
@@ -18,27 +18,23 @@
             <thead>
                 <tr>
 					<th>No</th>
-					<th>Nama</th>
-					<th>Tempat Tanggal Lahir</th>
-					<th>Hobi</th>
-					<th>Sekolah</th>
-					<th>Prestasi</th>
+					<th>Donatur</th>
+					<th>Nominal</th>
+					<th>Tanggal</th>
                </tr>
             </thead>
             <tbody>
 			<?php 
               $no=1;
-              foreach($data as $ap){ ?>
+              foreach($data as $do){ ?>
 				<tr>
 					<td><?php echo $no++ ?> </td>
-					<td><?php echo $ap->ap_nama ?></td>
-					<td><?php echo $ap->ap_tempatlahir, $ap->ap_tanggallahir ?></td>
-					<td><?php echo $ap->ap_hobi ?></td>
-					<td><?php echo $ap->ap_sekolah ?></td>
-					<td><?php echo $ap->ap_prestasi ?></td>
+					<td><?php echo $do->pendonatur ?></td>
+					<td><?php echo $do->nominal ?></td>
+					<td><?php echo $do->tanggal ?></td>
 				</tr>
 				<?php } ?>
-            </tbody>
+			</tbody>
           </table>
         </div>
       </div>

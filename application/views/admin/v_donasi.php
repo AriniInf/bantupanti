@@ -36,7 +36,12 @@
 					<td><?php echo $do->nominal ?></td>
 					<td><?php echo $do->tanggal ?></td>
 					<td></td>
-					<td><button>Validasi</button></td>
+					<td>
+					<form action="updatevalidasi/" method="post">
+						<input type="hidden" name="dn_id" value=<?php echo $do->dn_id?>>
+						<input type="submit" class="btn btn-info" value="validate">
+					</form>
+					</td>		
 					<td><?php echo anchor('admin/hapusDonasi/'.$do->dn_id,'Hapus');?></td>
 				</tr>
 				<?php } ?>

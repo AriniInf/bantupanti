@@ -216,6 +216,23 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 
+	public function updatevalidasi()
+	{	
+		$dn_id=$this->input->post('dn_id');
+		$data_update=array(
+			"dn_id"=>$dn_id,
+		);
+
+		$this->m_admin->updatevalidasi($dn_id);
+		var_dump($this->input->post());
+		redirect('admin/history');
+	}
+
+	public function history(){
+		$data['content'] = 'admin/v_history';
+		$data['data'] = $this->m_admin->history();
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
 	public function laporan(){
 		
 

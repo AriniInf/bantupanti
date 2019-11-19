@@ -17,18 +17,7 @@ class Login extends CI_Controller {
 			$validateAdminLogin = $this->model_login->admin_login($username,$pass);
 			$validateDonaturLogin = $this->model_login->donatur_login($username,$pass);
 			$validateAnakPantiLogin = $this->model_login->anakPanti_login($username,$pass);
-			if($validateDonaturLogin['status'] === true)
-			{
-				$session_data = array(
-					'data' => $validateDonaturLogin['data'],
-					'status' => $validateDonaturLogin['status']
-					);
-				$this->session->set_userdata($session_data);
-				redirect(base_url() . 'login/enter');
-				}
-
-			else if($validateAdminLogin['status'] === true){
-					
+			if($validateAdminLogin['status'] === true){	
 				$session_data = array(
 					'data' => $validateAdminLogin['data'],
 					'status' => $validateAdminLogin['status']
@@ -56,7 +45,7 @@ class Login extends CI_Controller {
 				redirect(base_url() . 'login/enter');
 			}
 
-			else if($this->model_login->ap_login($username,$pass)){
+			else if($validateAnakPantiLogin['status']===true){
 				$session_data = array(
 					'data' => $validateAnakPantiLogin['data'],
 					'status' => $validateAnakPantiLogin['status']
@@ -103,7 +92,7 @@ class Login extends CI_Controller {
 		}
 	}
 	public function logout(){
-		$this->session->unset_userdata('username'); 
+		$this->session->unset_userdata('data'); 
 		redirect('login');
 	}
 

@@ -13,29 +13,33 @@ class AnakPanti extends CI_Controller {
 	public function dashboard()
 	{
 		$data['content'] = 'anakPanti/v_dashboard';
+		$data['data'] = $this->session->userdata('data')->ap_id;
 		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
-	public function listAnak(){
-		$data['content'] = 'anakPanti/v_listAnakPanti';
-		$data['data'] = $this->m_anakPanti->listAnak()->result();
-		$this->load->view('admin/tampilan_utama_admin',$data);
+
+	public function kegiatan_panti(){
+		$data['content'] = 'anakPanti/v_kegiatanPanti';
+		$data['data'] = $this->m_anakPanti->kegiatan_panti()->result();
+		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
 
-	public function listStory(){
-
-		$data['data'] = $this->m_anakPanti->listStory()->result();
-		$this->load->view('anakPanti/v_listStory',$data);
+	
+	public function listDiary(){
+		$data['content'] = 'anakPanti/v_listStory';
+		$data['data'] = $this->m_anakPanti->listDiary();
+		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
 
-	function formStory(){
-		$this->load->view('anakPanti/v_formStory');
+	function formDiary(){
+		$data['content'] = 'anakPanti/v_formStory';
+		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
  
-	function tambahStory(){
+	function tambahDiary(){
 		$dy_id = $this->input->post('dy_id');
-		$ap_id = $this->input->post('ap_id');
-		$isistory = $this->input->post('diary');
-		$tanggalstory = $this->input->post('tanggal');
+		$ap_id = $this->session->userdata('data')->ap_id;
+		$diary = $this->input->post('diary');
+		$tanggal = $this->input->post('tanggal');
 		// $ini=$this->m_anakPanti;
 		// $data['ini']=$ini->listStory();
 		$data = array(
@@ -44,40 +48,7 @@ class AnakPanti extends CI_Controller {
 			'diary' => $diary,
 			'tanggal' => $tanggal
 			);
-		$this->m_anakPanti->tambahStory($data,'storyanakpanti');
-		redirect('anakPanti/listStory');
+		$this->m_anakPanti->tambahDiary($data,'diary');
+		redirect('anakPanti/listDiary');
 	}
-
-	function formAnak(){
-		$this->load->view('anakPanti/v_formAnak');
-	}
-
-	function tambahAnak(){
-		$ap_id = $this->input->post('ap_id');
-		$nama = $this->input->post('nama');
-		$tempatlahir = $this->input->post('tempatlahir');
-		$tanggallahir = $this->input->post('tanggal');
-		$hobi = $this->input->post('hobi');
-		$sekolah = $this->input->post('sekolah');
-		$prestasi = $this->input->post('prestasi');
-		$foto = $this->input->post('foto');
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		
-		$data = array(
-			'ap_id' => $ap_id,
-			'nama' => $nama,
-			'tempatlahir' => $tempatlahir,
-			'tanggal' => $tanggal,
-			'hobi' => $hobi,
-			'sekolah' => $sekolah,
-			'prestasi' => $prestasi,
-			'foto' => $foto,
-			'username' => $username,
-			'password' => $password
-			);
-		$this->m_anakPanti->tambahAnak($data,'anakpanti');
-		redirect('anakPanti/listAnak');
-	}
-
 }

@@ -77,7 +77,8 @@
             <li><a href="<?php echo site_url("admin/listDonatur"); ?>"><i class="fa fa-circle-o" name="donatur"></i>Donatur</a></li>
 						<li><a href="<?php echo site_url("admin/listAnak"); ?>"><i class="fa fa-circle-o" name="anak_panti"></i>Anak Panti</a></li>
 						<li><a href="<?php echo site_url("admin/listPengurus"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Pengurus Panti</a></li>
-						<li><a href="<?php echo site_url("admin/listAllKegiatan"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Kegiatan Panti</a></li>
+						<li><a href="<?php echo site_url("admin/listAllKegiatan"); ?>"><i class="fa fa-circle-o" name="kegiatanpanti"></i>Kegiatan Panti</a></li>
+						<li><a href="<?php echo site_url("admin/diary"); ?>"><i class="fa fa-circle-o" name="diary"></i>Diary Anak Panti</a></li>
           </ul>
         </li>
        
@@ -107,7 +108,8 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo site_url("admin/pemasukan"); ?>"><i class="fa fa-circle-o"></i> Rekap Pemasukan</a></li>
             <li><a href="<?php echo site_url("admin/pengeluaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Pengeluaran</a></li>
-            <li><a href="<?php echo site_url("admin/donasi"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
+						<li><a href="<?php echo site_url("admin/donasi"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
+						<li><a href="<?php echo site_url("admin/laporan"); ?>"><i class="fa fa-circle-o"></i> Laporan</a></li>
           </ul>
         </li>
 
