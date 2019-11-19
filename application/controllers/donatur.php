@@ -46,6 +46,9 @@ class Donatur extends CI_Controller {
 	}
 
 	public function history(){
+		$flag = 0;	
+		$do_id = $this->session->userdata('data')->do_id;
+
 		$data['content'] = 'donatur/v_history';
 		$data['data'] = $this->m_donatur->history()->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
@@ -60,7 +63,7 @@ class Donatur extends CI_Controller {
 		$dn_id = $this->input->post('dn_id');
 		$nominal = $this->input->post('nominal');
 		$tanggal = $this->input->post('tanggal');
-		// $bukti = $this->input->post('bukti');
+		$bukti = $this->input->post('bukti');
 		$keterangan = $this->input->post('keterangan');
 		$flag = 0;	
 		$do_id = $this->session->userdata('data')->do_id;	
@@ -72,8 +75,8 @@ class Donatur extends CI_Controller {
 			'tanggal' => $tanggal,
 			'flag' => $flag,
 			'do_id' => $do_id,
-			'keterangan' => $keterangan
-			// 'bukti' => $bukti
+			'keterangan' => $keterangan,
+			'bukti' => $bukti
 			);
 		$this->m_donatur->tambahdonasi($data,'donasi_');
 		redirect('donatur/history');
@@ -120,11 +123,20 @@ class Donatur extends CI_Controller {
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 
 	}
-	public function detail($do_id){
-		$data['content'] = 'donatur/v_detail';
-		$data['data'] = $this->m_donatur->detail($do_id);
+	public function editprofile(){
+		$this->rules();
+		if($this->form)
+		$data['content'] = 'donatur/v_editprofile';
+		$data['data'] = $this->m_donatur->profile()->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 
 	}
+	
+	// public function detail($do_id){
+	// 	$data['content'] = 'donatur/v_detail';
+	// 	$data['data'] = $this->m_donatur->detail($do_id);
+	// 	$this->load->view('donatur/tampilan_utama_donatur',$data);
+
+	// }
 	
 }
