@@ -62,7 +62,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="<?php echo site_url("admin/dashboard"); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          <a href="<?php echo site_url("anakPanti/dashboard"); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         <li class="treeview">

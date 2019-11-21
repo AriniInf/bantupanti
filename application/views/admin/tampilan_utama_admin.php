@@ -78,7 +78,7 @@
 						<li><a href="<?php echo site_url("admin/listAnak"); ?>"><i class="fa fa-circle-o" name="anak_panti"></i>Anak Panti</a></li>
 						<li><a href="<?php echo site_url("admin/listPengurus"); ?>"><i class="fa fa-circle-o" name="pengurus_panti"></i>Pengurus Panti</a></li>
 						<li><a href="<?php echo site_url("admin/listAllKegiatan"); ?>"><i class="fa fa-circle-o" name="kegiatanpanti"></i>Kegiatan Panti</a></li>
-						<li><a href="<?php echo site_url("admin/diary"); ?>"><i class="fa fa-circle-o" name="diary"></i>Diary Anak Panti</a></li>
+						<li><a href="<?php echo site_url("admin/listDiary"); ?>"><i class="fa fa-circle-o" name="diary"></i>Diary Anak Panti</a></li>
           </ul>
         </li>
        

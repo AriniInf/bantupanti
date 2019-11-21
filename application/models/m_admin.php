@@ -71,4 +71,12 @@ class M_admin extends CI_Model
 	public function updatevalidasi($id){
 		$hasil = $this->db->query("UPDATE donasi_ SET flag = '1' WHERE dn_id = '".$id."'");
 	  }
+
+	  public function listDiary(){
+		$query =  $this->db->query("SELECT sap.dy_id, ap.ap_id, sap.ap_id, ap.nama as anak, sap.diary, ap.tanggal from anakpanti ap right join diary sap on ap.ap_id = sap.ap_id");
+		return $query->result();
+	}
+	function hapusDiary($id){
+        $this->db->query("delete from diary where dy_id='".$id."'");
+	}
 }
