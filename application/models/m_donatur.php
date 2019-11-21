@@ -29,9 +29,12 @@ class M_donatur extends CI_Model
 	public function tambahdonasi($data,$table){
 		$query = $this->db->insert($table, $data);
 	}
+	public function tambahkomen($data,$table){
+		$query = $this->db->insert($table, $data);
+	}
 
-	public function history(){
-		$query =  $this->db->query("SELECT do.nama, dn.tanggal, dn.nominal, dn.bukti, dn.keterangan from donatur do inner join donasi_ dn on dn.do_id = do.do_id");
+	public function history($id){
+		$query =  $this->db->query("SELECT do.nama, dn.tanggal, dn.nominal, dn.bukti, dn.keterangan from donatur do inner join donasi_ dn on dn.do_id = do.do_id where dn.do_id = '".$id."'");
 		return $query;
 	
 	}

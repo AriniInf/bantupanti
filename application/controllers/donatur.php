@@ -50,7 +50,7 @@ class Donatur extends CI_Controller {
 		$do_id = $this->session->userdata('data')->do_id;
 
 		$data['content'] = 'donatur/v_history';
-		$data['data'] = $this->m_donatur->history()->result();
+		$data['data'] = $this->m_donatur->history($do_id)->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
@@ -124,13 +124,43 @@ class Donatur extends CI_Controller {
 
 	}
 	public function editprofile(){
-		$this->rules();
-		if($this->form)
-		$data['content'] = 'donatur/v_editprofile';
-		$data['data'] = $this->m_donatur->profile()->result();
+		$data['content'] = 'donatur/editprofile';
+		//$data['data'] = $this->m_donatur->editprofile()->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 
 	}
+	function tambahkomen(){
+		$komen = $this->input->post('komen');
+		$tanggal = $this->input->post('tanggal');
+		
+		$flag = 0;	
+		$do_id = $this->session->userdata('data')->do_id;	
+		$data = array(
+			
+			
+			//'do_id' => $do_id,
+			'komen' => $komen,
+			'tanggal' => $tanggal,
+			'flag' => $flag,
+			'do_id' => $do_id,
+
+			);
+			if($this->m_donatur->tambahkomen($data,'dokomen') == TRUE) {
+				$this->session->set_flashdata('tambah', true);
+		   }
+		   else {
+				$this->session->set_flashdata('tambah', false);
+		   }
+		redirect('donatur/v_diary');
+	}
+	
+
+	// public function update($id){
+	// 	$where= array('do_id' => $id);
+	// 	$data['donatur'] = $this->db->query->("select * from donatur where do_id ='$id'")->result();
+
+	// 	$this->load->view('donatur/tampilan_utama_donatur',$data);
+	// }
 	
 	// public function detail($do_id){
 	// 	$data['content'] = 'donatur/v_detail';

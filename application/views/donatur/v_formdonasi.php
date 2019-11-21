@@ -18,6 +18,10 @@
 		<label>bukti</label>
 		<input type="photo" name="bukti" class="form-control">
 	</div>
+	<div class="form-group">
+		<label>Keterangan</label>
+		<input type="text" name="keterangan" class="form-control">
+	</div>
 		<button type="submit" name="simpan" class="btn btn-info">Tambah</button>
 	</form>
 </div>

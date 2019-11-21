@@ -2,9 +2,7 @@
     <?php echo form_open_multipart('donatur/editprofile')
     ?>
     <div class="form-group">
-        <label>Nama Donatur</label>
-        <input type="text" name="nama" class="form-control">
-        <?php echo form_error('nama', '<div class="text-danger small ml-3">','</div>')?>
+        
     </div>
 
     <div class="form-group">

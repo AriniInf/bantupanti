@@ -34,7 +34,7 @@
 					<td><?php echo $kp->nama ?></td>
 					<td><?php echo $kp->penjelasan ?></td>
 					<td><?php echo $kp->tanggal ?></td>
-          <td><?php echo anchor('donatur/komenkegiatan','<button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> komen </button>')?>
+          <td width="20px"><?php echo anchor('donatur/komenkegiatan/'.$kp->kp_id,'<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>')?>
 
 
 				</tr>
