@@ -30,6 +30,18 @@ class AnakPanti extends CI_Controller {
 		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
 
+	public function listDiarymu(){
+		$data['content'] = 'anakPanti/v_listDiarymu';
+		$ap_id = $this->session->userdata('data')->ap_id;
+		$data['data'] = $this->m_anakPanti->listDiarymu($ap_id);
+		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
+	}
+
+	function hapusDiary($id){
+		$this->m_anakPanti->hapusDiary($id);
+		redirect('anakPanti/listDiary');        
+	}
+
 	function formDiary(){
 		$data['content'] = 'anakPanti/v_formStory';
 		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);

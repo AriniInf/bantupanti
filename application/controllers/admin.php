@@ -57,7 +57,7 @@ class Admin extends CI_Controller {
 	public function dashboard()
 	{
 		$data['content'] = 'admin/view_dashboard';
-		$data['data'] = $this->session->userdata('data')->ad_id;
+		//$data['data'] = $this->session->userdata('data')->ad_id;
 		$this->load->view('admin/tampilan_utama_admin', $data);
 	}
 

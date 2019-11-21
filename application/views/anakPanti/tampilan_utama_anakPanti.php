@@ -75,6 +75,7 @@
           </a>
           <ul class="treeview-menu">
 						<li><a href="<?php echo site_url("anakPanti/listDiary"); ?>"><i class="fa fa-circle-o" name="diary"></i>Diary</a></li>
+						<li><a href="<?php echo site_url("anakPanti/listDiarymu"); ?>"><i class="fa fa-circle-o" name="diary"></i>Diary mu</a></li>
 						<li><a href="<?php echo site_url("anakPanti/kegiatan_panti"); ?>"><i class="fa fa-circle-o" name="kegiatanpanti"></i>Kegiatan Panti</a></li>
           </ul>
         </li>

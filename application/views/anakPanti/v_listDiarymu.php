@@ -23,7 +23,11 @@
 							<span><p><?php echo $di->tanggal ?></p></span>
 							<!-- <h4 class="mb-2"></h4> -->
 							<p><?php echo $di->diary ?></p>
-													
+							<div>
+								<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+								<!-- <a href="" class="btn btn-warning btn-sm"><i class="fa fa-remove"></i> Hapus</a> -->
+								<?php echo anchor('anakPanti/hapusDiary/'.$di->dy_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</button>');?>
+							</div>						
 						</li>	
 						<?php } ?>		
 					</ul>

@@ -35,16 +35,6 @@ class Login extends CI_Controller {
 				redirect(base_url() . 'login/enter');
 			}
 
-			else if($validateDonaturLogin['status'] === true){
-					
-				$session_data = array(
-					'data' => $validateDonaturLogin['data'],
-					'status' => $validateDonaturLogin['status']
-					);
-				$this->session->set_userdata($session_data);
-				redirect(base_url() . 'login/enter');
-			}
-
 			else if($validateAnakPantiLogin['status']===true){
 				$session_data = array(
 					'data' => $validateAnakPantiLogin['data'],
