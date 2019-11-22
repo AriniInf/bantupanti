@@ -160,7 +160,7 @@ img {
           <div class="row">
 		  <div class="split-left">
 		  <div class="wrap-login100">
-			<form method="post" action="<?php echo base_url('login/login_validation') ?>" class="login100-form validate-form">
+			<!-- <form method="post" action="<?php echo base_url('login/login_validation') ?>" class="login100-form validate-form">
 			<div>
 		
 			</div>
@@ -190,7 +190,7 @@ img {
 					<p>ingin menjadi donatur dan belum terdaftar?</p>
 					<a href="<?php echo base_url(); ?>register" class="btn btn-info" role="button">Register</a>
 					
-				</form>
+				</form> -->
 			</div>
 			</div>
           </div>
@@ -262,7 +262,7 @@ img {
 </div>
 </div>
 
-<!-- <div class="split-left">
+<div class="split-left">
 <body style="background-color: #666666;">
 	
 	<div class="limiter">
@@ -310,7 +310,7 @@ img {
 			</div>
 		</div>
 	</div>
-</div> -->
+</div>
 	
 <!--===============================================================================================-->
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
