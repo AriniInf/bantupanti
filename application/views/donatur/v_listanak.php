@@ -19,6 +19,7 @@
 					<th>No</th>
 					<th>Nama</th>
 					<th>Tempat Tanggal Lahir</th>
+          <th>Foto</th>
 					
                </tr>
             </thead>
@@ -30,7 +31,8 @@
 					<td><?php echo $no++ ?> </td>
 					<td><?php echo $ap->nama ?></td>
 					<td><?php echo $ap->tempatlahir, $ap->tanggal ?></td>
-
+          <td><img src="<?php echo base_url('assets/uploads/').$ap->foto; ?>" width="90" height="110">
+          <
 				</tr>
 				<?php } ?>
             </tbody>

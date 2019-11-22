@@ -60,13 +60,29 @@ class Donatur extends CI_Controller {
 	}	
 
 	function tambahdonasi(){
+		
 		$dn_id = $this->input->post('dn_id');
 		$nominal = $this->input->post('nominal');
 		$tanggal = $this->input->post('tanggal');
-		$bukti = $this->input->post('bukti');
+		
 		$keterangan = $this->input->post('keterangan');
+		$bukti = $_FILES['bukti'];
 		$flag = 0;	
 		$do_id = $this->session->userdata('data')->do_id;	
+		
+		if($bukti=''){}else{
+			$config['upload_path']='./assets/uploads';
+			$config['allowed_types']='jpg|png|jpeg';
+
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('bukti')){
+				echo  "Gagal Upload";die();
+
+			}
+			else{
+				$bukti=$this->upload->data('file_name');
+			}
+		}
 		$data = array(
 			
 			'dn_id' => $dn_id,
@@ -168,5 +184,6 @@ class Donatur extends CI_Controller {
 	// 	$this->load->view('donatur/tampilan_utama_donatur',$data);
 
 	// }
+
 	
 }

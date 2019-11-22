@@ -35,7 +35,8 @@
 					<td><?php echo $do->pendonatur ?></td>
 					<td><?php echo $do->nominal ?></td>
 					<td><?php echo $do->tanggal ?></td>
-					<td></td>
+          <td><img src="<?php echo base_url('assets/uploads/').$do->bukti; ?>" width="90" height="110">
+					
 					<td>
 					<form action="updatevalidasi/" method="post">
 						<input type="hidden" name="dn_id" value=<?php echo $do->dn_id?>>

@@ -8,8 +8,9 @@
     <li class="active">Tambah Kegiatan</li>
   </ol>
 </section>
-<div class="container-fluid">	
-	<form action="<?php echo base_url(). 'admin/tambah_kegiatan'; ?>" method="post" class="col-xs-6">
+<div class="container-fluid">
+<?php echo form_open_multipart('admin/tambah_kegiatan'); ?>		
+	<!-- <form action="<?php echo base_url(). 'admin/tambah_kegiatan'; ?>" method="post" class="col-xs-6"> -->
 	<div class="form-group">
 		<input type="hidden" name="kp_id" id="kp_id" value="" class="form-control">
 	</div>
@@ -28,6 +29,11 @@
 		<label>Tanggal</label>
 		<input type="date" name="tanggal" class="form-control">
 	</div>
+	<div class="form-group">
+		<label>Foto</label><br>
+		<input type="file" name="foto" class="form-control">
+ 	</div>
 		<button type="submit" name="simpan" class="btn btn-info">Tambah</button>
-	</form>
+	<?php echo form_close(); ?>
+		
 </div>

@@ -8,8 +8,9 @@
     <li class="active">Pengurus Panti</li>
   </ol>
 </section>
-<div class="container-fluid">	
-	<form action="<?php echo base_url(). 'admin/tambahPengurus'; ?>" method="post" class="col-xs-6">
+<div class="container-fluid">
+<?php echo form_open_multipart('admin/tambahPengurus'); ?>	
+	<!-- <form action="<?php echo base_url(). 'admin/tambahPengurus'; ?>" method="post" class="col-xs-6"> -->
 	<div class="form-group">
 		<input type="hidden" name="pp_id" id="pp_id" value="" class="form-control">
 	</div>
@@ -32,7 +33,12 @@
 	<div class="form-group">                
 		<label>Telepon</label>
 		<input type="text" name="telp" class="form-control">
-	</div>
+		</div>
+	<div class="form-group">
+		<label>Foto</label><br>
+		<input type="file" name="foto" class="form-control">
+ 	</div>
 		<button type="submit" name="simpan" class="btn btn-info">Tambah</button>
-	</form>
+	<?php echo form_close(); ?>
+	
 </div>

@@ -8,7 +8,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Dashboardyuhuuuu</li>
+    <li class="active">Dashboard Donatur</li>
   </ol>
 </section>
 
@@ -26,11 +26,27 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="box">
-          <!-- <div class="box-header with-border">
-            ini box header
-          </div> -->
+        
           <div class="box-body">
-            <!-- ini box body -->
+            <h3>Langkah-langkah berdonasi</h3>
+            <div class="card">
+             
+              <img src="<?php echo base_url('assets/image/1.png')?>" alt="Avatar" style="width:100%">
+              <div class="container">
+                <!-- <h4><b>John Doe</b></h4>  -->
+                <p>Login sebagai donatur</p> 
+              </div>
+            </div>
+
+            <div class="card">
+             
+             <img src="<?php echo base_url('assets/image/2.png')?>" alt="Avatar" style="width:100%">
+             <div class="container">
+               <!-- <h4><b>John Doe</b></h4>  -->
+               <p>Lengkapi data Anda di profile</p> 
+             </div>
+           </div>
+
           </div>
           <!-- <div class="box-footer">
           </div> -->
@@ -49,8 +65,22 @@
 
   </script>
 
-  <!-- <style>
-  /* Make the image fully responsive */
+  <style>
+  .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20%;
+  float: left;
+  border: 1px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+  /* Make the image fully responsive
     .box
     {
     	background-image: url("<?php echo base_url(''); ?>assets/img/STPN2.jpg");
@@ -71,5 +101,5 @@
     	90%{
     		background-image: url("<?php echo base_url(''); ?>assets/img/STPN2.jpg");
     	}
-    }
-  </style> -->
+    } */
+  </style>
