@@ -29,9 +29,10 @@
           <!-- <div class="box-header with-border">
             ini box header
           </div> -->
-          <div class="box-body">
-            <!-- ini box body -->
-          </div>
+          
+           
+          <img src="<?php echo base_url('assets/image/anak.jpg')?>" style="width:100%">
+
           <!-- <div class="box-footer">
           </div> -->
       </div>
