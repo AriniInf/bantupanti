@@ -11,8 +11,9 @@
 <div class="container-fluid">	
 <?php echo form_open_multipart('admin/tambahAnak'); ?>
 	<!-- <form action="<?php echo base_url(). 'admin/tambahAnak'; ?>" method="post" class="col-xs-6"> -->
+
 	<div class="form-group">
-		<input type="hidden" name="ap_id" id="ap_id" value="" class="form-control">
+		<input type="hidden" name="ap_id" value="" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>Nama</label>

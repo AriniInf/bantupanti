@@ -40,6 +40,8 @@ class Donatur extends CI_Controller {
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
+	
+
 	public function profil(){
 		$data['content'] = 'donatur/profil';
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
@@ -133,6 +135,8 @@ class Donatur extends CI_Controller {
 		   }
 		redirect('donatur/v_diary');
 	}
+
+	
 	public function profile(){
 		$data['content'] = 'donatur/v_profile';
 		$data['data'] = $this->m_donatur->profile()->result();

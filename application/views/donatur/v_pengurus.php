@@ -1,11 +1,10 @@
 <section class="content-header">
   <h1>
-    Donatur
+    List Pengurus Panti
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Lihat Semua</a></li>
-    <li class="active">List Donatur</li>
+    <li class="active">List Pengurus Panti</li>
   </ol>
 </section>
 
@@ -23,6 +22,7 @@
 					<th>Jabatan</th>
 					<th>E-mail</th>
 					<th>Telp</th>
+          <th>Foto</th>
                </tr>
             </thead>
             <tbody>
@@ -36,6 +36,7 @@
 					<td><?php echo $pp->jabatan ?></td>
 					<td><?php echo $pp->email ?></td>
 					<td><?php echo $pp->telp ?></td>
+          <td><img src="<?php echo base_url('assets/uploads/').$pp->foto; ?>" width="90" height="110">
 				</tr>
               <?php }?>
             </tbody>

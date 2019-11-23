@@ -28,6 +28,7 @@
 							<span><p><?php echo $kp->tanggal ?></p></span>
 							<h4 class="mb-2"><?php echo $kp->kegiatan ?></h4>
 							<p><?php echo $kp->penjelasan ?></p>
+							<!-- <span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></span> -->
 					
 							<!-- <span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></span>
 							 -->

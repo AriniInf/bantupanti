@@ -1,3 +1,12 @@
+<section class="content-header">
+  <h1>
+    Form Donasi
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Form Donasi</li>
+  </ol>
+</section>
 <div class="container-fluid">	
 	<!-- <form action="<?php echo base_url(). 'donatur/tambahdonasi'; ?>" method="post" class="col-xs-6"> -->
 	<?php echo form_open_multipart('donatur/tambahdonasi'); ?>

@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    Donatur
+    List Donatur
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -21,6 +21,8 @@
 					<th>Nama</th>
 					<th>Alamat</th>
 					<th>Pekerjaan</th>
+          <th>Foto</th>
+          
                </tr>
             </thead>
             <tbody>
@@ -32,6 +34,8 @@
 					<td><?php echo $dn->nama ?></td>
 					<td><?php echo $dn->alamat ?></td>
 					<td><?php echo $dn->pekerjaan ?></td>
+          <td><img src="<?php echo base_url('assets/uploads/').$dn->foto; ?>" width="90" height="110">
+       
 				</tr>
 				<?php } ?>
 			</tbody>

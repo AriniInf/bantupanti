@@ -4,7 +4,6 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Lihat Semua</a></li>
     <li class="active">Kegiatan Panti</li>
   </ol>
 </section>
