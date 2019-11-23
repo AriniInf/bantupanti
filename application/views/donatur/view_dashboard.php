@@ -28,28 +28,72 @@
       <div class="box">
         
           <div class="box-body">
-            <h3>Langkah-langkah berdonasi</h3>
+          
+          <center><h3>Langkah-langkah berdonasi</h3></center>
+           
+           <br>
+            
             <div class="card">
+            
              
-              <img src="<?php echo base_url('assets/image/1.png')?>" alt="Avatar" style="width:100%">
+              <img src="<?php echo base_url('assets/image/one.png')?>" alt="Avatar" style="width:100%">
               <div class="container">
                 <!-- <h4><b>John Doe</b></h4>  -->
-                <p>Login sebagai donatur</p> 
+                <p><b>Login sebagai donatur</b></p> 
               </div>
             </div>
 
             <div class="card">
              
-             <img src="<?php echo base_url('assets/image/2.png')?>" alt="Avatar" style="width:100%">
+             <img src="<?php echo base_url('assets/image/two.png')?>" alt="Avatar" style="width:100%">
              <div class="container">
                <!-- <h4><b>John Doe</b></h4>  -->
-               <p>Lengkapi data Anda di profile</p> 
+               <p><b>Klik menu donasi</b></p> 
+             </div>
+           </div>
+
+           <div class="card">
+             
+             <img src="<?php echo base_url('assets/image/three.png')?>" alt="Avatar" style="width:100%">
+             <div class="container">
+               <!-- <h4><b>John Doe</b></h4>  -->
+               <p><b>Klik  sub-menu berdonasi</b></p> 
+             </div>
+           </div>
+
+           <div class="card">
+             
+             <img src="<?php echo base_url('assets/image/four.png')?>" alt="Avatar" style="width:100%">
+             <div class="container">
+               <!-- <h4><b>John Doe</b></h4>  -->
+               <p><b>Isi dan upload bukti tf</b></p> 
+             </div>
+           </div>
+
+           <div class="card">
+             
+             <img src="<?php echo base_url('assets/image/five.png')?>" alt="Avatar" style="width:100%">
+             <div class="container">
+               <!-- <h4><b>John Doe</b></h4>  -->
+               <p><b>klik tombol donasi</b></p> 
+             </div>
+           </div>
+
+           <div class="card">
+             
+             <img src="<?php echo base_url('assets/image/six.png')?>" alt="Avatar" style="width:100%">
+             <div class="container">
+               <!-- <h4><b>John Doe</b></h4>  -->
+               <p><b>Donasi Anda, akan diproses</b></p> 
              </div>
            </div>
 
           </div>
-          <!-- <div class="box-footer">
-          </div> -->
+            <div class="box-body">
+              <div class="don">
+                <img src="<?php echo base_url('assets/image/carousel12.jpg')?>" style="width:100%">
+             </div>
+            </div>
       </div>
       <!-- /.box -->
     </div>
@@ -66,12 +110,17 @@
   </script>
 
   <style>
+  
+  .don{
+    width: 100%;
+  }
   .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 20%;
+  width: 15%;
   float: left;
-  border: 1px;
+  border: 5px;
+  margin-right: 20px;
 }
 
 .card:hover {
