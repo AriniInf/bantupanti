@@ -13,7 +13,7 @@
             <?php foreach($data as $do) : ?>
         <tr>
           <td>Foto</td>
-          <td><?php echo $do->foto; ?></td>
+          <td><img src="<?php echo base_url('assets/uploads/').$do->foto; ?>" width="90" height="110">
         </tr>
 				<tr>
           <td>nama</td>

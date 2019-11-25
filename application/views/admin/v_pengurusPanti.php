@@ -23,6 +23,7 @@
 					<th>Jabatan</th>
 					<th>E-mail</th>
 					<th>Telp</th>
+          <th>Foto</th>
                </tr>
             </thead>
             <tbody>
@@ -36,6 +37,7 @@
 					<td><?php echo $pp->jabatan ?></td>
 					<td><?php echo $pp->email ?></td>
 					<td><?php echo $pp->telp ?></td>
+          <td><img src="<?php echo base_url('assets/uploads/').$pp->foto; ?>" width="90" height="110"></td>
 				</tr>
               <?php }?>
             </tbody>

@@ -4,7 +4,6 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Lihat Semua</a></li>
     <li class="active">Kegiatan Panti</li>
   </ol>
 </section>
@@ -23,6 +22,7 @@
 					<th>Nama Kegiatan</th>
 					<th>Penjelasan</th>
 					<th>Tanggal</th>
+          <th>Foto</th>
 
                </tr>
             </thead>
@@ -34,7 +34,9 @@
 					<td><?php echo $kp->nama ?></td>
 					<td><?php echo $kp->penjelasan ?></td>
 					<td><?php echo $kp->tanggal ?></td>
-          <td width="20px"><?php echo anchor('donatur/komenkegiatan/'.$kp->kp_id,'<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>')?>
+          <td><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90">
+          
+          <td width="20px"><?php echo anchor('donatur/komenkegiatan/'.$kp->kp_id,'<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>Komen</div>')?>
 
 
 				</tr>

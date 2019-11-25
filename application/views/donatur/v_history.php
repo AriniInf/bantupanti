@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    Donatur
+    History Donasi
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -36,7 +36,10 @@
 					<td><?php echo $dn->nominal ?></td>
 					<td><?php echo $dn->tanggal ?></td>
           <td><?php echo $dn->keterangan ?></td>
-          <td><?php echo $dn->bukti ?></td>
+
+          <td><img src="<?php echo base_url('assets/uploads/').$dn->bukti; ?>" width="90" height="110">
+          <td></td>
+          </td>
 
 				</tr>
 				<?php } ?>
