@@ -37,21 +37,21 @@ class Admin extends CI_Controller {
 		$nama = $this->input->post('nama');
 		$penjelasan = $this->input->post('penjelasan');
 		$tanggal = $this->input->post('tanggal');
-		$foto =$_FILES['foto'];
+		// $foto =$_FILES['foto'];
 
-		if($foto=''){}else{
-			$config['upload_path']='./assets/uploads';
-			$config['allowed_types']='jpg|png|jpeg';
+		// if($foto=''){}else{
+		// 	$config['upload_path']='./assets/uploads';
+		// 	$config['allowed_types']='jpg|png|jpeg';
 
-			$this->load->library('upload', $config);
-			if(!$this->upload->do_upload('foto')){
-				echo  "Gagal Upload";die();
+		// 	$this->load->library('upload', $config);
+		// 	if(!$this->upload->do_upload('foto')){
+		// 		echo  "Gagal Upload";die();
 
-			}
-			else{
-				$foto=$this->upload->data('file_name');
-			}
-		}
+		// 	}
+		// 	else{
+		// 		$foto=$this->upload->data('file_name');
+		// 	}
+		// }
 		
 		$data = array(
 			'kp_id' => $kp_id,
@@ -59,7 +59,7 @@ class Admin extends CI_Controller {
 			'nama' => $nama,
 			'penjelasan' => $penjelasan,
 			'tanggal' => $tanggal,
-			'foto' => $foto,
+			//'foto' => $foto,
 			);
 		$this->m_admin->tambah_kegiatan($data,'kegiatanpanti');
 		redirect('admin/listAllKegiatan');
@@ -334,9 +334,9 @@ class Admin extends CI_Controller {
 		);
 		$this->m_admin->ubahkp($data, $kp_id);
 		
-		var_dump($this->input->post());
-		//$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-		//redirect('admin/listAllKegiatan');
+		//var_dump($this->input->post());
+		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		redirect('admin/listAllKegiatan');
 	}
 }
 

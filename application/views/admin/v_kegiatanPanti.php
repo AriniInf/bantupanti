@@ -25,10 +25,7 @@
 							<span><p><?php echo $kp->tanggal ?></p></span>
 							<h4 class="mb-2"><?php echo $kp->kegiatan ?></h4>
 							<p><?php echo $kp->penjelasan ?></p>
-							<!-- <span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></span> -->
-					
-							<!-- <span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></span>
-							 -->
+							
 							<div>
 								<a 
 									data-target="#edit-data<?php echo $kp->kp_id;?>"
@@ -36,7 +33,8 @@
 									data-toggle="modal"><i class="fa fa-edit"></i>Edit
 								</a>
 								<a href="" class="btn btn-primary btn-sm" onclick="show_add_komentar(<?php echo $kp->kp_id;?>);"><i class="fa fa-edit"></i> Komen</a>
-								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</button>');?>
+								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</button>', array('class'=>'delete', 'onclick'=>"return confirmDialog();"));?>
+
 							</div>
 						</tr>						
 						</li>	
@@ -96,5 +94,11 @@
 	</div>
 	<?php }?>
 </body>
+
+<script>
+function confirmDialog() {
+    return confirm("Are you sure you want to delete this record?")
+}
+</script>
 
 </section>

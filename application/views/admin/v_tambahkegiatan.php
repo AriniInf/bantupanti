@@ -29,10 +29,10 @@
 		<label>Tanggal</label>
 		<input type="date" name="tanggal" class="form-control">
 	</div>
-	<div class="form-group">
+	<!-- <div class="form-group">
 		<label>Foto</label><br>
 		<input type="file" name="foto" class="form-control">
- 	</div>
+ 	</div> -->
 		<button type="submit" name="simpan" class="btn btn-info">Tambah</button>
 	<?php echo form_close(); ?>
 		
