@@ -8,8 +8,9 @@
     <li class="active">Kegiatan Panti</li>
   </ol>
 </section>
-<?=$this->session->flashdata('notif')?>
+
 <section class="content">
+<?=$this->session->flashdata('notif')?>
   <div class="row">
     <div class="col-xs-12">
       <div class="box">

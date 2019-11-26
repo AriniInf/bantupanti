@@ -335,7 +335,7 @@ class Admin extends CI_Controller {
 		$this->m_admin->ubahkp($data, $kp_id);
 		
 		//var_dump($this->input->post());
-		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert" style="width:500px"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('admin/listAllKegiatan');
 	}
 }

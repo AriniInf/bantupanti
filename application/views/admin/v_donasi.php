@@ -35,15 +35,15 @@
 					<td><?php echo $do->pendonatur ?></td>
 					<td><?php echo $do->nominal ?></td>
 					<td><?php echo $do->tanggal ?></td>
-          <td><img src="<?php echo base_url('assets/uploads/').$do->bukti; ?>" width="90" height="110">
+          <td><img src="<?php echo base_url('assets/uploads/').$do->bukti; ?>" width="50" height="50">
 					
 					<td>
 					<form action="updatevalidasi/" method="post">
 						<input type="hidden" name="dn_id" value=<?php echo $do->dn_id?>>
-						<input type="submit" class="btn btn-info" value="validate">
+						<input type="submit" class="btn btn-info btn-sm" onclick="return clicked();" value="validate" >
 					</form>
 					</td>		
-					<td><?php echo anchor('admin/hapusDonasi/'.$do->dn_id,'Hapus');?></td>
+					<td><?php echo anchor('admin/hapusDonasi/'.$do->dn_id,'<button class="btn btn-danger btn-remove btn-sm">Hapus</button>', array('class'=>'delete', 'onclick'=>"return deleteDialog();"));?></td>
 				</tr>
 				<?php } ?>
 			</tbody>
@@ -53,7 +53,21 @@
     </div>
   </div>
 </section>
+<script>
+function deleteDialog() {
+    return confirm("Apakah benar anda ingin menghapus data donasi ini?")
+}
+</script>
+<script type="text/javascript">
+    function clicked() {
+       if (confirm('Apakah benar anda ingin memvalidasi data donasi ini?')) {
+           yourformelement.submit();
+       } else {
+           return false;
+       }
+    }
 
+</script>
 <style>
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
    background-color: #f4f4f4;
