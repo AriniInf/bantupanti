@@ -1,7 +1,3 @@
-
-
-
-
 <section class="content-header">
   <h1>
     Kegiatan Panti
@@ -12,6 +8,7 @@
     <li class="active">Kegiatan Panti</li>
   </ol>
 </section>
+<?=$this->session->flashdata('notif')?>
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
@@ -33,12 +30,15 @@
 							<!-- <span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></span>
 							 -->
 							<div>
-								<a href="" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal" name="button_name" value="<?php echo $kp->kp_id?>"><i class="fa fa-edit"></i> Edit</a>
+								<a 
+									data-target="#edit-data<?php echo $kp->kp_id;?>"
+									class="btn btn-warning btn-sm"
+									data-toggle="modal"><i class="fa fa-edit"></i>Edit
+								</a>
 								<a href="" class="btn btn-primary btn-sm" onclick="show_add_komentar(<?php echo $kp->kp_id;?>);"><i class="fa fa-edit"></i> Komen</a>
 								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</button>');?>
 							</div>
-
-							</tr>						
+						</tr>						
 						</li>	
 						<?php } ?>		
 					</ul>
@@ -49,40 +49,52 @@
 	</div>
   </div>
 
-  <div class="modal fade" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-	  </div>
-	  <?php foreach($data as $kp){?>
-		<div class="modal-body">
-			<form action="">
-				<input type="hidden" name="id" value="">    
-				<div class="form-group">
-					<label>Nama lengkap</label>
-					<input type="text" name="nama" class="form-control">
-				</div>
-				<div class="form-group">
-					<label>Alamat</label>
-					<textarea class="form-control" name="alamat"></textarea>
-				</div>
-			</form>
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
-		</div>
-	 <?php }?>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<!-- Modal Ubah -->
+<?php foreach($data as $kp){ ?>
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data<?php echo $kp->kp_id;?>" class="modal fade">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+	                <h4 class="modal-title">Update Data</h4>
+	            </div>
+	            <form class="form-horizontal" action="<?php echo base_url('admin/ubahkp/')?>" method="post" enctype="multipart/form-data" role="form">
+		            <div class="modal-body">
+							<div class="form-group">
+								<div class="col-lg-10">
+									<input type="hidden" id="kp_id" name="kp_id" value="<?php echo $kp->kp_id;?>">
+								</div>
+							</div>
+		                    <div class="form-group">
+		                        <label class="col-lg-2 col-sm-2 control-label">Tanggal</label>
+		                        <div class="col-lg-10">
+		                            <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?php echo $kp->tanggal;?>">
+		                        </div>
+		                    </div>
+		                    <div class="form-group">
+		                        <label class="col-lg-2 col-sm-2 control-label">Kegiatan</label>
+		                        <div class="col-lg-10">
+		                        	<input type="text" class="form-control" id="nama" name="nama" value="<?php echo $kp->kegiatan;?>"></input>
+		                        </div>
+		                    </div>
+		                    <div class="form-group">
+		                        <label class="col-lg-2 col-sm-2 control-label">Penjelasan</label>
+		                        <div class="col-lg-10">
+		                            <input type="text" class="form-control" id="penjelasan" name="penjelasan" value="<?php echo $kp->penjelasan;?>">
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="modal-footer">
+		                    <button class="btn btn-info" type="submit"> Simpan</button>
+		                    <button type="button" class="btn btn-warning" data-dismiss="modal"> Batal</button>
+		                </div>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<?php }?>
 </body>
-<script type="text/javascript">
-    $(window).load(function(){
-        $('#myModal').modal('show');
-    });
-</script>
 
 </section>

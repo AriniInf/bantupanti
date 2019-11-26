@@ -109,6 +109,7 @@
             <li><a href="<?php echo site_url("admin/pemasukan"); ?>"><i class="fa fa-circle-o"></i> Rekap Pemasukan</a></li>
             <li><a href="<?php echo site_url("admin/pengeluaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Pengeluaran</a></li>
 						<li><a href="<?php echo site_url("admin/donasi"); ?>"><i class="fa fa-circle-o"></i> Rekap Donasi</a></li>
+						<li><a href="<?php echo site_url("admin/history"); ?>"><i class="fa fa-circle-o"></i> History Donasi</a></li>
 						<li><a href="<?php echo site_url("admin/laporan"); ?>"><i class="fa fa-circle-o"></i> Laporan</a></li>
           </ul>
         </li>

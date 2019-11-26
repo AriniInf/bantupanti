@@ -320,5 +320,24 @@ class Admin extends CI_Controller {
 		$this->m_admin->hapusDiary($id);
 		redirect('admin/listDiary');        
 	}
+
+	public function ubahkp(){
+		$kp_id = $this->input->post('kp_id');
+		$penjelasan = $this->input->post('penjelasan');
+		$tanggal = $this->input->post('tanggal');
+		$nama = $this->input->post('nama');
+		$data = array(
+			'kp_id'=>$kp_id,
+			'tanggal'=> $tanggal,
+			'nama'=> $nama,
+			'penjelasan'=> $penjelasan
+		);
+		$this->m_admin->ubahkp($data, $kp_id);
+		
+		var_dump($this->input->post());
+		//$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		//redirect('admin/listAllKegiatan');
+	}
 }
+
 
