@@ -24,7 +24,13 @@
 	</div>
 	<div class="form-group">
 		<label>Jabatan</label>
-		<input type="text" name="jabatan" class="form-control">
+		<select name="jabatan" class="form-control">
+			<option value="Ketua">Ketua</option>
+			<option value="Sekretaris">Sekretaris</option>
+			<option value="Bendahara">Bendahara</option>
+			<option value="Kepala Bagian">Kepala Bagian</option>
+			<option value="Staff Bagian">Staff Bagian</option>
+		</select>
 	</div>
 	<div class="form-group">                
 		<label>Email</label>

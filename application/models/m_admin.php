@@ -79,4 +79,10 @@ class M_admin extends CI_Model
 	function hapusDiary($id){
         $this->db->query("delete from diary where dy_id='".$id."'");
 	}
+
+	function ubahkp($data, $id){
+		$this->db->where('kp_id',$id);
+		$this->db->update('kegiatanpanti', $data);
+		return TRUE;
+	}
 }
