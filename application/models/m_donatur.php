@@ -38,9 +38,13 @@ class M_donatur extends CI_Model
 		return $query;
 	
 	}
-	public function profile(){
+	public function profile($do_id){
 	
 		return $this->db->get('donatur');
 	}
+	public function register($data,$table){
+		$query = $this->db->insert($table, $data);
+	}
 
 }
+?>

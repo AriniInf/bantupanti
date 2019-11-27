@@ -34,7 +34,7 @@
 					<td><?php echo $kp->nama ?></td>
 					<td><?php echo $kp->penjelasan ?></td>
 					<td><?php echo $kp->tanggal ?></td>
-          <td><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90">
+          <td><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></td>
           
           <td width="20px"><?php echo anchor('donatur/komenkegiatan/'.$kp->kp_id,'<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>Komen</div>')?>
 

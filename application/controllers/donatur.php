@@ -138,9 +138,15 @@ class Donatur extends CI_Controller {
 
 	
 	public function profile(){
+
+		$flag = 0;	
+		$do_id = $this->session->userdata('data')->do_id;
+
 		$data['content'] = 'donatur/v_profile';
-		$data['data'] = $this->m_donatur->profile()->result();
+		$data['data'] = $this->m_donatur->profile($do_id)->result();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
+
+		
 
 	}
 	public function editprofile(){
