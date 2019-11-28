@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>SIM PENGASUHAN STPN | Login</title>
+	<title>BantuPanti | Register</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,9 +32,14 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="<?php echo base_url(); ?>register/masuk"  method="post">
+			<?php if(isset($_SESSION['success'])){ ?>
+				<div class="alert alert-success"><?php echo $_SESSION['success'];?></div>
+			
+			<?php	}?>
+			<?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+				<form class="login100-form validate-form" action="<?php echo base_url(); ?>register/masuk"  method="POST">
 					<span class="login100-form-title p-b-43">
-						<img class="rounded-float-left img-responsive" style="width:100px;height:100px" src="<?php echo base_url(); ?>assets/image/its.png" >
+						<img class="rounded-float-left img-responsive" style="width:100px;height:100px" src="<?php echo base_url(); ?>assets/image/logo.png" >
 					</span>
 					
           
@@ -57,6 +62,20 @@
 					  
 					</div>
 					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="pekerjaan">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Pekerjaan</span>
+					</div>
+					
+						<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="alamat">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Telp</span>
+					  
+					
+					  
+					</div>
+					<div class="wrap-input100 validate-input">
 						<input class="input100" type="text" name="username">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Username</span>
@@ -70,16 +89,16 @@
 						<span class="label-input100">Password</span>
             			
 					</div>
-					<div class="wrap-input100 validate-input">
+					<!-- <div class="wrap-input100 validate-input">
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Confirm Password</span>
             			
-					</div>
+					</div> -->
 			
 					
 					<div class="container-login100-form-btn">
-		 				 <button class="login100-form-btn" type="submit" name="insert" >Register </button>
+		 				 <button class="login100-form-btn" type="submit" name="register" >Register </button>
 					</div>
 					
 				</form>

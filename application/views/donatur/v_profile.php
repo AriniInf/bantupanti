@@ -36,7 +36,7 @@
 					<td><?php echo $do->telp; ?></td>
 				</tr>
         <tr>
-        <td><?php echo anchor('donatur/editprofile','<button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> komen </button>')?>
+        <td><?php echo anchor('donatur/editprofile','<button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> edit </button>')?></td>
         </tr>
         <br>
               <?php endforeach; ?>

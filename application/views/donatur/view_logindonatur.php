@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>SIM PENGASUHAN STPN | Login</title>
+	<title>BantuPanti | Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -301,7 +301,7 @@ img {
 					</div>
 					
 					<p>ingin menjadi donatur dan belum terdaftar?</p>
-					<a href="<?php echo base_url(); ?>register" class="btn btn-info" role="button">Register</a>
+					<a href="<?php echo base_url('register'); ?>" class="btn btn-info" role="button">Register</a>
 					
 				</form>
 

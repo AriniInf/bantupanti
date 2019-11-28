@@ -60,7 +60,8 @@
 					</div>
 					
 					<p>ingin menjadi donatur dan belum terdaftar?</p>
-					<a href="<?php echo base_url(); ?>register" class="btn btn-info" role="button">Register</a>
+					 <!-- <?php echo anchor('view_register','<div class="btn btn-primary btn-sm">Register</div>')?> -->
+					<a href="<?php echo base_url('view_register'); ?>" class="btn btn-info" role="button">Register</a>
 					
 				</form>
 
