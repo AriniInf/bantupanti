@@ -37,21 +37,21 @@ class Admin extends CI_Controller {
 		$nama = $this->input->post('nama');
 		$penjelasan = $this->input->post('penjelasan');
 		$tanggal = $this->input->post('tanggal');
-		// $foto =$_FILES['foto'];
+		$foto =$_FILES['foto'];
 
-		// if($foto=''){}else{
-		// 	$config['upload_path']='./assets/uploads';
-		// 	$config['allowed_types']='jpg|png|jpeg';
+		if($foto=''){}else{
+			$config['upload_path']='./assets/uploads';
+			$config['allowed_types']='jpg|png|jpeg';
 
-		// 	$this->load->library('upload', $config);
-		// 	if(!$this->upload->do_upload('foto')){
-		// 		echo  "Gagal Upload";die();
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('foto')){
+				echo  "Gagal Upload";die();
 
-		// 	}
-		// 	else{
-		// 		$foto=$this->upload->data('file_name');
-		// 	}
-		// }
+			}
+			else{
+				$foto=$this->upload->data('file_name');
+			}
+		}
 		
 		$data = array(
 			'kp_id' => $kp_id,
@@ -277,6 +277,14 @@ class Admin extends CI_Controller {
 		$data['data'] = $this->m_admin->history();
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
+
+	function laporan(){
+		$data['content']='admin/v_laporan';
+		$data['data'] = $this->m_admin->pengeluaran();
+		$data['data'] = $this->m_admin->pemasukan();
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
 	// public function laporan(){
 		
 

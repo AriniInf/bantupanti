@@ -8,7 +8,13 @@
     <li class="active">Kegiatan Panti</li>
   </ol>
 </section>
+<style>
+	.keg{
+		float: left;
 
+	}
+	
+</style>
 <section class="content">
 <?=$this->session->flashdata('notif')?>
   <div class="row">
@@ -17,16 +23,18 @@
         <div class="box-body" style="overflow-y:scroll">
 			<div class="box_general">
 				<div class="list_general list_admin">
+				<div class="keg">
 					<ul>
 						<?php
 						foreach($data as $kp){ ?>
-						<li>
-						<tr>	
-							<span><h3><?php echo $kp->pengurus?></h3></span>
-							<span><p><?php echo $kp->tanggal ?></p></span>
+						<span><li><h3><?php echo $kp->pengurus?></h3></span>
+						<span><p><?php echo $kp->tanggal ?></p></span>
 							<h4 class="mb-2"><?php echo $kp->kegiatan ?></h4>
 							<p><?php echo $kp->penjelasan ?></p>
-							
+								<div class="ff">
+									<span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="90" height="110"></span>
+								</div>
+								
 							<div>
 								<a 
 									data-target="#edit-data<?php echo $kp->kp_id;?>"
@@ -37,9 +45,11 @@
 								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i>Hapus</button>', array('class'=>'delete', 'onclick'=>"return confirmDialog();"));?>
 
 							</div>
-						</tr>						
+						
+												
 						</li>	
-						<?php } ?>		
+						<?php } ?>
+								
 					</ul>
 				</div>
 			</div>
@@ -94,6 +104,7 @@
 	    </div>
 	</div>
 	<?php }?>
+
 </body>
 
 <script>

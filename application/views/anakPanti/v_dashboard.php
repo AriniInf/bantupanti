@@ -17,7 +17,7 @@
   <div class="row">
 	 <?php 
 
-	 echo $data;
+	//  echo $data;
 	 
 	 ?>
   </div>
