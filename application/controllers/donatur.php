@@ -139,7 +139,7 @@ class Donatur extends CI_Controller {
 	
 	public function profile(){
 
-		$flag = 0;	
+		
 		$do_id = $this->session->userdata('data')->do_id;
 
 		$data['content'] = 'donatur/v_profile';
