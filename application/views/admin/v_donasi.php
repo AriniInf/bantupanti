@@ -16,35 +16,35 @@
         <div class="box-body" style="overflow-y:scroll">
           <table id="example2" class="table table-bordered table-hover bg-danger table-striped text-center">
             <thead>
-                <tr>
-					<th>No</th>
-					<th>Donatur</th>
-					<th>Nominal</th>
-					<th>Tanggal</th>
-					<th>Bukti</th>
-					<th>Validasi</th>
-					<th>Hapus</th>
-               </tr>
+							<tr>
+								<th>No</th>
+								<th>Donatur</th>
+								<th>Nominal</th>
+								<th>Tanggal</th>
+								<th>Bukti</th>
+								<th>Validasi</th>
+								<th>Hapus</th>
+							</tr>
             </thead>
             <tbody>
-			<?php 
+						<?php 
               $no=1;
               foreach($data as $do){ ?>
-				<tr>
-					<td><?php echo $no++ ?> </td>
-					<td><?php echo $do->pendonatur ?></td>
-					<td><?php echo $do->nominal ?></td>
-					<td><?php echo $do->tanggal ?></td>
-          <td><img src="<?php echo base_url('assets/uploads/').$do->bukti; ?>" width="50" height="50">
-					
-					<td>
-					<form action="updatevalidasi/" method="post">
-						<input type="hidden" name="dn_id" value=<?php echo $do->dn_id?>>
-						<input type="submit" class="btn btn-info btn-sm" onclick="return clicked();" value="validate" >
-					</form>
-					</td>		
-					<td><?php echo anchor('admin/hapusDonasi/'.$do->dn_id,'<button class="btn btn-danger btn-remove btn-sm">Hapus</button>', array('class'=>'delete', 'onclick'=>"return deleteDialog();"));?></td>
-				</tr>
+						<tr>
+							<td><?php echo $no++ ?> </td>
+							<td><?php echo $do->pendonatur ?></td>
+							<td><?php echo $do->nominal ?></td>
+							<td><?php echo $do->tanggal ?></td>
+							<td><img src="<?php echo base_url('assets/uploads/').$do->bukti; ?>" width="50" height="50">
+							
+							<td>
+							<form action="updatevalidasi/" method="post">
+								<input type="hidden" name="dn_id" value=<?php echo $do->dn_id?>>
+								<input type="submit" class="btn btn-info btn-sm" onclick="return clicked();" value="validate" >
+							</form>
+							</td>		
+							<td><?php echo anchor('admin/hapusDonasi/'.$do->dn_id,'<button class="btn btn-danger btn-remove btn-sm">Hapus</button>', array('class'=>'delete', 'onclick'=>"return deleteDialog();"));?></td>
+						</tr>
 				<?php } ?>
 			</tbody>
           </table>

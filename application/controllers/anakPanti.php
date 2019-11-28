@@ -18,7 +18,9 @@ class AnakPanti extends CI_Controller {
 	}
 
 	public function kegiatan_panti(){
+		$kp_id = $this->input->post('kp_id');
 		$data['content'] = 'anakPanti/v_kegiatanPanti';
+		$data['komentar'] = $this->m_anakPanti->listKomentar($kp_id)->result();
 		$data['data'] = $this->m_anakPanti->kegiatan_panti()->result();
 		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
@@ -62,5 +64,29 @@ class AnakPanti extends CI_Controller {
 			);
 		$this->m_anakPanti->tambahDiary($data,'diary');
 		redirect('anakPanti/listDiary');
+	}
+
+	public function komen(){
+		$kp_id = $this->input->post('kp_id');
+		$ap_id = $this->session->userdata('data')->ap_id;
+		$komen = $this->input->post('komen');
+		$tanggal = date("Y/m/d");
+		$data = array(
+			'kp_id'=>$kp_id,
+			'ap_id'=>$ap_id,
+			'komen'=>$komen,
+			'tanggal'=>$tanggal
+		);
+		$this->m_anakPanti->komen($data, 'apkomen');
+		$this->session->set_flashdata('notif_komen','<div class="alert alert-info" role="alert" style="width:500px"> Komentar Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		//var_dump($this->input->post());
+		redirect('anakPanti/kegiatan_panti');
+	}
+
+	public function listKomentar(){
+		$kp_id = $this->input->post('kp_id');
+		$data['content'] = 'anakPanti/kegiatan_panti';
+		$data['data'] = $this->m_admin->listKomentar($kp_id)->result();
+		$this->load->view('anakPanti/tampilan_utama_anakPanti', $data);
 	}
 }

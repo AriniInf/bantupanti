@@ -85,4 +85,11 @@ class M_admin extends CI_Model
 		$this->db->update('kegiatanpanti', $data);
 		return TRUE;
 	}
+	public function komen($data,$table){
+		$query = $this->db->insert($table, $data);
+	}
+	public function listKomentar($id){
+		$hasil = $this->db->query("SELECT ak.kp_id, ad.ad_id, komen, pp.nama as pengurus, ak.tanggal from kegiatanpanti kp join adkomen ak on ak.ad_id = kp.ad_id join admin ad on ak.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id where ak.kp_id='".$id."'");
+			return $hasil;
+	}
 }
