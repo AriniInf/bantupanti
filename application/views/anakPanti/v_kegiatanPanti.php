@@ -14,14 +14,18 @@
         <div class="box-body" style="overflow-y:scroll">
 			<div class="box_general">
 				<div class="list_general list_admin">
-					<ul>
-						<?php
+				<ul>
+				<?php
 						foreach($data as $kp){ ?>
-						<li>	
-							<span><h3><?php echo $kp->pengurus?></h3></span>
-							<span><p><?php echo $kp->tanggal ?></p></span>
+							<!-- <li>	 -->
+					<div class="row">
+						<div class="col-xs-6">
+						
+						<li><h3><?php echo $kp->pengurus?></h3>
+							<p><?php echo $kp->tanggal ?></p>
 							<h4 class="mb-2"><?php echo $kp->kegiatan ?></h4>
 							<p><?php echo $kp->penjelasan ?></p>
+<<<<<<< HEAD
 							<div>
 							<a 
 								data-target="#komen-data<?php echo $kp->kp_id;?>"
@@ -37,6 +41,24 @@
 						</li>	
 						<?php } ?>		
 					</ul>
+=======
+							<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
+							
+						</div>
+						<div class="col-xs-3">
+							<span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></span>
+							<br>
+						</div>
+								
+					</div>
+					</li>
+							<?php } ?>		
+						</ul>	
+								
+							
+													
+						
+>>>>>>> cd5713e1218b28357b0f173dff76b96a8a06bb11
 				</div>
 			</div>
 		</div>

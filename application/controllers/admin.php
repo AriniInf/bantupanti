@@ -39,21 +39,21 @@ class Admin extends CI_Controller {
 		$nama = $this->input->post('nama');
 		$penjelasan = $this->input->post('penjelasan');
 		$tanggal = $this->input->post('tanggal');
-		// $foto =$_FILES['foto'];
+		$foto =$_FILES['foto'];
 
-		// if($foto=''){}else{
-		// 	$config['upload_path']='./assets/uploads';
-		// 	$config['allowed_types']='jpg|png|jpeg';
+		if($foto=''){}else{
+			$config['upload_path']='./assets/uploads';
+			$config['allowed_types']='jpg|png|jpeg';
 
-		// 	$this->load->library('upload', $config);
-		// 	if(!$this->upload->do_upload('foto')){
-		// 		echo  "Gagal Upload";die();
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('foto')){
+				echo  "Gagal Upload";die();
 
-		// 	}
-		// 	else{
-		// 		$foto=$this->upload->data('file_name');
-		// 	}
-		// }
+			}
+			else{
+				$foto=$this->upload->data('file_name');
+			}
+		}
 		
 		$data = array(
 			'kp_id' => $kp_id,
@@ -281,6 +281,7 @@ class Admin extends CI_Controller {
 		$data['data'] = $this->m_admin->history();
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
+<<<<<<< HEAD
 	public function laporan(){
 		$data['content'] = 'admin/v_laporan';
 		$data['pengeluaran'] = $this->m_admin->pengeluaran();
@@ -288,6 +289,49 @@ class Admin extends CI_Controller {
 		$data['campuran'] = $this->m_admin->campuran();
 		$this->load->view('admin/tampilan_utama_admin_print',$data);
 	}
+=======
+
+	function laporan(){
+		$data['content']='admin/v_laporan';
+		$data['data'] = $this->m_admin->pengeluaran();
+		$data['data'] = $this->m_admin->pemasukan();
+		$this->load->view('admin/tampilan_utama_admin',$data);
+	}
+
+	// public function laporan(){
+		
+
+	// 	$pdf = new FPDF('l','mm','A5');
+    //     // membuat halaman baru
+    //     $pdf->AddPage();
+    //     // setting jenis font yang akan digunakan
+    //     $pdf->SetFont('Arial','B',16);
+    //     // mencetak string 
+    //     $pdf->Cell(190,7,'SEKOLAH MENENGAH KEJURUSAN NEEGRI 2 LANGSA',0,1,'C');
+    //     $pdf->SetFont('Arial','B',12);
+    //     $pdf->Cell(190,7,'DAFTAR SISWA KELAS IX JURUSAN REKAYASA PERANGKAT LUNAK',0,1,'C');
+    //     // Memberikan space kebawah agar tidak terlalu rapat
+    //     $pdf->Cell(10,7,'',0,1);
+    //     $pdf->SetFont('Arial','B',10);
+    //     $pdf->Cell(20,6,'NIM',1,0);
+    //     $pdf->Cell(85,6,'NAMA MAHASISWA',1,0);
+    //     $pdf->Cell(27,6,'NO HP',1,0);
+    //     $pdf->Cell(25,6,'TANGGAL LHR',1,1);
+    //     $pdf->SetFont('Arial','',10);
+    //     $mahasiswa = $this->db->get('mahasiswa')->result();
+    //     foreach ($mahasiswa as $row){
+    //         $pdf->Cell(20,6,$row->nim,1,0);
+    //         $pdf->Cell(85,6,$row->nama_lengkap,1,0);
+    //         $pdf->Cell(27,6,$row->no_hp,1,0);
+    //         $pdf->Cell(25,6,$row->tanggal_lahir,1,1); 
+    //     }
+	// 	$pdf->Output();
+	// 	$data['content'] = 'admin/v_laporan';
+	// 	$data['data'] = $this->m_admin->pengeluaran();
+	// 	$this->load->view('admin/tampilan_utama_admin_print',$data);
+
+	// }
+>>>>>>> cd5713e1218b28357b0f173dff76b96a8a06bb11
 
 	public function listDiary(){
 		$data['content'] = 'anakPanti/v_listStory';
