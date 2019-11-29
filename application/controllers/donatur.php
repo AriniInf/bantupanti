@@ -195,5 +195,29 @@ class Donatur extends CI_Controller {
 
 	// }
 
+	public function update_profil(){
+		$do_id = $this->input->post('do_id');
+		$email = $this->input->post('email');
+		$alamat = $this->input->post('alamat');
+		$nama = $this->input->post('nama');
+		$telp = $this->input->post('telp');
+		$foto = $this->input->post('foto');
+		$pekerjaan = $this->input->post('pekerjaan');
+		$data = array(
+			'do_id'=>$do_id,
+			'alamat'=> $alamat,
+			'nama'=> $nama,
+			'email'=> $email,
+			'pekerjaan'=> $pekerjaan,
+			'telp'=> $telp,
+			'foto'=> $foto
+		);
+		$this->m_donatur->update_profil($data, $do_id);
+		
+		//var_dump($this->input->post());
+		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert" style="width:500px"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		redirect('donatur/profile');
+	}
+
 	
 }

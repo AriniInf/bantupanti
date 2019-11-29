@@ -12,8 +12,6 @@ class Register extends CI_Controller {
 			if($this->form_validation->run() == FALSE){
 				if($this->form_validation->run() == TRUE){
 					echo 'form validated';
-
-
 					$data = array(
 						'do_id' => $_POST['do_id'],
 						'nama' => $_POST['nama'],
