@@ -4,7 +4,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Kegiatan Panti</li>
+    <li class="active">Komen Kegiatan</li>
   </ol>
 </section>
 <section class="content">
@@ -21,19 +21,17 @@
 						<div class="col-xs-6">
 						
 						<li>
-							<p><?php echo $ko->tanggal ?></p>
-							<p><?php echo $ko->komen ?></p>
+							<p><?php echo $ko->tanggalap ?></p>
+							<p><?php echo $ko->komenap ?></p>
 							<div>
 
-								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i> Hapus</button>', array('class'=>'delete', 'onclick'=>"return confirmDialog();"));?>
+								
 
 							</div>
 							
 						</div>
 						<div class="col-xs-3">
-						<br><br>
-							<span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></span>
-							<br>
+						<
 						</div>
 					</div>
 					</li>
