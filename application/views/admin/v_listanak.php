@@ -1,11 +1,4 @@
 <section class="content-header">
-<?php if($this->session->flashdata('tambah')): ?>
-     <?php if($this->session->flashdata('tambah') == TRUE): ?>
-          <div class="alert alert-success">Berhasil menambahkan pengguna baru</div>
-     <?php elseif($this->session->flashdata('tambah') == FALSE): ?>
-          <div class="alert alert-danger">Gagal menambahkan pengguna baru</div>
-     <?php endif; ?>
-<?php endif; ?>
   <h1>
     List Anak Panti
   </h1>
@@ -17,6 +10,7 @@
 </section>
 
 <section class="content">
+<?=$this->session->flashdata('notif')?>
   <div class="row">
     <div class="col-xs-12">
       <div class="box">

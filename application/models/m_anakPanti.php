@@ -32,6 +32,7 @@ class M_anakPanti extends CI_Model
 		function hapusDiary($id){
         $this->db->query("delete from diary where dy_id='".$id."'");
 	}
+<<<<<<< HEAD
 
 	public function profile($ap_id){
 	
@@ -39,5 +40,14 @@ class M_anakPanti extends CI_Model
 		return $query; 
 	}
 
+=======
+	public function komen($data,$table){
+		$query = $this->db->insert($table, $data);
+	}
+	public function listKomentar($id){
+		$hasil = $this->db->query("SELECT ak.kp_id, ad.ad_id, komen, pp.nama as pengurus, ak.tanggal from kegiatanpanti kp join adkomen ak on ak.ad_id = kp.ad_id join admin ad on ak.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id where ak.kp_id='".$id."'");
+			return $hasil;
+	}
+>>>>>>> 736259c0f782ac1729f1da8ce1982ab63c3657cf
 
 }

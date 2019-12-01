@@ -48,8 +48,18 @@ class M_admin extends CI_Model
     	return $hasil->result() ;
 	}
 
+	public function total_pemasukan(){
+		$hasil=$this->db->query("SELECT sum(nominal) as total from transaksi where flag = '0'");
+    	return $hasil->result() ;
+	}
+
 	public function pengeluaran(){
-		$hasil=$this->db->query("SELECT tr_id, keterangan,nominal,flag,tanggal from transaksi where flag = '1'");
+		$hasil=$this->db->query("SELECT tr_id, keterangan, nominal, flag, tanggal from transaksi where flag = '1'");
+    	return $hasil->result() ;
+	}
+
+	public function total_pengeluaran(){
+		$hasil=$this->db->query("SELECT sum(nominal) as total from transaksi where flag = '1'");
     	return $hasil->result() ;
 	}
 
@@ -84,5 +94,13 @@ class M_admin extends CI_Model
 		$this->db->where('kp_id',$id);
 		$this->db->update('kegiatanpanti', $data);
 		return TRUE;
+	}
+	public function komen($data,$table){
+		$query = $this->db->insert($table, $data);
+	}
+	public function listKomentar($id){
+		//join kegiatanpanti kp on kp.kp_id = ak.kp_id where ak.kp_id='".$id."'" 
+		$hasil = $this->db->query("SELECT ak.komen, ak.tanggal, dk.komen, dk.tanggal, pk.komen, pk.tanggal from adkomen ak, dokomen dk, apkomen pk, kegiatanpanti kp where ak.kp_id = kp.kp_id OR dk.kp_id=kp.kp_id OR pk.kp_id=kp.kp_id");
+			return $hasil->result();
 	}
 }

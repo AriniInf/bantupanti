@@ -49,7 +49,7 @@
         <ul class="nav navbar-nav">
          
           <li>
-          <a href="<?php echo site_url("donatur/profile"); ?>"><i class="glyphicon glyphicon-log-out"></i> Profile</a>
+          <a href="<?php echo site_url("donatur/profile"); ?>"><i class="glyphicon glyphicon-user"></i> Profile</a>
           </li>
 
           <li>

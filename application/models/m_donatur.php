@@ -49,5 +49,10 @@ class M_donatur extends CI_Model
 		$query = $this->db->insert($table, $data);
 	}
 
+	function update_profil($data, $id){
+		$this->db->where('do_id',$id);
+		$this->db->update('donatur', $data);
+		return TRUE;
+	}
 }
 ?>
