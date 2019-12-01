@@ -1,13 +1,15 @@
+<script>
+  window.print();
+  importStyle: true;
+</script>
 <section class="content-header">
   <h1>
-	Laporan
-	<?php echo anchor('admin/view_print','<div class="btn btn-primary btn-sm">Print</div>')?>
-	
+    Laporan
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="#">Tabel Rekap</a></li>
-    <li class="active">Laporan </li>
+    <li class="active">Laporan</li>
   </ol>
 </section>
 
@@ -15,7 +17,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
-		<div class="box-body" style="overflow-y:scroll">
+		<div class="box-body">
 		<center><h3>Laporan Keuangan Panti Asuhan BJ Habibie</h3></center>
 		<center><p>Jl. Keputih Tegal I No.25, Keputih, Kec. Sukolilo, Kota SBY, Jawa Timur 60111.</p></center>
 		<center><p>Telepon: (031) 5950362</p></center>

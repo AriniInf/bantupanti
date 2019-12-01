@@ -205,6 +205,7 @@ class Admin extends CI_Controller {
 		
 		redirect('admin/listPengurus');
 	}
+
 	public function tambah_pemasukan(){
 		$tr_id=$this->input->post('tr_id');
 		$ad_id = $this->session->userdata('data')->ad_id;
@@ -377,6 +378,22 @@ class Admin extends CI_Controller {
 		$data['content'] = 'admin/v_listAllKegiatan';
 		$data['data'] = $this->m_admin->listKomentar($kp_id)->result();
 		$this->load->view('admin/tampilan_utama_admin', $data);
+	}
+
+	public function view_print(){
+		$data['content']='admin/view_print';
+		$data['pengeluaran'] = $this->m_admin->pengeluaran();
+		$data['total_peng'] = $this->m_admin->total_pengeluaran();
+		$data['pemasukan'] = $this->m_admin->pemasukan();
+		$data['total_pem'] = $this->m_admin->total_pemasukan();
+		$this->load->view('admin/tampilan_utama_admin_print',$data);
+	}
+
+	public function lihat_komen($id){
+		$data['content']='admin/v_komen';
+		$id = $this->input->post('kp_id');
+		$data['komen'] = $this->m_admin->listKomentar($id)->result();
+		$this->load->view('admin/tampilan_utama_admin_print',$data);
 	}
 
 }

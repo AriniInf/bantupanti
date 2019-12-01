@@ -37,14 +37,17 @@
 			
 			<?php	}?>
 			<?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
-				<form class="login100-form validate-form" action="<?php echo base_url(); ?>register/masuk"  method="POST">
+				<form class="login100-form validate-form" action="<?php echo base_url(); ?>register/"  method="POST">
 					<span class="login100-form-title p-b-43">
 						<img class="rounded-float-left img-responsive" style="width:100px;height:100px" src="<?php echo base_url(); ?>assets/image/logo.png" >
 					</span>
-					
+					<div>
+						<input class="input100" type="hidden" name="do_id">
+						<span class="focus-input100"></span>
+					</div>
           
 					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="username">
+						<input class="input100" type="text" name="nama">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Nama</span>
 					  
@@ -68,12 +71,9 @@
 					</div>
 					
 						<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="alamat">
+						<input class="input100" type="text" name="telp">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Telp</span>
-					  
-					
-					  
 					</div>
 					<div class="wrap-input100 validate-input">
 						<input class="input100" type="text" name="username">
@@ -87,6 +87,12 @@
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
+            			
+					</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="password" name="password_conf">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Confirm Password</span>
             			
 					</div>
 					<!-- <div class="wrap-input100 validate-input">

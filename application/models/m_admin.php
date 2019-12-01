@@ -63,6 +63,10 @@ class M_admin extends CI_Model
     	return $hasil->result() ;
 	}
 
+	// public function total_saldo(){
+	// 	$hasil=$this->
+	// }
+
 	public function donasi(){
 		$hasil=$this->db->query("SELECT dn_id, dn.do_id, do.nama as pendonatur, nominal, tanggal, bukti from donasi_ dn  join donatur do on do.do_id = dn.do_id where flag = '0'");
     	return $hasil->result() ;
@@ -100,6 +104,10 @@ class M_admin extends CI_Model
 	}
 	public function listKomentar($id){
 		$hasil = $this->db->query("SELECT ak.kp_id, ad.ad_id, komen, pp.nama as pengurus, ak.tanggal from kegiatanpanti kp join adkomen ak on ak.ad_id = kp.ad_id join admin ad on ak.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id where ak.kp_id='".$id."'");
+			return $hasil;
+	}
+	public function listKegiatan($id){
+		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama as kegiatan, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id where kp.kp_id='".$id."'");
 			return $hasil;
 	}
 }

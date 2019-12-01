@@ -37,8 +37,6 @@
 						<img class="rounded-float-left img-responsive" style="width:100px;height:100px" src="<?php echo base_url(); ?>assets/image/its.png" >
 					</span>
 					
-          
-					
 					<div class="wrap-input100 validate-input">
 						<input class="input100" type="text" name="username">
 						<span class="focus-input100"></span>

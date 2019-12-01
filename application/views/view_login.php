@@ -28,10 +28,11 @@
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #666666;">
-	
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
+			<?=$this->session->flashdata('notif')?>
 				<form class="login100-form validate-form" action="<?php echo base_url(); ?>login/masuk"  method="post">
 					<span class="login100-form-title p-b-43">
 						<img class="rounded-float-left img-responsive" style="width:100px;height:100px" src="<?php echo base_url(); ?>assets/image/logo.png" >
