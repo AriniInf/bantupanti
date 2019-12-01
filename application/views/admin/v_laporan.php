@@ -13,59 +13,105 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
-        <div class="box-body" style="overflow-y:scroll">
-        <div class="lap">
-              <table id="example2" class="table table-bordered table-hover bg-danger table-striped text-center">
-                  
-                  <h2>Laporan Pemasukan</h2>
-                      <tr>
-                <th>No</th>
-                <th>Keterangan</th>
-                <th>Nominal</th>
-                <th>Tanggal</th>
-                    </tr>
-                  
-                  
-            <?php
-              $no=1;
-              foreach($data as $pm){ ?>
-              <tr>
-                <td><?php echo $no++ ?> </td>
-                <td><?php echo $pm->keterangan ?></td>
-                <td><?php echo $pm->nominal ?></td>
-                <td><?php echo $pm->tanggal?></td>
-              </tr>
-              <?php } ?>
-                
-                </table>
-        </div>
-        <div class="lap">
-            <table id="example2" class="table table-bordered table-hover bg-danger table-striped text-center">
-               
-             <h2>Laporan Pengeluaran</h2>
-                      <tr>
-                <th>No</th>
-                <th>Keterangan</th>
-                <th>Nominal</th>
-                <th>Tanggal</th>
-                    </tr>
-              
-                 
-            <?php
-              $no=1;
-              foreach($data as $pm){ ?>
-              <tr>
-                <td><?php echo $no++ ?> </td>
-                <td><?php echo $pm->keterangan ?></td>
-                <td><?php echo $pm->nominal ?></td>
-                <td><?php echo $pm->tanggal?></td>
-              </tr>
-              <?php } ?>
-               
-                </table>
-        </div>
+				<div class="box-body" style="overflow-y:scroll">
+				<center><h3>Laporan Keuangan Panti Asuhan BJ Habibie</h3></center>
+				<center><p>Jl. Keputih Tegal I No.25, Keputih, Kec. Sukolilo, Kota SBY, Jawa Timur 60111.</p></center>
+      			<center><p>Telepon: (031) 5950362</p></center>
 
-        </div>
+				<hr>
+
+        <div class="lap">
+					<table id="" class="table table-bordered table-hover bg-danger table-striped text-center">
+						<h4><li>Laporan Pemasukan</li></h4>
+					
+						<thead>
+						<tr>
+							<th>No</th>
+							<th>Keterangan</th>
+							<th>Tanggal</th>
+							<th>Nominal</th>
+						</tr>
+						</thead>
+						<tbody> 
+				    
+            <?php
+              $no=1;
+              foreach($pemasukan as $pm){ ?>
+              <tr>
+                <td><?php echo $no++ ?> </td>
+                <td><?php echo $pm->keterangan ?></td>
+								<td><?php echo $pm->tanggal?></td>
+                <td><?php echo $pm->nominal ?></td>
+              </tr>
+            <?php } ?>
+						</tbody>
+						<tfoot>
+						<?php
+              foreach($total_pem as $pm){ ?>
+						<tr class="bg-gray">
+							<td colspan="3"><center><b>Total</b></center></td>
+							<td><?php echo $pm->total?></td>
+						</tr>
+						<?php } ?>
+					</tfoot>
+          </table>
+				</div>
+
+        <div class="lap">
+				<table id="" class="table table-bordered table-hover bg-danger table-striped text-center">
+						<h4><li>Laporan Pengeluaran</li></h4>
+						<thead>
+						<tr>
+							<th>No</th>
+							<th>Keterangan</th>
+							<th>Tanggal</th>
+							<th>Nominal</th>
+						</tr>
+						</thead>
+						<tbody>       
+            <?php
+              $no=1;
+              foreach($pengeluaran as $pm){ ?>
+              <tr>
+                <td><?php echo $no++ ?> </td>
+                <td><?php echo $pm->keterangan ?></td>
+								<td><?php echo $pm->tanggal?></td>
+                <td><?php echo $pm->nominal ?></td>
+              </tr>
+            <?php } ?>
+						</tbody>
+						<tfoot>
+						<?php
+              foreach($total_peng as $pm){ ?>
+						<tr class="bg-gray">
+							<td colspan="3"><center><b>Total</b></center></td>
+							<td><?php echo $pm->total?></td>
+						</tr>
+						<?php } ?>
+					</tfoot>
+          </table>
+		</div>
+		
+		<h5>Jumlah saldo kas pada akhir bulan ......... 2019</h5>
+		<h4>Rp.</h4>
+		<br>
+
+		<div class="lap1">
+			<p>Mengetahui,</p>
+				<p>Ketua Panti Asuhan BJ Habibie</p>
+				<br><br><br>
+				<p>Arini Indah Nur Fuadah</p>
+				<br>
+		</div>
+
+        <div class="lap2">
+		<br>
+				<br><p>Bendahara,</p>
+				<br><br><br>
+				<p>Jack</p>
+				<br>
+		
+		</div>
       </div>
     </div>
   </div>
@@ -77,8 +123,22 @@
 }
 .lap{
   float:left;
-  width: 47%;
+  width: 70%;
+  margin-right: 120px;
+  margin-left: 120px;
+}
+.lap2{
+  float:right;
+  width: 20%;
+  margin-left: 100px;
   margin-right: 20px;
 }
+
+.lap1{
+  float:left;
+  width: 40%;
+  margin-left: 20px;
+}
+
 </style>
 

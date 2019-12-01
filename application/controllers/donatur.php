@@ -201,7 +201,22 @@ class Donatur extends CI_Controller {
 		$alamat = $this->input->post('alamat');
 		$nama = $this->input->post('nama');
 		$telp = $this->input->post('telp');
-		$foto = $this->input->post('foto');
+		$foto =$_FILES['foto'];
+
+		if($foto=''){}else{
+			$config['upload_path']='./assets/uploads';
+			$config['allowed_types']='jpg|png|jpeg';
+
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('foto')){
+				echo  "Gagal Upload";die();
+
+			}
+			else{
+				$foto=$this->upload->data('file_name');
+			}
+		}
+		
 		$pekerjaan = $this->input->post('pekerjaan');
 		$data = array(
 			'do_id'=>$do_id,
@@ -211,6 +226,7 @@ class Donatur extends CI_Controller {
 			'pekerjaan'=> $pekerjaan,
 			'telp'=> $telp,
 			'foto'=> $foto
+			
 		);
 		$this->m_donatur->update_profil($data, $do_id);
 		

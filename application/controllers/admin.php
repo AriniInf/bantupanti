@@ -281,20 +281,14 @@ class Admin extends CI_Controller {
 		$data['data'] = $this->m_admin->history();
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
-<<<<<<< HEAD
-	public function laporan(){
-		$data['content'] = 'admin/v_laporan';
-		$data['pengeluaran'] = $this->m_admin->pengeluaran();
-		$data['pemasukan'] = $this->m_admin->pemasukan();
-		$data['campuran'] = $this->m_admin->campuran();
-		$this->load->view('admin/tampilan_utama_admin_print',$data);
-	}
-=======
+
 
 	function laporan(){
 		$data['content']='admin/v_laporan';
-		$data['data'] = $this->m_admin->pengeluaran();
-		$data['data'] = $this->m_admin->pemasukan();
+		$data['pengeluaran'] = $this->m_admin->pengeluaran();
+		$data['total_peng'] = $this->m_admin->total_pengeluaran();
+		$data['pemasukan'] = $this->m_admin->pemasukan();
+		$data['total_pem'] = $this->m_admin->total_pemasukan();
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 
@@ -331,7 +325,7 @@ class Admin extends CI_Controller {
 	// 	$this->load->view('admin/tampilan_utama_admin_print',$data);
 
 	// }
->>>>>>> cd5713e1218b28357b0f173dff76b96a8a06bb11
+
 
 	public function listDiary(){
 		$data['content'] = 'anakPanti/v_listStory';

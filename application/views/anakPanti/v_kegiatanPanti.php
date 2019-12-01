@@ -25,7 +25,6 @@
 							<p><?php echo $kp->tanggal ?></p>
 							<h4 class="mb-2"><?php echo $kp->kegiatan ?></h4>
 							<p><?php echo $kp->penjelasan ?></p>
-<<<<<<< HEAD
 							<div>
 							<a 
 								data-target="#komen-data<?php echo $kp->kp_id;?>"
@@ -41,7 +40,6 @@
 						</li>	
 						<?php } ?>		
 					</ul>
-=======
 							<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
 							
 						</div>
@@ -58,7 +56,6 @@
 							
 													
 						
->>>>>>> cd5713e1218b28357b0f173dff76b96a8a06bb11
 				</div>
 			</div>
 		</div>

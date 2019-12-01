@@ -8,7 +8,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Dashboard Donatur</li>
+    <li class="active">Dashboard</li>
   </ol>
 </section>
 
@@ -201,7 +201,10 @@
   width: 5%;
   float: left;
   border: 20%;
-  margin-left: 20px;
+	margin-left:25px;
+
+
+  
 
 }
 .card6 {
@@ -210,15 +213,15 @@
   width: 5%;
   float: left;
   border: 20%;
-  margin-right: 40px;
+ 
 
 }
 .arrow{
   width: 5%;
   float: left;
   border: 20%;
-  margin-left: 47px;
-  margin-right: 47px;
+  margin-left: 37px;
+  margin-right: 37px;
 
 }
 .tulisan{
@@ -229,45 +232,45 @@
   margin-right: 10px;
 }
 .tulisan1{
-  width: 15%;
+  width: 10%;
   float: left;
   border: 0%;
   margin-left: 0px;
-  margin-right: 12px;
+  margin-right: 25px;
 }
 .tulisan2{
   width: 15%;
   float: left;
   border: 0%;
-  margin-left: 3px;
-  margin-right: 10px;
+  margin-left: 30px;
+  margin-right: 25px;
 }
 .tulisan3{
   width: 15%;
   float: left;
   border: 0%;
-  margin-left: 7px;
-  margin-right: 15px;
+  margin-left:15px;
+  margin-right: 0px;
 }
 .tulisan4{
   width: 15%;
   float: left;
   border: 0%;
-  margin-left: 20px;
+  margin-left: 22px;
   margin-right: 25px;
 }
 .tulisan5{
   width: 12%;
   float: left;
   border: 0%;
-  margin-left: 22px;
-  margin-right: 20px;
+  margin-left: 25px;
+  margin-right: 30px;
 }
 .tulisan6{
-  width: 15%;
+  width: 10%;
   float: left;
   border: 0%;
-  margin-left: 20px;
+	margin-left: 10px;
   margin-right: 0px;
 }
 .card:hover {

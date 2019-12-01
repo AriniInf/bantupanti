@@ -48,8 +48,18 @@ class M_admin extends CI_Model
     	return $hasil->result() ;
 	}
 
+	public function total_pemasukan(){
+		$hasil=$this->db->query("SELECT sum(nominal) as total from transaksi where flag = '0'");
+    	return $hasil->result() ;
+	}
+
 	public function pengeluaran(){
-		$hasil=$this->db->query("SELECT tr_id, keterangan,nominal,flag,tanggal from transaksi where flag = '1'");
+		$hasil=$this->db->query("SELECT tr_id, keterangan, nominal, flag, tanggal from transaksi where flag = '1'");
+    	return $hasil->result() ;
+	}
+
+	public function total_pengeluaran(){
+		$hasil=$this->db->query("SELECT sum(nominal) as total from transaksi where flag = '1'");
     	return $hasil->result() ;
 	}
 

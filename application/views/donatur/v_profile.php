@@ -55,7 +55,7 @@
 								<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
 								<h4 class="modal-title">Update Data</h4>
 						</div>
-						<form class="form-horizontal" action="<?php echo base_url('donatur/update_profil/')?>" method="post" enctype="multipart/form-data" role="form">
+						<?php echo form_open_multipart('donatur/update_profil/'); ?>
 							<div class="modal-body">
 								<div class="form-group">
 									<div class="col-lg-10">
@@ -103,7 +103,8 @@
 								<button class="btn btn-info" type="submit"> Simpan</button>
 								<button type="button" class="btn btn-warning" data-dismiss="modal"> Batal</button>
 						</div>
-					</form>
+						<?php echo form_close(); ?>
+
 				</div>
 			</div>
 		</div>
