@@ -33,5 +33,11 @@ class M_anakPanti extends CI_Model
         $this->db->query("delete from diary where dy_id='".$id."'");
 	}
 
+	public function profile($ap_id){
+	
+		$query = $this->db->query("SELECT * FROM anakpanti where ap_id='".$ap_id."'");
+		return $query; 
+	}
+
 
 }
