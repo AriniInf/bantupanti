@@ -9,6 +9,4 @@ class Model_register extends CI_Model
 	}
 
 }
-
-
 ?>

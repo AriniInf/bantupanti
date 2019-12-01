@@ -29,6 +29,7 @@
 							
 						</div>
 						<div class="col-xs-3">
+						<br><br>
 							<span><img src="<?php echo base_url('assets/uploads/').$kp->foto; ?>" width="110" height="90"></span>
 							<br>
 						</div>

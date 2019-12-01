@@ -17,10 +17,11 @@ class M_donatur extends CI_Model
 		return $this->db->get('penguruspanti');
 	}
 
-	public function kegiatanPanti(){
-	
-		return $this->db->get('kegiatanpanti');
+	public function kegiatanpanti(){
+		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama as kegiatan, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
+			return $hasil;
 	}
+	
 	public function diary(){
 		$query =  $this->db->query("SELECT dy.dy_id, dy.ap_id, ap.nama, dy.diary, dy.tanggal from anakpanti ap left join diary dy on ap.ap_id = dy.ap_id");
 		return $query;
