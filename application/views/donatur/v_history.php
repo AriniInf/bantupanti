@@ -8,11 +8,13 @@
   </ol>
 </section>
 
+	
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
-        <div class="box-body" style="overflow-y:scroll">
+				<div class="box-body" style="overflow-y:scroll">
+				<?=$this->session->flashdata('notif')?>
           <table id="example2" class="table table-bordered table-hover bg-danger table-striped text-center">
             <thead>
                 <tr>

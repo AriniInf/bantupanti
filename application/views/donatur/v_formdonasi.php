@@ -8,7 +8,7 @@
   </ol>
   <style>
   			input[type=text], select {
-				width: 20%;
+				width: 40%;
 				padding: 12px 20px;
 				margin: 8px 0;
 				display: inline-block;
@@ -17,8 +17,19 @@
 				box-sizing: border-box;
 			}
 
+			textarea{
+				width: 40%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+			
+
 			input[type=date], select {
-				width: 20%;
+				width: 40%;
 				padding: 12px 20px;
 				margin: 8px 0;
 				display: inline-block;
@@ -38,11 +49,11 @@
 		<input type="hidden" name="do_id" id="do_id" value="" class="form-control">
 	</div>
 	<div class="form-group">
-		<label>nominal</label><br>
+		<label>Nominal</label><br>
 		<input type="text" name="nominal" class="form-control" placeholder="Rp. ">
 	</div>
 	<div class="form-group">
-		<label>tanggal</label><br>
+		<label>Tanggal</label><br>
 		<input type="date" name="tanggal" class="form-control" placeholder="tanggal">
 	</div>
 	<!-- <div class="form-group">                
@@ -51,10 +62,11 @@
 	</div> -->
 	<div class="form-group">
 		<label>Keterangan</label><br>
-		<input type="text" name="keterangan" class="form-control" placeholder="keterangan">
+		<textarea class="col col-sm-4.9" name="keterangan" style="resize:none" placeholder="Didonasikan untuk apa..."></textarea>
 	</div>
+
 		<div class="form-group">
-		<label>Bukti TF</label><br>
+		<label>Bukti TF</label>
 		<input type="file" name="bukti">
  </div>
  <button type="submit" class="btn btn-primary">DONASI</button>

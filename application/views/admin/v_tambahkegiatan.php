@@ -8,6 +8,36 @@
     <li class="active">Tambah Kegiatan</li>
   </ol>
 </section>
+<style>
+input[type=text], select {
+				width: 40%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+
+			input[type=date], select {
+				width: 40%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+			input[type=file], select {
+				width: 40%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+</style>
 <div class="container-fluid">
 <?php echo form_open_multipart('admin/tambah_kegiatan'); ?>		
 	<!-- <form action="<?php echo base_url(). 'admin/tambah_kegiatan'; ?>" method="post" class="col-xs-6"> -->
@@ -18,15 +48,15 @@
 		<input type="hidden" name="ad_id" id="ad_id" value="" class="form-control">
 	</div>
 	<div class="form-group">
-		<label>Nama Kegiatan</label>
-		<input type="text" name="nama" class="form-control">
+		<label>Nama Kegiatan</label><br>
+		<input type="text" name="nama" class="form-control" placeholder="Nama Kegiatan">
 	</div>
 	<div class="form-group">
-		<label>Penjelasan</label>
-		<input type="text" name="penjelasan" class="form-control">
+		<label>Penjelasan</label><br>
+		<input type="text" name="penjelasan" class="form-control" placeholder="Penjelasan Kegiatan">
 	</div>
 	<div class="form-group">                
-		<label>Tanggal</label>
+		<label>Tanggal</label><br>
 		<input type="date" name="tanggal" class="form-control">
 	</div>
 	<!-- <div class="form-group">

@@ -97,18 +97,18 @@ class Donatur extends CI_Controller {
 			'bukti' => $bukti
 			);
 		$this->m_donatur->tambahdonasi($data,'donasi_');
+		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Terima Kasih, Anda telah berdonasi <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		
 		redirect('donatur/history');
 	}
-
 	public function diary(){
-
 		$data['content'] = 'donatur/v_diary';
-		$data['data'] = $this->m_donatur->diary()->result();
+		$data['data'] = $this->m_donatur->diary();
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
-
-		// $data['data'] = $this->m_donatur->diary()->result();
-		// $this->load->view('donatur/v_diary',$data);
 	}
+
+	
+
 	public function komenkegiatan(){
 		$data['content'] = 'donatur/komenkegiatan';
 		$this->load->view('donatur/tampilan_utama_donatur',$data);
@@ -231,7 +231,7 @@ class Donatur extends CI_Controller {
 		$this->m_donatur->update_profil($data, $do_id);
 		
 		//var_dump($this->input->post());
-		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert" style="width:500px"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('donatur/profile');
 	}
 

@@ -19,7 +19,7 @@
 						<?php
 						foreach($data as $di){ ?>
 						<li>	
-							<span><h3><?php echo $di->nama?></h3></span>
+							<span><h3><?php echo $di->anak?></h3></span>
 							<span><p><?php echo $di->tanggal ?></p></span>
 							<!-- <h4 class="mb-2"></h4> -->
 							<p><?php echo $di->diary ?></p>

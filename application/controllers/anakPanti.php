@@ -10,19 +10,24 @@ class AnakPanti extends CI_Controller {
 		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
 
+	// public function kegiatan_panti(){
+	// 	$kp_id = $this->input->post('kp_id');
+	// 	$data['content'] = 'anakPanti/v_kegiatanPanti';
+	// 	$data['komentar'] = $this->m_anakPanti->listKomentar($kp_id)->result();
+	// 	$data['data'] = $this->m_anakPanti->kegiatan_panti()->result();
+	// 	$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
+	// }
 	public function kegiatan_panti(){
-		$kp_id = $this->input->post('kp_id');
-		$data['content'] = 'anakPanti/v_kegiatanPanti';
-		$data['komentar'] = $this->m_anakPanti->listKomentar($kp_id)->result();
-		$data['data'] = $this->m_anakPanti->kegiatan_panti()->result();
-		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
+		$data['content'] = 'donatur/v_kegiatanPanti';
+		$data['data'] = $this->anakPanti->kegiatanPanti()->result();
+		$this->load->view('anakPanti/tampilan_utama_donatur',$data);
 	}
 
 	
 	public function listDiary(){
-		$data['content'] = 'anakPanti/v_listStory';
-		$data['data'] = $this->m_anakPanti->listDiary();
-		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
+		$data['content'] = 'donatur/v_diary';
+		$data['data'] = $this->m_donatur->diary();
+		$this->load->view('donatur/tampilan_utama_donatur',$data);
 	}
 
 	public function listDiarymu(){

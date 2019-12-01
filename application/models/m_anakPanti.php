@@ -9,7 +9,7 @@ class M_anakPanti extends CI_Model
 		return $hasil;
 	}
 
-	public function listDiary(){
+	public function diary(){
 		$query =  $this->db->query("SELECT sap.dy_id, ap.ap_id, sap.ap_id, ap.nama as anak, sap.diary, ap.tanggal from anakpanti ap right join diary sap on ap.ap_id = sap.ap_id");
 		return $query->result();
 	}
@@ -24,11 +24,10 @@ class M_anakPanti extends CI_Model
 		$query =  $this->db->insert($table, $data);
 	}
 
-	public function kegiatan_panti(){
-		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama as kegiatan, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
+	public function kegiatanpanti(){
+		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
 			return $hasil;
 	}
-
 		function hapusDiary($id){
         $this->db->query("delete from diary where dy_id='".$id."'");
 	}

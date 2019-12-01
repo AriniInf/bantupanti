@@ -153,7 +153,7 @@ class Admin extends CI_Controller {
 			);
 
 		$this->m_admin->tambahAnak($data,'anakpanti');
-		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert" style="width:500px"> Data Anak Panti Berhasil Ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Anak Panti Berhasil Ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('admin/listAnak');
 	}
 
@@ -249,7 +249,7 @@ class Admin extends CI_Controller {
 			"flag"=>$flag
 		);
 		$this->m_admin->nambah_transaksi($tr_id,$ad_id,$keterangan,$nominal,$flag,$tanggal);
-		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert" style="width:500px"> Data pengeluaran Berhasil Ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data pengeluaran Berhasil Ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('admin/pengeluaran');
 	}
 
@@ -318,7 +318,7 @@ class Admin extends CI_Controller {
 		$this->m_admin->ubahkp($data, $kp_id);
 		
 		//var_dump($this->input->post());
-		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert" style="width:500px"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('admin/listAllKegiatan');
 	}
 
@@ -334,7 +334,7 @@ class Admin extends CI_Controller {
 			'tanggal'=>$tanggal
 		);
 		$this->m_admin->komen($data, 'adkomen');
-		$this->session->set_flashdata('notif_komen','<div class="alert alert-info" role="alert" style="width:500px"> Komentar Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		$this->session->set_flashdata('notif_komen','<div class="alert alert-info" role="alert"> Komentar Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		//var_dump($this->input->post());
 		redirect('admin/listAllKegiatan');
 	}

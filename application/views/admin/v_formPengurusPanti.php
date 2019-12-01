@@ -8,6 +8,36 @@
     <li class="active">Pengurus Panti</li>
   </ol>
 </section>
+<style>
+input[type=text], select {
+				width: 40%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+
+			input[type=date], select {
+				width: 40%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+			input[type=file], select {
+				width: 40%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+</style>
 <div class="container-fluid">
 <?php echo form_open_multipart('admin/tambahPengurus'); ?>	
 	<!-- <form action="<?php echo base_url(). 'admin/tambahPengurus'; ?>" method="post" class="col-xs-6"> -->
@@ -15,16 +45,16 @@
 		<input type="hidden" name="pp_id" id="pp_id" value="" class="form-control">
 	</div>
 	<div class="form-group">
-		<label>Nama</label>
-		<input type="text" name="nama" class="form-control">
+		<label>Nama</label><br>
+		<input type="text" name="nama" class="form-control" placeholder="Nama">
 	</div>
 	<div class="form-group">
-		<label>Alamat</label>
-		<input type="text" name="alamat" class="form-control">
+		<label>Alamat</label><br>
+		<input type="text" name="alamat" class="form-control" placeholder="Alamat">
 	</div>
 	<div class="form-group">
-		<label>Jabatan</label>
-		<select name="jabatan" class="form-control">
+		<label>Jabatan</label><br>
+		<select name="jabatan" class="col col-sm-4.9" placeholder="Jabatan">
 			<option value="Ketua">Ketua</option>
 			<option value="Sekretaris">Sekretaris</option>
 			<option value="Bendahara">Bendahara</option>
@@ -33,12 +63,12 @@
 		</select>
 	</div>
 	<div class="form-group">                
-		<label>Email</label>
-		<input type="text" name="email" class="form-control">
+		<label>Email</label><br>
+		<input type="text" name="email" class="form-control" placeholder="Email">
 	</div>
 	<div class="form-group">                
-		<label>Telepon</label>
-		<input type="text" name="telp" class="form-control">
+		<label>Telepon</label><br>
+		<input type="text" name="telp" class="form-control" placeholder="Telp">
 		</div>
 	<div class="form-group">
 		<label>Foto</label><br>
