@@ -98,9 +98,9 @@ class M_admin extends CI_Model
 	public function komen($data,$table){
 		$query = $this->db->insert($table, $data);
 	}
-	public function listKomentar(){
+	public function listKomentar($id){
 		//join kegiatanpanti kp on kp.kp_id = ak.kp_id where ak.kp_id='".$id."'" 
-		$hasil = $this->db->query("SELECT ak.kp_id, ap.kp_id, do.kp_id ,ap.komen, ap.tanggal, do.komen, do.tanggal from adkomen ak, apkomen ap, dokomen do");
+		$hasil = $this->db->query("SELECT ak.komen, ak.tanggal, dk.komen, dk.tanggal, pk.komen, pk.tanggal from adkomen ak, dokomen dk, apkomen pk, kegiatanpanti kp where ak.kp_id = kp.kp_id OR dk.kp_id=kp.kp_id OR pk.kp_id=kp.kp_id");
 			return $hasil->result();
 	}
 }

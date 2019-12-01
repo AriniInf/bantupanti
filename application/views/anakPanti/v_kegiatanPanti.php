@@ -50,13 +50,7 @@
 						</div>
 								
 					</div>
-					</li>
-							<?php } ?>		
-						</ul>	
-								
-							
-													
-						
+					</li>	
 				</div>
 			</div>
 		</div>

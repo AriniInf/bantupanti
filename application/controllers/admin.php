@@ -293,6 +293,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tampilan_utama_admin',$data);
 	}
 
+
 	public function listDiary(){
 		$data['content'] = 'anakPanti/v_listStory';
 		$data['data'] = $this->m_admin->listDiary();
@@ -354,9 +355,10 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tampilan_utama_admin_print',$data);
 	}
 
-	public function lihat_komen(){
+	public function lihat_komen($id){
 		$data['content']='admin/v_komen';
-		$data['komen'] = $this->m_admin->listKomentar();
+		$id = $this->input->post('kp_id');
+		$data['komen'] = $this->m_admin->listKomentar($id);
 		$this->load->view('admin/tampilan_utama_admin', $data);
 	
 	}
