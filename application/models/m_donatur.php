@@ -17,9 +17,11 @@ class M_donatur extends CI_Model
 		return $this->db->get('penguruspanti');
 	}
 
+
 	public function kegiatanpanti(){
-		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
-			return $hasil;
+		
+		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama as kegiatan, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
+		return $hasil;
 	}
 	
 	
@@ -54,6 +56,21 @@ class M_donatur extends CI_Model
 	function update_profil($data, $id){
 		$this->db->where('do_id',$id);
 		$this->db->update('donatur', $data);
+		return TRUE;
+	}
+
+	public function komen($data,$table){
+		$query = $this->db->insert($table, $data);
+	}
+
+	public function listKomentar($id){
+		$hasil = $this->db->query("SELECT ak.komen, ak.tanggal, dk.komen, dk.tanggal, pk.komen, pk.tanggal from adkomen ak, dokomen dk, apkomen pk, kegiatanpanti kp where ak.kp_id = kp.kp_id OR dk.kp_id=kp.kp_id OR pk.kp_id=kp.kp_id");
+			return $hasil->result();
+	}
+
+	function ubahkp($data, $id){
+		$this->db->where('kp_id',$id);
+		$this->db->update('kegiatanpanti', $data);
 		return TRUE;
 	}
 }

@@ -30,8 +30,10 @@ class M_anakPanti extends CI_Model
 	}
 
 	public function kegiatanpanti(){
-		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
-			return $hasil;
+		
+			$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama as kegiatan, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
+				return $hasil;
+		
 	}
 	
 		function hapusDiary($id){
@@ -59,6 +61,12 @@ class M_anakPanti extends CI_Model
 	public function listKomentar($id){
 		$hasil = $this->db->query("SELECT ak.kp_id, ad.ad_id, komen, pp.nama as pengurus, ak.tanggal from kegiatanpanti kp join adkomen ak on ak.ad_id = kp.ad_id join admin ad on ak.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id where ak.kp_id='".$id."'");
 			return $hasil;
+	}
+
+	function ubahkp($data, $id){
+		$this->db->where('kp_id',$id);
+		$this->db->update('kegiatanpanti', $data);
+		return TRUE;
 	}
 
 

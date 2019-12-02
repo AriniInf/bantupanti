@@ -235,5 +235,29 @@ class Donatur extends CI_Controller {
 		redirect('donatur/profile');
 	}
 
+	public function komen(){
+		$kp_id = $this->input->post('kp_id');
+		$do_id = $this->session->userdata('data')->do_id;
+		$komen = $this->input->post('komen');
+		$tanggal = date("Y/m/d");
+		$data = array(
+			'kp_id'=>$kp_id,
+			'do_id'=>$do_id,
+			'komen'=>$komen,
+			'tanggal'=>$tanggal
+		);
+		$this->m_donatur->komen($data, 'dokomen');
+		$this->session->set_flashdata('notif_komen','<div class="alert alert-info" role="alert"> Komentar Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		//var_dump($this->input->post());
+		redirect('donatur/kegiatanPanti');
+	}
+	public function lihat_komen($id){
+		$data['content']='donatur/v_komen';
+		$id = $this->input->post('do_id');
+		$data['komen'] = $this->m_donatur->listKomentar($id);
+		$this->load->view('donatur/tampilan_utama_donatur', $data);
+	
+	}
+
 	
 }

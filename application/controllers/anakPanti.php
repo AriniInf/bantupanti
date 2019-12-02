@@ -91,7 +91,7 @@ class AnakPanti extends CI_Controller {
 	public function listKomentar(){
 		$kp_id = $this->input->post('kp_id');
 		$data['content'] = 'anakPanti/kegiatan_panti';
-		$data['data'] = $this->m_admin->listKomentar($kp_id)->result();
+		$data['data'] = $this->m_anakPanti->listKomentar($kp_id)->result();
 		$this->load->view('anakPanti/tampilan_utama_anakPanti', $data);
 	}
 
@@ -160,6 +160,33 @@ class AnakPanti extends CI_Controller {
 				//var_dump($this->input->post());
 				$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 				redirect('anakPanti/profile');
+			}
+
+
+			public function lihat_komen($id){
+				$data['content']='anakPanti/v_komen';
+				$id = $this->input->post('ap_id');
+				$data['komen'] = $this->m_anakPanti->listKomentar($id);
+				$this->load->view('anakPanti/tampilan_utama_anakPanti', $data);
+			
+			}
+
+			public function ubahkp(){
+				$kp_id = $this->input->post('kp_id');
+				$penjelasan = $this->input->post('penjelasan');
+				$tanggal = $this->input->post('tanggal');
+				$nama = $this->input->post('nama');
+				$data = array(
+					'kp_id'=>$kp_id,
+					'tanggal'=> $tanggal,
+					'nama'=> $nama,
+					'penjelasan'=> $penjelasan
+				);
+				$this->m_admin->ubahkp($data, $kp_id);
+				
+				//var_dump($this->input->post());
+				$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+				redirect('anakPanti/kegiatan_panti');
 			}
 
 }
