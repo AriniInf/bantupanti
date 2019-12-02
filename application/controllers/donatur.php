@@ -312,13 +312,13 @@ class Donatur extends CI_Controller {
 		else{
 			$kp_id = $this->input->post('kp_id');
 			$do_id = $this->session->userdata('data')->do_id;
-			$komen = $this->input->post('komen');
-			$tanggal = date("Y/m/d");
+			$komendo = $this->input->post('komendo');
+			$tanggaldo = date("Y/m/d");
 			$data = array(
 				'kp_id'=>$kp_id,
 				'do_id'=>$do_id,
-				'komen'=>$komen,
-				'tanggal'=>$tanggal
+				'komendo'=>$komendo,
+				'tanggaldo'=>$tanggaldo
 			);
 			$this->m_donatur->komen($data, 'dokomen');
 			$this->session->set_flashdata('notif_komen','<div class="alert alert-info" role="alert"> Komentar Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
@@ -326,18 +326,20 @@ class Donatur extends CI_Controller {
 			redirect('donatur/kegiatanPanti');
 		}
 	}
-	public function lihat_komen($id){
+	
+	public function listKomentar($kp_id){
 		$username = $this->session->userdata('data');
 		if($username==""){
-			$this->load->view('donatur/view_logindonatur');
-		}
-		else{
-			$data['content']='donatur/v_komen';
-			$id = $this->input->post('do_id');
-			$data['komen'] = $this->m_donatur->listKomentar($id);
+	   		$this->load->view('donatur/view_logindonatur');
+	  	}
+	  	else{
+			$data['content'] = 'donatur/v_komen';
+			$data['admin'] = $this->m_donatur->listKomentarAdmin($kp_id);
+			$data['donatur'] = $this->m_donatur->listKomentarDonatur($kp_id);
+			$data['anak'] = $this->m_donatur->listKomentarAnakPanti($kp_id);
+			//var_dump($data);
 			$this->load->view('donatur/tampilan_utama_donatur', $data);
-		}
-	
+		  }
 	}
 
 }

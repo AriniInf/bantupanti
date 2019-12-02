@@ -68,7 +68,7 @@ class AnakPanti extends CI_Controller {
 	  	}
 	  	else{
 			$this->m_anakPanti->hapusDiary($id);
-			redirect('anakPanti/listDiary'); 
+			redirect('anakPanti/listDiarymu'); 
 		  }       
 	}
 
@@ -114,32 +114,19 @@ class AnakPanti extends CI_Controller {
 	  	else{
 			$kp_id = $this->input->post('kp_id');
 			$ap_id = $this->session->userdata('data')->ap_id;
-			$komen = $this->input->post('komen');
-			$tanggal = date("Y/m/d");
+			$komenap = $this->input->post('komenap');
+			$tanggalap = date("Y/m/d");
 			$data = array(
 				'kp_id'=>$kp_id,
 				'ap_id'=>$ap_id,
-				'komen'=>$komen,
-				'tanggal'=>$tanggal
+				'komenap'=>$komenap,
+				'tanggalap'=>$tanggalap
 			);
 			$this->m_anakPanti->komen($data, 'apkomen');
 			$this->session->set_flashdata('notif_komen','<div class="alert alert-info" role="alert" style="width:500px"> Komentar Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 			//var_dump($this->input->post());
 			redirect('anakPanti/kegiatan_panti');
 		}
-	}
-
-	public function listKomentar(){
-		$username = $this->session->userdata('data');
-		if($username==""){
-	   		$this->load->view('donatur/view_logindonatur');
-	  	}
-	  	else{
-			$kp_id = $this->input->post('kp_id');
-			$data['content'] = 'anakPanti/kegiatan_panti';
-			$data['data'] = $this->m_anakPanti->listKomentar($kp_id)->result();
-			$this->load->view('anakPanti/tampilan_utama_anakPanti', $data);
-		  }
 	}
 
 	public function edit_diary(){
@@ -225,17 +212,19 @@ class AnakPanti extends CI_Controller {
 	}
 
 
-	public function lihat_komen($id){
+	public function listKomentar($kp_id){
 		$username = $this->session->userdata('data');
 		if($username==""){
-			$this->load->view('donatur/view_logindonatur');
-		}
-		else{
-			$data['content']='anakPanti/v_komen';
-			$id = $this->input->post('ap_id');
-			$data['komen'] = $this->m_anakPanti->listKomentar($id);
+	   		$this->load->view('donatur/view_logindonatur');
+	  	}
+	  	else{
+			$data['content'] = 'anakPanti/v_komen';
+			$data['admin'] = $this->m_anakPanti->listKomentarAdmin($kp_id);
+			$data['donatur'] = $this->m_anakPanti->listKomentarDonatur($kp_id);
+			$data['anak'] = $this->m_anakPanti->listKomentarAnakPanti($kp_id);
+			//var_dump($data);
 			$this->load->view('anakPanti/tampilan_utama_anakPanti', $data);
-		}
+		  }
 	}
 
 	public function ubahkp(){

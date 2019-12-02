@@ -16,22 +16,45 @@
 				<div class="list_general list_admin">
 				<ul>
 				<?php
-					foreach($komen as $ko){ ?>
+					foreach($admin as $ko){ ?>
 					<div class="row">
 						<div class="col-xs-6">
-						
 						<li>
-								<p><?php echo $ko->tanggal ?></p>
-								<p><?php echo $ko->komen ?></p>
-							<div>
-							</div>
-							
+							<p><?php echo $ko->tanggalad ?></p>
+							<p><?php echo $ko->komenad ?></p>
 						</div>
 						<div class="col-xs-3">
 						</div>
 					</div>
-					</li>
-					<?php } ?>		
+						</li>
+					<?php } ?>	
+					<?php
+					foreach($donatur as $ko){ ?>
+					<div class="row">
+						<div class="col-xs-6">
+						<li>
+							<p><?php echo $ko->tanggaldo ?></p>
+							<p><?php echo $ko->komendo ?></p>
+						</div>
+						<div class="col-xs-3">
+						</div>
+					</div>
+						</li>
+					<?php } ?>	
+						
+					<?php
+					foreach($anak as $ko){ ?>
+					<div class="row">
+						<div class="col-xs-6">
+						<li>
+							<p><?php echo $ko->tanggalap ?></p>
+							<p><?php echo $ko->komenap ?></p>
+						</div>
+						<div class="col-xs-3">
+						</div>
+					</div>
+						</li>
+					<?php } ?>
 					</ul>			
 				</div>
 			</div>

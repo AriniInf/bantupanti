@@ -73,5 +73,20 @@ class M_donatur extends CI_Model
 		$this->db->update('kegiatanpanti', $data);
 		return TRUE;
 	}
+
+	public function listKomentarAdmin($id){
+		$hasil = $this->db->query("SELECT DISTINCT(ak.kp_id), ad.ad_id, komenad, pp.nama as pengurus, tanggalad from kegiatanpanti kp join adkomen ak on ak.ad_id = kp.ad_id join admin ad on ak.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id where ak.kp_id='".$id."'");
+		return $hasil->result();
+	}
+
+	public function listKomentarAnakPanti($id){
+		$hasil = $this->db->query("SELECT DISTINCT(ak.kp_id), ap.ap_id, komenap, ap.nama as anak, tanggalap from apkomen ak join anakpanti ap on ak.ap_id = ap.ap_id where ak.kp_id='".$id."'");
+		return $hasil->result();
+	}
+
+	public function listKomentarDonatur($id){
+		$hasil = $this->db->query("SELECT DISTINCT(ak.kp_id), da.do_id, komendo, da.nama as donatur, tanggaldo from dokomen ak join donatur da on ak.do_id = da.do_id where ak.kp_id='".$id."'");
+		return $hasil->result();
+	}
 }
 ?>
