@@ -39,6 +39,14 @@ class M_anakPanti extends CI_Model
 		return $query; 
 	}
 
+
+
+	function update_profil($data, $id){
+		$this->db->where('ap_id',$id);
+		$this->db->update('anakpanti', $data);
+		return TRUE;
+	}
+
 	public function komen($data,$table){
 		$query = $this->db->insert($table, $data);
 	}
