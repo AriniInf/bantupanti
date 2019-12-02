@@ -37,7 +37,7 @@
 									class="btn btn-primary btn-sm"
 									data-toggle="modal"><i class="fa fa-comment"></i> Komen
 								</a>
-								<?php echo anchor('admin/listKomentar/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i> lihat Komen</button>');?>
+								<?php echo anchor('admin/listKomentar/'.$kp->kp_id,'<button class="btn btn-info btn-remove btn-sm"><i class="fa fa-eye mr-2"></i> lihat Komen</button>');?>
 								<?php echo anchor('admin/hapusKegiatan/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i> Hapus</button>', array('class'=>'delete', 'onclick'=>"return confirmDialog();"));?>
 
 							</div>
@@ -140,7 +140,7 @@
 		                    <div class="form-group">
 		                        <label class="col-lg-2 col-sm-2 control-label">Komentar</label>
 		                        <div class="col-lg-10">
-		                        	<input type="text" class="form-control" id="komen" name="komen"></input>
+		                        	<input type="text" class="form-control" id="komenad" name="komenad"></input>
 		                        </div>
 		                    </div>
 		                <div class="modal-footer">

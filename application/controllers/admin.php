@@ -483,13 +483,13 @@ class Admin extends CI_Controller {
 	  	else{
 			$kp_id = $this->input->post('kp_id');
 			$ad_id = $this->session->userdata('data')->ad_id;
-			$komen = $this->input->post('komen');
-			$tanggal = date("Y/m/d");
+			$komenad = $this->input->post('komenad');
+			$tanggalad = date("Y/m/d");
 			$data = array(
 				'kp_id'=>$kp_id,
 				'ad_id'=>$ad_id,
-				'komen'=>$komen,
-				'tanggal'=>$tanggal
+				'komenad'=>$komenad,
+				'tanggalad'=>$tanggalad
 			);
 			$this->m_admin->komen($data, 'adkomen');
 			$this->session->set_flashdata('notif_komen','<div class="alert alert-info" role="alert"> Komentar Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
@@ -503,13 +503,12 @@ class Admin extends CI_Controller {
 	   		$this->load->view('donatur/view_logindonatur');
 	  	}
 	  	else{
-			$kp_id = $this->input->post('kp_id');
 			$data['content'] = 'admin/v_komen';
 			$data['admin'] = $this->m_admin->listKomentarAdmin($kp_id);
 			$data['donatur'] = $this->m_admin->listKomentarDonatur($kp_id);
 			$data['anak'] = $this->m_admin->listKomentarAnakPanti($kp_id);
-			var_dump($data);
-			//$this->load->view('admin/tampilan_utama_admin', $data);
+			//var_dump($data);
+			$this->load->view('admin/tampilan_utama_admin', $data);
 		  }
 	}
 
@@ -526,19 +525,6 @@ class Admin extends CI_Controller {
 			$data['total_pem'] = $this->m_admin->total_pemasukan();
 			$this->load->view('admin/tampilan_utama_admin_print',$data);
 		  }
-	}
-
-	public function lihat_komen($id){
-		$username = $this->session->userdata('data');
-		if($username==""){
-	   		$this->load->view('donatur/view_logindonatur');
-	  	}
-	  	else{
-			$data['content']='admin/v_komen';
-			$id = $this->input->post('kp_id');
-			$data['komen'] = $this->m_admin->listKomentar($id);
-			$this->load->view('admin/tampilan_utama_admin', $data);
-		}
 	}
 }
 

@@ -33,7 +33,7 @@
 									class="btn btn-primary btn-sm"
 									data-toggle="modal"><i class="fa fa-comment"></i> Komen
 								</a>
-								<?php echo anchor('anakPanti/lihat_komen/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i> lihat Komen</button>');?>
+								<?php echo anchor('anakPanti/komen/'.$kp->kp_id,'<button class="btn btn-danger btn-remove btn-sm"><i class="fa fa-trash mr-2"></i> lihat Komen</button>');?>
 								
 
 							</div>
