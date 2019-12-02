@@ -33,6 +33,7 @@ class M_anakPanti extends CI_Model
 		$hasil = $this->db->query("SELECT kp_id, ad.ad_id, pp.nama as pengurus, kp.nama, penjelasan, tanggal, kp.foto from kegiatanpanti kp join admin ad on kp.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id");
 			return $hasil;
 	}
+	
 		function hapusDiary($id){
         $this->db->query("delete from diary where dy_id='".$id."'");
 	}

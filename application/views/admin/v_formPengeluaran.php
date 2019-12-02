@@ -30,7 +30,7 @@ input[type=text], select {
 			}
 </style>
 <div class="container-fluid">	
-	<form action="<?php echo base_url(). 'admin/tambah_pengeluaran'; ?>" method="post" class="col-xs-6">
+	<form action="<?php echo base_url(). 'admin/tambah_pengeluaran'; ?>" method="post">
 	<div class="form-group">
 		<input type="hidden" name="ap_id" id="ap_id" value="" class="form-control">
 	</div>
