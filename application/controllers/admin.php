@@ -74,9 +74,15 @@ class Admin extends CI_Controller {
 
 	public function dashboard()
 	{
-		$data['content'] = 'admin/view_dashboard';
-		//$data['data'] = $this->session->userdata('data')->ad_id;
-		$this->load->view('admin/tampilan_utama_admin', $data);
+		$username = $this->session->userdata('data');
+		if($username==""){
+	   		$this->load->view('donatur/view_logindonatur');
+	  	}
+	  	else{
+			$data['content'] = 'admin/view_dashboard';
+			//$data['data'] = $this->session->userdata('data')->ad_id;
+			$this->load->view('admin/tampilan_utama_admin', $data);
+		}
 	}
 
 	function formAnak(){
@@ -339,10 +345,12 @@ class Admin extends CI_Controller {
 		redirect('admin/listAllKegiatan');
 	}
 
-	public function listKomentari(){
-	
-		$data['content'] = 'admin/v_listAllKegiatan';
-		$data['data'] = $this->m_admin->listKomenta->result();
+	public function listKomentar(){
+		$id = $this->input->post('kp_id');
+		$data['content'] = 'admin/v_komen';
+		$data['admin'] = $this->m_admin->listKomentarAdmin($id);
+		$data['donatur'] = $this->m_admin->listKomentarDonatur($id);
+		$data['anak'] = $this->m_admin->listKomentarAnakPanti($id);
 		$this->load->view('admin/tampilan_utama_admin', $data);
 	}
 

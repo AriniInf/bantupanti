@@ -58,9 +58,19 @@ class M_anakPanti extends CI_Model
 	public function komen($data,$table){
 		$query = $this->db->insert($table, $data);
 	}
-	public function listKomentar($id){
-		$hasil = $this->db->query("SELECT ak.kp_id, ad.ad_id, komen, pp.nama as pengurus, ak.tanggal from kegiatanpanti kp join adkomen ak on ak.ad_id = kp.ad_id join admin ad on ak.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id where ak.kp_id='".$id."'");
-			return $hasil;
+	public function listKomentarAdmin($id){
+		$hasil = $this->db->query("SELECT SELECT DISTINCT(ak.kp_id), ad.ad_id, komenad, pp.nama as pengurus, ak.tanggalad from kegiatanpanti kp join adkomen ak on ak.ad_id = kp.ad_id join admin ad on ak.ad_id = ad.ad_id join penguruspanti pp on ad.pp_id = pp.pp_id where ak.kp_id='".$id."'");
+		return $hasil->result();
+	}
+
+	public function listKomentarAnakPanti($id){
+		$hasil = $this->db->query("SELECT DISTINCT(ak.kp_id), ap.ap_id, komenap, ap.nama as anak, ak.tanggalap from apkomen ak join anakpanti ap on ak.ap_id = ap.ap_id where ak.kp_id='".$id."'");
+		return $hasil->result();
+	}
+
+	public function listKomentarDonaturi($id){
+		$hasil = $this->db->query("SELECT DISTINCT(ak.kp_id), da.do_id, komendo, da.nama as donatur, ak.tanggaldo from dokomen ak join donatur da on ak.do_id = da.do_id where ak.kp_id='".$id."'");
+		return $hasil->result();
 	}
 
 	function ubahkp($data, $id){

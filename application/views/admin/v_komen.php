@@ -23,17 +23,11 @@
 						<li>
 							<p><?php echo $ko->tanggal ?></p>
 							<p><?php echo $ko->komen ?></p>
-							<div>
-
-								
-
-							</div>
-							
 						</div>
 						<div class="col-xs-3">
 						</div>
 					</div>
-					</li>
+						</li>
 					<?php } ?>		
 					</ul>			
 				</div>
