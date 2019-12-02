@@ -19,6 +19,11 @@ class M_anakPanti extends CI_Model
 		return $query->result();
 	}
 
+	function edit_diary($data, $id){
+		$this->db->where('dy_id',$id);
+		$this->db->update('diary', $data);
+		return TRUE;
+	}
 
 	public function tambahDiary($data,$table){
 		$query =  $this->db->insert($table, $data);
