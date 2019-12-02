@@ -23,7 +23,7 @@
 						
 						<li><h3><?php echo $kp->pengurus?></h3>
 							<p><?php echo $kp->tanggal ?></p>
-							<h4 class="mb-2"><?php echo $kp->kegiatan ?></h4>
+							<h4 class="mb-2"><?php echo $kp->nama ?></h4>
 							<p><?php echo $kp->penjelasan ?></p>
 							<div>
 							<a 
@@ -40,7 +40,6 @@
 						</li>	
 						<?php } ?>		
 					</ul>
-							<a href="" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Komen</a>
 							
 						</div>
 						<div class="col-xs-3">

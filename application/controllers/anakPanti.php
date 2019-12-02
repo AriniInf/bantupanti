@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class AnakPanti extends CI_Controller {
 
+	public function __construct() {
+		parent::__construct();
+		$this->load->library('session');
+		$this->load->model('m_anakPanti');
+        $this->load->helper('url');
+	}
+
 	public function dashboard()
 	{
 		$data['content'] = 'anakPanti/v_dashboard';
@@ -18,16 +25,16 @@ class AnakPanti extends CI_Controller {
 	// 	$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	// }
 	public function kegiatan_panti(){
-		$data['content'] = 'donatur/v_kegiatanPanti';
-		$data['data'] = $this->anakPanti->kegiatanPanti()->result();
-		$this->load->view('anakPanti/tampilan_utama_donatur',$data);
+		$data['content'] = 'anakPanti/v_kegiatanPanti';
+		$data['data'] = $this->m_anakPanti->kegiatanPanti()->result();
+		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
 
 	
 	public function listDiary(){
-		$data['content'] = 'donatur/v_diary';
-		$data['data'] = $this->m_donatur->diary();
-		$this->load->view('donatur/tampilan_utama_donatur',$data);
+		$data['content'] = 'anakPanti/v_listStory';
+		$data['data'] = $this->m_anakPanti->diary();
+		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
 	}
 
 	public function listDiarymu(){
@@ -87,6 +94,7 @@ class AnakPanti extends CI_Controller {
 		$data['data'] = $this->m_admin->listKomentar($kp_id)->result();
 		$this->load->view('anakPanti/tampilan_utama_anakPanti', $data);
 	}
+<<<<<<< HEAD
 	public function profile(){
 
 		
@@ -139,4 +147,22 @@ class AnakPanti extends CI_Controller {
 		redirect('anakPanti/profile');
 	}
 
+=======
+
+	public function edit_diary(){
+		$dy_id = $this->input->post('dy_id');
+		$diary = $this->input->post('diary');
+		$tanggal = $this->input->post('tanggal');
+		$data = array(
+			'dy_id'=>$dy_id,
+			'tanggal'=> $tanggal,
+			'diary'=> $diary
+		);
+		$this->m_anakPanti->edit_diary($data, $dy_id);
+		
+		//var_dump($this->input->post());
+		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		redirect('anakPanti/listDiarymu');
+	}
+>>>>>>> 8ed52b3912d8f9087bf872b07b133e8bfdde55d5
 }

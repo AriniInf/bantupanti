@@ -39,7 +39,7 @@ input[type=date], select {
 	</div>
 	<div class="form-group">
 		<label>Diary</label><br>
-		<textarea class="col col-sm-5.6" name="Diary" style="resize:none" placeholder="Tulis ceritamu di sini.."></textarea>
+		<textarea class="col col-sm-5.6" name="diary" style="resize:none" placeholder="Tulis ceritamu di sini.."></textarea>
 	</div>
 
 	<div class="form-group">
