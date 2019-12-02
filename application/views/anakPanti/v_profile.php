@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-   Profile Donatur
+   Profile Anak Panti
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -52,7 +52,7 @@
 <?php endforeach; ?>
 </table>
 
-<?php foreach($data as $do){ ?>
+<?php foreach($data as $ap){ ?>
 
 	<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data<?php echo $ap->ap_id;?>" class="modal fade">
 		<div class="modal-dialog">
@@ -61,21 +61,14 @@
 								<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
 								<h4 class="modal-title">Update Data</h4>
 						</div>
-						<?php echo form_open_multipart('donatur/update_profil/'); ?>
+						<?php echo form_open_multipart('anakPanti/update_profil/'); ?>
 							<div class="modal-body">
 								<div class="form-group">
 									<div class="col-lg-10">
 										<input type="hidden" id="ap_id" name="ap_id" value="<?php echo $ap->ap_id;?>">
 									</div>
 								</div>
-								$ap_id = $this->input->post('ap_id');
-		$nama = $this->input->post('nama');
-		$tanggal = $this->input->post('tanggal');
-		$tempatlahir = $this->input->post('tempatlahir');
-		$hobi = $this->input->post('hobi');
-		$sekolah = $this->input->post('sekolah');
-		$prestasi = $this->input->post('prestasi');
-		$foto =$_FILES['foto'];
+								
 								<div class="form-group">
 										<label class="col-lg-2 col-sm-2 control-label">Nama</label>
 										<div class="col-lg-10">
@@ -83,13 +76,13 @@
 										</div>
 								</div>
 								<div class="form-group">
-										<label class="col-lg-2 col-sm-2 control-label">Tempat Lahir</label>
+										<label class="col-lg-2 col-sm-2 control-label">Tempat</label>
 										<div class="col-lg-10">
 											<input type="text" class="form-control" id="tempatlahir" name="tempatlahir" value="<?php echo $ap->tempatlahir;?>"></input>
 										</div>
 								</div>
 								<div class="form-group">
-										<label class="col-lg-2 col-sm-2 control-label">Tanggal Lahir</label>
+										<label class="col-lg-2 col-sm-2 control-label">Tanggal</label>
 										<div class="col-lg-10">
 												<input type="text" class="form-control" id="tanggal" name="tanggal" value="<?php echo $ap->tanggal;?>">
 										</div>
@@ -109,7 +102,13 @@
 								<div class="form-group">
 										<label class="col-lg-2 col-sm-2 control-label">Prestasi</label>
 										<div class="col-lg-10">
-												<input type="file" class="form-control" id="prestasi" name="prestasi" value="<?php echo $ap->prestasi;?>">
+												<input type="text" class="form-control" id="prestasi" name="prestasi" value="<?php echo $ap->prestasi;?>">
+										</div>
+								</div>
+								<div class="form-group">
+										<label class="col-lg-2 col-sm-2 control-label">Foto</label>
+										<div class="col-lg-10">
+												<input type="file" class="form-control" id="foto" name="foto" value="<?php echo $ap->foto;?>">
 										</div>
 								</div>
 						</div>

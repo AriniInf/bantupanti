@@ -94,60 +94,6 @@ class AnakPanti extends CI_Controller {
 		$data['data'] = $this->m_admin->listKomentar($kp_id)->result();
 		$this->load->view('anakPanti/tampilan_utama_anakPanti', $data);
 	}
-<<<<<<< HEAD
-	public function profile(){
-
-		
-		$ap_id = $this->session->userdata('data')->ap_id;
-
-		$data['content'] = 'anakPanti/v_profile';
-		$data['data'] = $this->m_anakPanti->profile($ap_id)->result();
-		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
-	}
-	public function update_profil(){
-		$ap_id = $this->input->post('ap_id');
-		$nama = $this->input->post('nama');
-		$tanggal = $this->input->post('tanggal');
-		$tempatlahir = $this->input->post('tempatlahir');
-		$hobi = $this->input->post('hobi');
-		$sekolah = $this->input->post('sekolah');
-		$prestasi = $this->input->post('prestasi');
-		$foto =$_FILES['foto'];
-
-		if($foto=''){}else{
-			$config['upload_path']='./assets/uploads';
-			$config['allowed_types']='jpg|png|jpeg';
-
-			$this->load->library('upload', $config);
-			if(!$this->upload->do_upload('foto')){
-				echo  "Gagal Upload";die();
-
-			}
-			else{
-				$foto=$this->upload->data('file_name');
-			}
-		}
-		
-		
-		$data = array(
-			'ap_id'=>$ap_id,
-			'nama'=> $nama,
-			'tanggal'=> $tanggal,
-			'tempatlahir'=> $tempatlahir,
-			'hobi'=> $hobi,
-			'sekolah'=> $sekolah,
-			'prestasi'=> $prestasi,
-			'fota'=>$foto,
-			
-		);
-		$this->m_anakPanri->update_profil($data, $ap_id);
-		
-		//var_dump($this->input->post());
-		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-		redirect('anakPanti/profile');
-	}
-
-=======
 
 	public function edit_diary(){
 		$dy_id = $this->input->post('dy_id');
@@ -164,5 +110,57 @@ class AnakPanti extends CI_Controller {
 		$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('anakPanti/listDiarymu');
 	}
->>>>>>> 8ed52b3912d8f9087bf872b07b133e8bfdde55d5
+		public function profile(){
+
+		
+		$ap_id = $this->session->userdata('data')->ap_id;
+
+		$data['content'] = 'anakPanti/v_profile';
+		$data['data'] = $this->m_anakPanti->profile($ap_id)->result();
+		$this->load->view('anakPanti/tampilan_utama_anakPanti',$data);
+	}
+
+	public function update_profil(){
+				$ap_id = $this->input->post('ap_id');
+				$nama = $this->input->post('nama');
+				$tanggal = $this->input->post('tanggal');
+				$tempatlahir = $this->input->post('tempatlahir');
+				$hobi = $this->input->post('hobi');
+				$sekolah = $this->input->post('sekolah');
+				$prestasi = $this->input->post('prestasi');
+				$foto =$_FILES['foto'];
+				if($foto=''){}else{
+					$config['upload_path']='./assets/uploads';
+					$config['allowed_types']='jpg|png|jpeg';
+		
+					$this->load->library('upload', $config);
+					if(!$this->upload->do_upload('foto')){
+						echo  "Gagal Upload";die();
+		
+					}
+					else{
+						$foto=$this->upload->data('file_name');
+					}
+				}
+				
+				
+				$data = array(
+					'ap_id'=>$ap_id,
+					'nama'=> $nama,
+					'tanggal'=> $tanggal,
+					'tempatlahir'=> $tempatlahir,
+					'hobi'=> $hobi,
+					'sekolah'=> $sekolah,
+					'prestasi'=> $prestasi,
+					'foto'=>$foto,
+					
+				);
+				$this->m_anakPanti->update_profil($data, $ap_id);
+				
+				//var_dump($this->input->post());
+				$this->session->set_flashdata('notif','<div class="alert alert-info" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+				redirect('anakPanti/profile');
+			}
+
 }
+
