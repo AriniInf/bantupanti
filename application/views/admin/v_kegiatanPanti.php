@@ -26,6 +26,7 @@
 							<p><?php echo $kp->tanggal ?></p>
 							<h4 class="mb-2"><?php echo $kp->kegiatan ?></h4>
 							<p><?php echo $kp->penjelasan ?></p>
+							
 							<div>
 								<a 
 									data-target="#edit-data<?php echo $kp->kp_id;?>"
@@ -95,6 +96,12 @@
 		                        <label class="col-lg-2 col-sm-2 control-label">Penjelasan</label>
 		                        <div class="col-lg-10">
 		                            <input type="text" class="form-control" id="penjelasan" name="penjelasan" value="<?php echo $kp->penjelasan;?>">
+		                        </div>
+							</div>
+							<div class="form-group">
+		                        <label class="col-lg-2 col-sm-2 control-label">Penjelasan</label>
+		                        <div class="col-lg-10">
+		                            <input type="file" class="form-control" id="foto" name="foto" value="<?php echo $kp->foto;?>">
 		                        </div>
 		                    </div>
 		                </div>

@@ -90,7 +90,7 @@ class Admin extends CI_Controller {
 				'nama' => $nama,
 				'penjelasan' => $penjelasan,
 				'tanggal' => $tanggal,
-				//'foto' => $foto,
+				'foto' => $foto,
 				);
 			$this->m_admin->tambah_kegiatan($data,'kegiatanpanti');
 			redirect('admin/listAllKegiatan');
